@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
+import {DataSummary} from '../../models/turkeydata';
+import {DataServicesService} from '../../services/data.service';
 
 
 @Component({
@@ -17,13 +19,22 @@ export class DashboardComponent implements OnInit {
   public chartColor;
   public chartEmail;
   public chartHours;
+  patients = 0;
+  cases = 0;
+  deaths = 0;
+  recovered = 0;
+  critical = 0;
+  pneumoniaPercent = 0;
+  tests = 0;
+  dataSummaries: DataSummary[];
+  datatable = [];
+  weeklyTable = [];
 
-
-  constructor() {}
+  constructor(private dataService: DataServicesService) {}
 
     ngOnInit() {
-         this.chartColor = '#FFFFFF';
 
+      this.chartColor = '#FFFFFF';
       this.canvas = document.getElementById('chartHours');
       this.ctx = this.canvas.getContext('2d');
 
@@ -38,7 +49,7 @@ export class DashboardComponent implements OnInit {
               pointRadius: 0,
               pointHoverRadius: 0,
               borderWidth: 3,
-              data: [300, 310, 316, 322, 330, 326, 333, 345, 338, 354] //test sayısı
+              data: [300, 310, 316, 322, 330, 326, 333, 345, 338, 354] // test sayısı
             },
             {
               borderColor: '#f17e5d',
@@ -174,7 +185,7 @@ export class DashboardComponent implements OnInit {
       const speedCanvas = document.getElementById('speedChart');
 
       const dataFirst = {
-        data: [0, 19, 15, 20, 30, 40, 40, 50, 25, 30, 50, 70],   //Test
+        data: [0, 19, 15, 20, 30, 40, 40, 50, 25, 30, 50, 70],   // Test
         fill: false,
         borderColor: '#fbc658',
         backgroundColor: 'transparent',
@@ -185,7 +196,7 @@ export class DashboardComponent implements OnInit {
       };
 
       const dataSecond = {
-        data: [0, 5, 10, 12, 20, 27, 30, 34, 42, 45, 55, 63],    //vaka
+        data: [0, 5, 10, 12, 20, 27, 30, 34, 42, 45, 55, 63],    // vaka
         fill: false,
         borderColor: '#51CACF',
         backgroundColor: 'transparent',
@@ -195,7 +206,7 @@ export class DashboardComponent implements OnInit {
         pointBorderWidth: 8
       };
       const dataThird = {
-        data: [8, 58, 18, 18, 21, 28, 38, 84, 48, 85, 55, 69], //vefat
+        data: [8, 58, 18, 18, 21, 28, 38, 84, 48, 85, 55, 69], // vefat
         fill: false,
         borderColor: '#ef8157',
         backgroundColor: 'transparent',
@@ -223,5 +234,42 @@ export class DashboardComponent implements OnInit {
         data: speedData,
         options: chartOptions
       });
+
+
+      this.dataService.getDailyJsonData().subscribe({
+        next: (res) => {
+          console.log(res);
+          this.dataSummaries = res;
+          res.forEach((cs) => {
+            if (!Number.isNaN(cs.date)) {
+              this.patients = cs.patients;
+              this.critical = cs.critical;
+              this.cases = cs.cases;
+              this.recovered = cs.recovered;
+              this.pneumoniaPercent = cs.pneumoniaPercent;
+              this.deaths = cs.deaths;
+              this.tests = cs.tests;
+            }
+          });
+          this.initChart();
+        },
+      });
+
     }
+
+
+  initChart() {
+    this.datatable = [];
+    this.weeklyTable = [];
+
+    this.dataSummaries.forEach((cs) => {
+      this.datatable.push([cs.date, cs.cases]);
+    });
+    // son 7 günün :) chartta gösterilmesi ama çalışmıyor .ÇALIŞTI.
+    for (let i = 0; i < 7; i++) {
+      this.weeklyTable[i] = this.datatable[this.datatable.length - 1];
+      this.datatable.length -= 1;
+    }
+    console.log(this.weeklyTable);
+  }
 }
