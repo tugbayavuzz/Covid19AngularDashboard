@@ -1,4 +1,4 @@
-// tslint:disable-next-line:class-name
+
 export interface DataSummary {
     date ?: string;
     tests ?: number;
