@@ -19,6 +19,8 @@ export class DashboardComponent implements OnInit {
   public chartColor;
   public chartEmail;
   public chartHours;
+
+  date = ' ';
   patients = 0;
   cases = 0;
   deaths = 0;
@@ -29,9 +31,92 @@ export class DashboardComponent implements OnInit {
   dataSummaries: DataSummary[];
   datatable = [];
   weeklyTable = [];
+  weeklyTable2 = [];
+  weeklyTable3 = [];
 
   constructor(private dataService: DataServicesService) {}
-   ngOnInit() {
+
+    ngOnInit() {
+      this.chartColor = '#FFFFFF';
+      this.canvas = document.getElementById('chartHours');
+      this.ctx = this.canvas.getContext('2d');
+
+      this.chartHours = new Chart(this.ctx, {
+
+        type: 'line',
+
+        data: {
+          labels: [this.date],
+          datasets: [{
+              borderColor: '#6bd098',
+              backgroundColor: '#6bd098',
+              pointRadius: 0,
+              pointHoverRadius: 0,
+              borderWidth: 3,
+              data: this.weeklyTable // test sayısnı son 1 haftalık cekmeye calısacagım
+            },
+            {
+              borderColor: '#f17e5d',
+              backgroundColor: '#f17e5d',
+              pointRadius: 0,
+              pointHoverRadius: 0,
+              borderWidth: 3,
+              data: this.weeklyTable2.push(this.cases) // vaka sayısı son 1 haftalık cekmeye calısacagım
+            },
+            {
+              borderColor: '#fcc468',
+              backgroundColor: '#fcc468',
+              pointRadius: 0,
+              pointHoverRadius: 0,
+              borderWidth: 3,
+              data: this.weeklyTable3 // ölüm sayısını son 1 haftalık cekmeye calısacagım
+            }
+          ]
+        },
+        options: {
+          legend: {
+            display: false
+          },
+
+          tooltips: {
+            enabled: false
+          },
+
+          scales: {
+            yAxes: [{
+
+              ticks: {
+                fontColor: '#9f9f9f',
+                beginAtZero: false,
+                maxTicksLimit: 5,
+                // padding: 20
+              },
+              gridLines: {
+                drawBorder: false,
+                zeroLineColor: '#ccc',
+                color: 'rgba(255,255,255,0.05)'
+              }
+
+            }],
+
+            xAxes: [{
+              barPercentage: 1.6,
+              gridLines: {
+                drawBorder: false,
+                color: 'rgba(255,255,255,0.1)',
+                zeroLineColor: 'transparent',
+                display: false,
+              },
+              ticks: {
+                padding: 20,
+                fontColor: '#9f9f9f'
+              }
+            }]
+          },
+        }
+      });
+
+
       this.canvas = document.getElementById('chartEmail');
       this.ctx = this.canvas.getContext('2d');
       this.chartEmail = new Chart(this.ctx, {
@@ -170,7 +255,7 @@ export class DashboardComponent implements OnInit {
               this.tests = cs.tests;
             }
           });
-          this.initChart();
+          this.initChart(), this.initChart2(), this. initChart3();
         },
       });
 
@@ -183,104 +268,40 @@ export class DashboardComponent implements OnInit {
     this.dataSummaries.forEach((cs) => {
       this.datatable.push([cs.date, cs.cases]);
     });
-
     // son 7 günün :) chartta gösterilmesi ama çalışmıyor .ÇALIŞTI.
-    const totalPatients = [];
-    const totalDeath = [];
-    const totalTests = [];
-
-
     for (let i = 0; i < 7; i++) {
-      const dailyResult = this.dataSummaries[i];
-      totalPatients.push(dailyResult.patients)
-      totalDeath.push(dailyResult.deaths)
-      totalTests.push(dailyResult.tests)
-       this.weeklyTable[i] = this.datatable[this.datatable.length - 1];
-       this.datatable.length -= 1;
+      this.weeklyTable[i] = this.datatable[this.datatable.length - 1];
+      this.datatable.length -= 1;
     }
+    console.log(this.weeklyTable);
+  }
+  initChart2() {
+    this.datatable = [];
+    this.weeklyTable2 = [];
 
-    console.log(totalPatients);
-    console.log(totalDeath);
-    console.log(totalTests);
-
-
-    this.canvas = document.getElementById('chartHours');
-    this.ctx = this.canvas.getContext('2d');
-
-    this.chartHours = new Chart(this.ctx, {
-      type: 'line',
-
-      data: {
-        labels: ['Pzt', 'Salı', 'Çarş', 'Perş', 'Cuma', 'Cmt', 'Pzr'],
-        datasets: [{
-          borderColor: '#6bd098',
-          backgroundColor: '#6bd098',
-          pointRadius: 0,
-          pointHoverRadius: 0,
-          borderWidth: 3,
-          data: totalTests // test sayısı
-        },
-          {
-            borderColor: '#f17e5d',
-            backgroundColor: '#f17e5d',
-            pointRadius: 0,
-            pointHoverRadius: 0,
-            borderWidth: 3,
-            data: totalPatients // vaka sayısı
-          },
-          {
-            borderColor: '#fcc468',
-            backgroundColor: '#fcc468',
-            pointRadius: 0,
-            pointHoverRadius: 0,
-            borderWidth: 3,
-            data: totalDeath // ölüm sayısı son 1 hafta
-          }
-        ]
-      },
-      options: {
-        legend: {
-          display: false
-        },
-
-        tooltips: {
-          enabled: false
-        },
-
-        scales: {
-          yAxes: [{
-
-            ticks: {
-              fontColor: '#9f9f9f',
-              beginAtZero: false,
-              maxTicksLimit: 5,
-              // padding: 20
-            },
-            gridLines: {
-              drawBorder: false,
-              zeroLineColor: '#ccc',
-              color: 'rgba(255,255,255,0.05)'
-            }
-
-          }],
-
-          xAxes: [{
-            barPercentage: 1.6,
-            gridLines: {
-              drawBorder: false,
-              color: 'rgba(255,255,255,0.1)',
-              zeroLineColor: 'transparent',
-              display: false,
-            },
-            ticks: {
-              padding: 20,
-              fontColor: '#9f9f9f'
-            }
-          }]
-        },
-      }
+    this.dataSummaries.forEach((cs) => {
+      this.datatable.push([cs.date, cs.deaths]);
     });
+    // son 7 günün :) chartta gösterilmesi ama çalışmıyor .ÇALIŞTI.
+    for (let i = 0; i < 7; i++) {
+      this.weeklyTable2[i] = this.datatable[this.datatable.length - 1];
+      this.datatable.length -= 1;
+    }
+    console.log(this.weeklyTable2);
+  }
+  initChart3() {
+    this.datatable = [];
+    this.weeklyTable3 = [];
 
+    this.dataSummaries.forEach((cs) => {
+      this.datatable.push([cs.date, cs.tests]);
+    });
+    // son 7 günün :) chartta gösterilmesi ama çalışmıyor .ÇALIŞTI.
+    for (let i = 0; i < 7; i++) {
+      this.weeklyTable3[i] = this.datatable[this.datatable.length - 1];
+      this.datatable.length -= 1;
+    }
+    console.log(this.weeklyTable3);
   }
 
 

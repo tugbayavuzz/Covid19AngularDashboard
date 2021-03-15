@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class DataServicesService {
   private dailyDataUrl = environment.apiCsvUrl;
   private dailyDataJsonUrl = environment.apiJsonUrl;
+
   constructor(private http: HttpClient) {}
 
   getDailyData() {
