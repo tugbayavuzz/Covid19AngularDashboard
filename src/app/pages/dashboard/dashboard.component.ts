@@ -33,12 +33,12 @@ export class DashboardComponent implements OnInit {
   constructor(private dataService: DataServicesService) {}
 
     ngOnInit() {
-
       this.chartColor = '#FFFFFF';
       this.canvas = document.getElementById('chartHours');
       this.ctx = this.canvas.getContext('2d');
 
       this.chartHours = new Chart(this.ctx, {
+
         type: 'line',
 
         data: {
@@ -49,7 +49,7 @@ export class DashboardComponent implements OnInit {
               pointRadius: 0,
               pointHoverRadius: 0,
               borderWidth: 3,
-              data: [300, 310, 316, 322, 330, 326, 333, 345, 338, 354] // test sayısı
+              data: [this.tests] // test sayısı
             },
             {
               borderColor: '#f17e5d',
@@ -57,7 +57,7 @@ export class DashboardComponent implements OnInit {
               pointRadius: 0,
               pointHoverRadius: 0,
               borderWidth: 3,
-              data: [320, 340, 365, 360, 370, 385, 390, 384, 408, 420] // vaka sayısı
+              data: [this.cases] // vaka sayısı
             },
             {
               borderColor: '#fcc468',
@@ -65,7 +65,7 @@ export class DashboardComponent implements OnInit {
               pointRadius: 0,
               pointHoverRadius: 0,
               borderWidth: 3,
-              data: [170, 394, 415, 409, 425, 445, 460, 450, 478, 484] // ölüm sayısı son 1 hafta
+              data: [this.deaths] // ölüm sayısı son 1 hafta
             }
           ]
         },
@@ -133,7 +133,7 @@ export class DashboardComponent implements OnInit {
               '#000000'
             ],
             borderWidth: 0,
-            data: [342, 480, 530, 258, 456, 789, 172] // son 7 günün verisini dızıye at buraya tanımla.
+            data: [this.cases] // son 7 günün verisini dızıye at buraya tanımla.
           }]
         },
 
@@ -272,4 +272,5 @@ export class DashboardComponent implements OnInit {
     }
     console.log(this.weeklyTable);
   }
+
 }
