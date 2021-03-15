@@ -31,88 +31,7 @@ export class DashboardComponent implements OnInit {
   weeklyTable = [];
 
   constructor(private dataService: DataServicesService) {}
-
-    ngOnInit() {
-      this.chartColor = '#FFFFFF';
-      this.canvas = document.getElementById('chartHours');
-      this.ctx = this.canvas.getContext('2d');
-
-      this.chartHours = new Chart(this.ctx, {
-
-        type: 'line',
-
-        data: {
-          labels: ['Pzt', 'Salı', 'Çarş', 'Perş', 'Cuma', 'Cmt', 'Pzr'],
-          datasets: [{
-              borderColor: '#6bd098',
-              backgroundColor: '#6bd098',
-              pointRadius: 0,
-              pointHoverRadius: 0,
-              borderWidth: 3,
-              data: [this.tests] // test sayısı
-            },
-            {
-              borderColor: '#f17e5d',
-              backgroundColor: '#f17e5d',
-              pointRadius: 0,
-              pointHoverRadius: 0,
-              borderWidth: 3,
-              data: [this.cases] // vaka sayısı
-            },
-            {
-              borderColor: '#fcc468',
-              backgroundColor: '#fcc468',
-              pointRadius: 0,
-              pointHoverRadius: 0,
-              borderWidth: 3,
-              data: [this.deaths] // ölüm sayısı son 1 hafta
-            }
-          ]
-        },
-        options: {
-          legend: {
-            display: false
-          },
-
-          tooltips: {
-            enabled: false
-          },
-
-          scales: {
-            yAxes: [{
-
-              ticks: {
-                fontColor: '#9f9f9f',
-                beginAtZero: false,
-                maxTicksLimit: 5,
-                // padding: 20
-              },
-              gridLines: {
-                drawBorder: false,
-                zeroLineColor: '#ccc',
-                color: 'rgba(255,255,255,0.05)'
-              }
-
-            }],
-
-            xAxes: [{
-              barPercentage: 1.6,
-              gridLines: {
-                drawBorder: false,
-                color: 'rgba(255,255,255,0.1)',
-                zeroLineColor: 'transparent',
-                display: false,
-              },
-              ticks: {
-                padding: 20,
-                fontColor: '#9f9f9f'
-              }
-            }]
-          },
-        }
-      });
-
-
+   ngOnInit() {
       this.canvas = document.getElementById('chartEmail');
       this.ctx = this.canvas.getContext('2d');
       this.chartEmail = new Chart(this.ctx, {
@@ -257,7 +176,6 @@ export class DashboardComponent implements OnInit {
 
     }
 
-
   initChart() {
     this.datatable = [];
     this.weeklyTable = [];
@@ -265,12 +183,105 @@ export class DashboardComponent implements OnInit {
     this.dataSummaries.forEach((cs) => {
       this.datatable.push([cs.date, cs.cases]);
     });
+
     // son 7 günün :) chartta gösterilmesi ama çalışmıyor .ÇALIŞTI.
+    const totalPatients = [];
+    const totalDeath = [];
+    const totalTests = [];
+
+
     for (let i = 0; i < 7; i++) {
-      this.weeklyTable[i] = this.datatable[this.datatable.length - 1];
-      this.datatable.length -= 1;
+      const dailyResult = this.dataSummaries[i];
+      totalPatients.push(dailyResult.patients)
+      totalDeath.push(dailyResult.deaths)
+      totalTests.push(dailyResult.tests)
+       this.weeklyTable[i] = this.datatable[this.datatable.length - 1];
+       this.datatable.length -= 1;
     }
-    console.log(this.weeklyTable);
+
+    console.log(totalPatients);
+    console.log(totalDeath);
+    console.log(totalTests);
+
+
+    this.canvas = document.getElementById('chartHours');
+    this.ctx = this.canvas.getContext('2d');
+
+    this.chartHours = new Chart(this.ctx, {
+      type: 'line',
+
+      data: {
+        labels: ['Pzt', 'Salı', 'Çarş', 'Perş', 'Cuma', 'Cmt', 'Pzr'],
+        datasets: [{
+          borderColor: '#6bd098',
+          backgroundColor: '#6bd098',
+          pointRadius: 0,
+          pointHoverRadius: 0,
+          borderWidth: 3,
+          data: totalTests // test sayısı
+        },
+          {
+            borderColor: '#f17e5d',
+            backgroundColor: '#f17e5d',
+            pointRadius: 0,
+            pointHoverRadius: 0,
+            borderWidth: 3,
+            data: totalPatients // vaka sayısı
+          },
+          {
+            borderColor: '#fcc468',
+            backgroundColor: '#fcc468',
+            pointRadius: 0,
+            pointHoverRadius: 0,
+            borderWidth: 3,
+            data: totalDeath // ölüm sayısı son 1 hafta
+          }
+        ]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+
+        tooltips: {
+          enabled: false
+        },
+
+        scales: {
+          yAxes: [{
+
+            ticks: {
+              fontColor: '#9f9f9f',
+              beginAtZero: false,
+              maxTicksLimit: 5,
+              // padding: 20
+            },
+            gridLines: {
+              drawBorder: false,
+              zeroLineColor: '#ccc',
+              color: 'rgba(255,255,255,0.05)'
+            }
+
+          }],
+
+          xAxes: [{
+            barPercentage: 1.6,
+            gridLines: {
+              drawBorder: false,
+              color: 'rgba(255,255,255,0.1)',
+              zeroLineColor: 'transparent',
+              display: false,
+            },
+            ticks: {
+              padding: 20,
+              fontColor: '#9f9f9f'
+            }
+          }]
+        },
+      }
+    });
+
   }
+
 
 }
