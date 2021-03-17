@@ -11,6 +11,9 @@
       </div>
       <a class="navbar-brand" href="javascript:void(0)">{{getTitle()}}</a>
     </div>
+    <div>
+      <a class="navbar-brand" style="color:red " >{{todayDate | date:'fullDate'}}</a>
+    </div>
     <button class="navbar-toggler" type="button" (click)="collapse()"
       [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
       <span class="navbar-toggler-bar navbar-kebab"></span>
