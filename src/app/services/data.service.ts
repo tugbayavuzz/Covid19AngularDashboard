@@ -46,6 +46,7 @@ export class DataServicesService {
             temp.deaths = cs.deaths + temp.deaths;
             temp.recovered = cs.recovered + temp.recovered;
             temp.tests = cs.tests + temp.tests;
+            temp.date = cs.date;
             raw[cs.date] = temp;
           } else {
             raw[cs.date] = cs;
