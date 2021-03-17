@@ -1,14 +1,14 @@
-import { Component, OnInit } from "@angular/core";
-import Chart from "chart.js";
-import { endOfWeek, isSameWeek, subWeeks } from "date-fns";
-import { DataSummary } from "../../models/turkeydata";
-import { DataServicesService } from "../../services/data.service";
+import { Component, OnInit } from '@angular/core';
+import Chart from 'chart.js';
+import { endOfWeek, isSameWeek, subWeeks } from 'date-fns';
+import { DataSummary } from '../../models/turkeydata';
+import { DataServicesService } from '../../services/data.service';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: "dashboard-cmp",
+  selector: 'dashboard-cmp',
   moduleId: module.id,
-  templateUrl: "dashboard.component.html",
+  templateUrl: 'dashboard.component.html',
 })
 export class DashboardComponent implements OnInit {
   public canvas: any;
@@ -33,25 +33,25 @@ export class DashboardComponent implements OnInit {
 
   constructor(private dataService: DataServicesService) {}
   ngOnInit() {
-    this.canvas = document.getElementById("chartEmail");
-    this.ctx = this.canvas.getContext("2d");
+    this.canvas = document.getElementById('chartEmail');
+    this.ctx = this.canvas.getContext('2d');
     this.chartEmail = new Chart(this.ctx, {
-      type: "pie",
+      type: 'pie',
       data: {
         labels: [1, 2, 3, 4, 5, 6, 7],
         datasets: [
           {
-            label: "Emails",
+            label: 'Emails',
             pointRadius: 0,
             pointHoverRadius: 0,
             backgroundColor: [
-              "#4acccd",
-              "#fcc468",
-              "#ef8157",
-              "#6bd098",
-              "#90EE90",
-              "#dcdcdc",
-              "#000000",
+              '#4acccd',
+              '#fcc468',
+              '#ef8157',
+              '#6bd098',
+              '#90EE90',
+              '#dcdcdc',
+              '#000000',
             ],
             borderWidth: 0,
             data: [this.cases], // son 7 günün verisini dızıye at buraya tanımla.
@@ -65,8 +65,8 @@ export class DashboardComponent implements OnInit {
         },
 
         pieceLabel: {
-          render: "percentage",
-          fontColor: ["white"],
+          render: 'percentage',
+          fontColor: ['white'],
           precision: 2,
         },
 
@@ -82,8 +82,8 @@ export class DashboardComponent implements OnInit {
               },
               gridLines: {
                 drawBorder: false,
-                zeroLineColor: "transparent",
-                color: "rgba(255,255,255,0.05)",
+                zeroLineColor: 'transparent',
+                color: 'rgba(255,255,255,0.05)',
               },
             },
           ],
@@ -93,8 +93,8 @@ export class DashboardComponent implements OnInit {
               barPercentage: 1.6,
               gridLines: {
                 drawBorder: false,
-                color: "rgba(255,255,255,0.1)",
-                zeroLineColor: "transparent",
+                color: 'rgba(255,255,255,0.1)',
+                zeroLineColor: 'transparent',
               },
               ticks: {
                 display: false,
@@ -105,14 +105,14 @@ export class DashboardComponent implements OnInit {
       },
     });
 
-    const speedCanvas = document.getElementById("speedChart");
+    const speedCanvas = document.getElementById('speedChart');
 
     const dataFirst = {
       data: [0, 19, 15, 20, 30, 40, 40, 50, 25, 30, 50, 70], // Test
       fill: false,
-      borderColor: "#fbc658",
-      backgroundColor: "transparent",
-      pointBorderColor: "#fbc658",
+      borderColor: '#fbc658',
+      backgroundColor: 'transparent',
+      pointBorderColor: '#fbc658',
       pointRadius: 4,
       pointHoverRadius: 4,
       pointBorderWidth: 8,
@@ -121,9 +121,9 @@ export class DashboardComponent implements OnInit {
     const dataSecond = {
       data: [0, 5, 10, 12, 20, 27, 30, 34, 42, 45, 55, 63], // vaka
       fill: false,
-      borderColor: "#51CACF",
-      backgroundColor: "transparent",
-      pointBorderColor: "#51CACF",
+      borderColor: '#51CACF',
+      backgroundColor: 'transparent',
+      pointBorderColor: '#51CACF',
       pointRadius: 4,
       pointHoverRadius: 4,
       pointBorderWidth: 8,
@@ -131,28 +131,28 @@ export class DashboardComponent implements OnInit {
     const dataThird = {
       data: [8, 58, 18, 18, 21, 28, 38, 84, 48, 85, 55, 69], // vefat
       fill: false,
-      borderColor: "#ef8157",
-      backgroundColor: "transparent",
-      pointBorderColor: "#ef8157",
+      borderColor: '#ef8157',
+      backgroundColor: 'transparent',
+      pointBorderColor: '#ef8157',
       pointRadius: 4,
       pointHoverRadius: 4,
       pointBorderWidth: 8,
     };
 
     const speedData = {
-      labels: ["Pzt", "Salı", "Çarş", "Perş", "Cuma", "Cmt", "Pzr"],
+      labels: ['Pzt', 'Salı', 'Çarş', 'Perş', 'Cuma', 'Cmt', 'Pzr'],
       datasets: [dataFirst, dataSecond, dataThird],
     };
 
     const chartOptions = {
       legend: {
         display: false,
-        position: "top",
+        position: 'top',
       },
     };
 
     const lineChart = new Chart(speedCanvas, {
-      type: "line",
+      type: 'line',
       hover: false,
       data: speedData,
       options: chartOptions,
@@ -186,32 +186,32 @@ export class DashboardComponent implements OnInit {
       today = subWeeks(today, 1);
     }
     // Get this week data
-    let myWeekData = this.dataSummaries.filter((cs) => {
-      let [day, month, year] = cs.date.split("/");
-      let csDate = new Date(+year, +month - 1, +day);
-      let result = isSameWeek(csDate, today, { weekStartsOn: 1 });
+    const myWeekData = this.dataSummaries.filter((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate = new Date(+year, +month - 1, +day);
+      const result = isSameWeek(csDate, today, { weekStartsOn: 1 });
       return result;
     });
 
-    let patients = myWeekData.map((cs) => cs.patients);
-    let deaths = myWeekData.map((cs) => cs.deaths);
-    let tests = myWeekData.map((cs) => cs.tests);
+    const patients = myWeekData.map((cs) => cs.patients);
+    const deaths = myWeekData.map((cs) => cs.deaths);
+    const tests = myWeekData.map((cs) => cs.tests);
 
-    console.log("ALI");
+    console.log('ALI');
     console.log(patients);
     console.log(deaths);
     console.log(tests);
 
-    this.canvas = document.getElementById("chartHours");
-    this.ctx = this.canvas.getContext("2d");
+    this.canvas = document.getElementById('chartHours');
+    this.ctx = this.canvas.getContext('2d');
 
-    this.secondCanvas = document.getElementById("chartSecond");
-    this.secondCtx = this.secondCanvas.getContext("2d");
+    this.secondCanvas = document.getElementById('chartSecond');
+    this.secondCtx = this.secondCanvas.getContext('2d');
 
-    this.thirdCanvas = document.getElementById("chartThird");
-    this.thirdCtx = this.thirdCanvas.getContext("2d");
+    this.thirdCanvas = document.getElementById('chartThird');
+    this.thirdCtx = this.thirdCanvas.getContext('2d');
 
-    this.drawChart(this.ctx, patients,'patients');
+    this.drawChart(this.ctx, patients, 'patients');
     this.drawChart(this.secondCtx, deaths, 'deaths');
     this.drawChart(this.thirdCtx, tests, 'tests');
   }
@@ -220,30 +220,30 @@ export class DashboardComponent implements OnInit {
     let dataSet;
 
     switch (type) {
-      case "patients":
+      case 'patients':
         dataSet = {
-          borderColor: "#f17e5d",
-          backgroundColor: "#f17e5d",
+          borderColor: '#f17e5d',
+          backgroundColor: '#f17e5d',
           pointRadius: 0,
           pointHoverRadius: 0,
           borderWidth: 3,
           data: data, // vaka sayısı
         };
         break;
-      case "deaths":
+      case 'deaths':
         dataSet = {
-          borderColor: "#fcc468",
-          backgroundColor: "#fcc468",
+          borderColor: '#fcc468',
+          backgroundColor: '#fcc468',
           pointRadius: 0,
           pointHoverRadius: 0,
           borderWidth: 3,
           data: data, // ölüm sayısı son 1 hafta
         };
         break;
-      case "tests":
+      case 'tests':
         dataSet = {
-          borderColor: "#6bd098",
-          backgroundColor: "#6bd098",
+          borderColor: '#6bd098',
+          backgroundColor: '#6bd098',
           pointRadius: 0,
           pointHoverRadius: 0,
           borderWidth: 3,
@@ -253,10 +253,10 @@ export class DashboardComponent implements OnInit {
     }
 
     this.chartHours = new Chart(ctx, {
-      type: "line",
+      type: 'line',
 
       data: {
-        labels: ["Pzt", "Salı", "Çarş", "Perş", "Cuma", "Cmt", "Pzr"],
+        labels: ['Pzt', 'Salı', 'Çarş', 'Perş', 'Cuma', 'Cmt', 'Pzr'],
         datasets: [dataSet],
       },
       options: {
@@ -272,15 +272,15 @@ export class DashboardComponent implements OnInit {
           yAxes: [
             {
               ticks: {
-                fontColor: "#9f9f9f",
+                fontColor: '#9f9f9f',
                 beginAtZero: false,
                 maxTicksLimit: 5,
                 // padding: 20
               },
               gridLines: {
                 drawBorder: false,
-                zeroLineColor: "#ccc",
-                color: "rgba(255,255,255,0.05)",
+                zeroLineColor: '#ccc',
+                color: 'rgba(255,255,255,0.05)',
               },
             },
           ],
@@ -290,13 +290,13 @@ export class DashboardComponent implements OnInit {
               barPercentage: 1.6,
               gridLines: {
                 drawBorder: false,
-                color: "rgba(255,255,255,0.1)",
-                zeroLineColor: "transparent",
+                color: 'rgba(255,255,255,0.1)',
+                zeroLineColor: 'transparent',
                 display: false,
               },
               ticks: {
                 padding: 20,
-                fontColor: "#9f9f9f",
+                fontColor: '#9f9f9f',
               },
             },
           ],
@@ -331,34 +331,34 @@ export class DashboardComponent implements OnInit {
     console.log(totalDeath);
     console.log(totalTests);
 
-    this.canvas = document.getElementById("chartHours");
-    this.ctx = this.canvas.getContext("2d");
+    this.canvas = document.getElementById('chartHours');
+    this.ctx = this.canvas.getContext('2d');
 
     this.chartHours = new Chart(this.ctx, {
-      type: "line",
+      type: 'line',
 
       data: {
-        labels: ["Pzt", "Salı", "Çarş", "Perş", "Cuma", "Cmt", "Pzr"],
+        labels: ['Pzt', 'Salı', 'Çarş', 'Perş', 'Cuma', 'Cmt', 'Pzr'],
         datasets: [
           {
-            borderColor: "#6bd098",
-            backgroundColor: "#6bd098",
+            borderColor: '#6bd098',
+            backgroundColor: '#6bd098',
             pointRadius: 0,
             pointHoverRadius: 0,
             borderWidth: 3,
             data: totalTests, // test sayısı
           },
           {
-            borderColor: "#f17e5d",
-            backgroundColor: "#f17e5d",
+            borderColor: '#f17e5d',
+            backgroundColor: '#f17e5d',
             pointRadius: 0,
             pointHoverRadius: 0,
             borderWidth: 3,
             data: totalPatients, // vaka sayısı
           },
           {
-            borderColor: "#fcc468",
-            backgroundColor: "#fcc468",
+            borderColor: '#fcc468',
+            backgroundColor: '#fcc468',
             pointRadius: 0,
             pointHoverRadius: 0,
             borderWidth: 3,
@@ -379,15 +379,15 @@ export class DashboardComponent implements OnInit {
           yAxes: [
             {
               ticks: {
-                fontColor: "#9f9f9f",
+                fontColor: '#9f9f9f',
                 beginAtZero: false,
                 maxTicksLimit: 5,
                 // padding: 20
               },
               gridLines: {
                 drawBorder: false,
-                zeroLineColor: "#ccc",
-                color: "rgba(255,255,255,0.05)",
+                zeroLineColor: '#ccc',
+                color: 'rgba(255,255,255,0.05)',
               },
             },
           ],
@@ -397,13 +397,13 @@ export class DashboardComponent implements OnInit {
               barPercentage: 1.6,
               gridLines: {
                 drawBorder: false,
-                color: "rgba(255,255,255,0.1)",
-                zeroLineColor: "transparent",
+                color: 'rgba(255,255,255,0.1)',
+                zeroLineColor: 'transparent',
                 display: false,
               },
               ticks: {
                 padding: 20,
-                fontColor: "#9f9f9f",
+                fontColor: '#9f9f9f',
               },
             },
           ],
