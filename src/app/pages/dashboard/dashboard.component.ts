@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import Chart from 'chart.js';
-import {endOfWeek, isSameWeek, subWeeks} from 'date-fns';
+import {endOfWeek, isSameWeek, isWithinInterval, subDays, subWeeks} from 'date-fns';
 import {DataSummary} from '../../models/turkeydata';
 import {DataServicesService} from '../../services/data.service';
-import {formatDate} from '@angular/common';
+
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -32,7 +32,6 @@ export class DashboardComponent implements OnInit {
   dataSummaries: DataSummary[];
   datatable = [];
   weeklyTable = [];
-  dateoflast7day: any = [];
 
   constructor(private dataService: DataServicesService) {
   }
@@ -60,23 +59,44 @@ export class DashboardComponent implements OnInit {
   }
 
   initChart1() {
-    let today1 = new Date();
-    if (today1 !== endOfWeek(new Date(), {weekStartsOn: 1})) {
-      today1 = subWeeks(today1, 1);
-    }
+    const monthNames = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const startOfWeek = subDays(today, 6);
     // Get this week data
     const myWeekData = this.dataSummaries.filter((cs) => {
       const [day, month, year] = cs.date.split('/');
       const csDate = new Date(+year, +month - 1, +day);
-      const result = isSameWeek(csDate, today1, {weekStartsOn: 1});
+      const result = isWithinInterval(csDate, { start: startOfWeek, end: today });
       return result;
     });
+
+    const weekDatesLabels = myWeekData.map((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate = new Date(+year, +month - 1, +day);
+      return `${day} ${monthNames[csDate.getMonth()]}`;
+    });
+
 
     const cases = myWeekData.map((cs) => cs.cases);
     const deaths = myWeekData.map((cs) => cs.deaths);
     const tests = myWeekData.map((cs) => cs.tests);
 
     console.log('Chart1');
+    console.log('Week Data', myWeekData);
     console.log(cases);
     console.log(deaths);
     console.log(tests);
@@ -90,14 +110,14 @@ export class DashboardComponent implements OnInit {
     this.thirdCanvas = document.getElementById('chartThird');
     this.thirdCtx = this.thirdCanvas.getContext('2d');
 
-    this.drawChart1(this.ctx, cases, 'cases');
-    this.drawChart1(this.secondCtx, deaths, 'deaths');
-    this.drawChart1(this.thirdCtx, tests, 'tests');
+    this.drawChart1(this.ctx, cases, 'cases', weekDatesLabels);
+    this.drawChart1(this.secondCtx, deaths, 'deaths', weekDatesLabels);
+    this.drawChart1(this.thirdCtx, tests, 'tests', weekDatesLabels);
   }
 
 
 
-  drawChart1(ctx, data, type) {
+  drawChart1(ctx, data, type,  weekDatesLabels) {
     let dataSet;
     switch (type) {
       case 'cases':
@@ -136,7 +156,7 @@ export class DashboardComponent implements OnInit {
       type: 'line',
 
       data: {
-        labels: [1, 2, 3, 4, 5, 6, 7],
+        labels: weekDatesLabels,
         datasets: [dataSet],
       },
       options: {
@@ -187,37 +207,56 @@ export class DashboardComponent implements OnInit {
 
 
   initChart2() {
-    let today = new Date();
-    if (today !== endOfWeek(new Date(), {weekStartsOn: 1})) {
-      today = subWeeks(today, 1);
-    }
+    const monthNames = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const startOfWeek = subDays(today, 7);
     // Get this week data
     const myWeekData = this.dataSummaries.filter((cs) => {
       const [day, month, year] = cs.date.split('/');
       const csDate = new Date(+year, +month - 1, +day);
-      const result = isSameWeek(csDate, today, {weekStartsOn: 1});
+      const result = isWithinInterval(csDate, { start: startOfWeek, end: today });
       return result;
     });
 
-    const cases = myWeekData.map((cs) => cs.cases);
+    const weekDatesLabels = myWeekData.map((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate = new Date(+year, +month - 1, +day);
+      return `${day} ${monthNames[csDate.getMonth()]}`;
+    });
 
 
-    console.log('Chart2');
-    console.log(cases);
+    const recovered = myWeekData.map((cs) => cs.recovered);
+
+
+    console.log('Chart1');
+    console.log('Week Data', myWeekData);
+    console.log(recovered);
 
 
     this.canvas = document.getElementById('chartEmail');
     this.ctx = this.canvas.getContext('2d');
 
-    this.drawChart2(this.ctx, cases, 'cases');
+    this.drawChart2(this.ctx, recovered, weekDatesLabels);
 
   }
 
-  drawChart2(ctx, data, type) {
+  drawChart2(ctx, data, weekDatesLabels) {
     let dataSet2;
-
-    switch (type) {
-      case 'cases':
+     {
         dataSet2 = {
           pointRadius: 0,
           pointHoverRadius: 0,
@@ -233,21 +272,30 @@ export class DashboardComponent implements OnInit {
           borderWidth: 0,
           data: data,
         };
-        break;
+
     }
 
     this.chartEmail = new Chart(this.ctx, {
       type: 'pie',
 
       data: {
-        labels: [1, 2, 3, 4, 5, 6, 7],
+        labels: weekDatesLabels,
         datasets: [dataSet2],
       },
       options: {
         legend: {
           display: false,
         },
-
+        plugins: {
+              datalabels: {
+                // tslint:disable-next-line:no-shadowed-variable
+                formatter: (value, ctx) => {
+                  const sum = ctx.dataset._meta[0].total;
+                  const percentage = (value * 100 / sum).toFixed(2) + '%';
+                  return percentage;
+                },
+                color: '#fff',
+          },
         pieceLabel: {
           render: 'percentage',
           fontColor: ['white'],
@@ -287,48 +335,57 @@ export class DashboardComponent implements OnInit {
           ],
         },
       },
-    });
+    }});
   }
 
 
   initChart3() {
-    let today = new Date();
-    if (today !== endOfWeek(new Date(), {weekStartsOn: 1})) {
-      today = subWeeks(today, 1);
-    }
+    const monthNames = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const startOfWeek = subDays(today, 6);
     // Get this week data
     const myWeekData = this.dataSummaries.filter((cs) => {
       const [day, month, year] = cs.date.split('/');
       const csDate = new Date(+year, +month - 1, +day);
-      const result = isSameWeek(csDate, today, {weekStartsOn: 1});
+      const result = isWithinInterval(csDate, { start: startOfWeek, end: today });
       return result;
     });
 
-    const cases = myWeekData.map((cs) => cs.cases);
-    const deaths = myWeekData.map((cs) => cs.deaths);
-    const tests = myWeekData.map((cs) => cs.tests);
+    const weekDatesLabels = myWeekData.map((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate = new Date(+year, +month - 1, +day);
+      return `${day} ${monthNames[csDate.getMonth()]}`;
+    });
 
 
-    console.log('Chart3');
-    console.log(cases);
-    console.log(deaths);
-    console.log(tests);
+    const patients = myWeekData.map((cs) => cs.patients);
+
+    console.log('Chart1');
+    console.log('Week Data', myWeekData);
+    console.log(patients);
+
+    this.drawChart3(this.ctx, patients,  weekDatesLabels);
 
 
-    this.canvas = document.getElementById('speedChart');
-    this.ctx = this.canvas.getContext('2d');
+}
 
-    this.drawChart3(this.ctx, cases, 'cases');
-    this.drawChart3(this.ctx, deaths, 'deaths');
-    this.drawChart3(this.ctx, tests, 'tests');
-
-  }
-
-  drawChart3(ctx, data, type) {
-    let dataFirst, dataSecond, dataThird;
-
-    switch (type) {
-      case 'cases':
+  drawChart3(ctx, data, weekDatesLabels) {
+    let dataFirst;
+    {
         dataFirst = {
           data: data, // Test
           fill: false,
@@ -339,39 +396,12 @@ export class DashboardComponent implements OnInit {
           pointHoverRadius: 4,
           pointBorderWidth: 8,
         };
-        break;
-
-      case 'tests':
-        dataSecond = {
-          data: data, // vaka
-          fill: false,
-          borderColor: '#51CACF',
-          backgroundColor: 'transparent',
-          pointBorderColor: '#51CACF',
-          pointRadius: 4,
-          pointHoverRadius: 4,
-          pointBorderWidth: 8,
-        };
-        break;
-
-      case 'deaths':
-        dataThird = {
-          data: data, // vefat
-          fill: false,
-          borderColor: '#ef8157',
-          backgroundColor: 'transparent',
-          pointBorderColor: '#ef8157',
-          pointRadius: 4,
-          pointHoverRadius: 4,
-          pointBorderWidth: 8,
-        };
-        break;
     }
 
 
     const speedData = {
-      labels: ['Pzt', 'Salı', 'Çarş', 'Perş', 'Cuma', 'Cmt', 'Pzr'],
-      datasets: [dataFirst, dataSecond, dataThird],
+      labels: weekDatesLabels,
+      datasets: [dataFirst],
     };
 
     const chartOptions = {
@@ -401,7 +431,6 @@ export class DashboardComponent implements OnInit {
     const totalCases = [];
     const totalDeath = [];
     const totalTests = [];
-    const totalDate = [];
 
     for (let i = 0; i < 7; i++) {
       const dailyResult = this.dataSummaries[i];
@@ -431,7 +460,7 @@ export class DashboardComponent implements OnInit {
       type: 'line',
 
       data: {
-        labels: ['Pzt', 'Salı', 'Çarş', 'Perş', 'Cuma', 'Cmt', 'Pzr'],
+        labels: [],
         datasets: [
           {
             borderColor: '#6bd098',
