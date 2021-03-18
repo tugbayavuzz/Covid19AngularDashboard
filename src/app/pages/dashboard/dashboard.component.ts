@@ -32,6 +32,7 @@ export class DashboardComponent implements OnInit {
   dataSummaries: DataSummary[];
   datatable = [];
   weeklyTable = [];
+  weekDatesLabels = [];
 
   constructor(private dataService: DataServicesService) {
   }
@@ -232,7 +233,7 @@ export class DashboardComponent implements OnInit {
       return result;
     });
 
-    const weekDatesLabels = myWeekData.map((cs) => {
+    this.weekDatesLabels = myWeekData.map((cs) => {
       const [day, month, year] = cs.date.split('/');
       const csDate = new Date(+year, +month - 1, +day);
       return `${day} ${monthNames[csDate.getMonth()]}`;
@@ -250,7 +251,8 @@ export class DashboardComponent implements OnInit {
     this.canvas = document.getElementById('chartEmail');
     this.ctx = this.canvas.getContext('2d');
 
-    this.drawChart2(this.ctx, recovered, weekDatesLabels);
+    this.drawChart2(this.ctx, recovered, this.weekDatesLabels);
+
 
   }
 
@@ -433,25 +435,11 @@ export class DashboardComponent implements OnInit {
     const totalTests = [];
 
     for (let i = 0; i < 7; i++) {
-      const dailyResult = this.dataSummaries[i];
-      totalCases.push(dailyResult.cases);
-      totalDeath.push(dailyResult.deaths);
-      totalTests.push(dailyResult.tests);
       this.weeklyTable[i] = this.datatable[this.datatable.length - 1];
       this.datatable.length -= 1;
     }
- /*   for (let i = 0; i < 7; i++) {
-      const dailyResult = this.dataSummaries[i];
-      totalDate.push(dailyResult.date);
-      this.dateoflast7day[i] = this.weeklyTable[this.weeklyTable.length - 1];
-      this.weeklyTable.length -= 1;
-    }
 
-  */
-
-    console.log(totalCases);
-    console.log(totalDeath);
-    console.log(totalTests);
+    console.log(this.weeklyTable);
 
     this.canvas = document.getElementById('chartHours');
     this.ctx = this.canvas.getContext('2d');
