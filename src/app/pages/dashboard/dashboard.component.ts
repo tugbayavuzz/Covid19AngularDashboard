@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import Chart from 'chart.js';
-import { endOfWeek, isSameWeek, subWeeks } from 'date-fns';
-import { DataSummary } from '../../models/turkeydata';
-import { DataServicesService } from '../../services/data.service';
+import {endOfWeek, isSameWeek, subWeeks} from 'date-fns';
+import {DataSummary} from '../../models/turkeydata';
+import {DataServicesService} from '../../services/data.service';
+import {formatDate} from '@angular/common';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -31,8 +32,10 @@ export class DashboardComponent implements OnInit {
   dataSummaries: DataSummary[];
   datatable = [];
   weeklyTable = [];
+  dateoflast7day: any = [];
 
-  constructor(private dataService: DataServicesService) {}
+  constructor(private dataService: DataServicesService) {
+  }
   ngOnInit() {
     this.dataService.getDailyJsonData().subscribe({
       next: (res) => {
@@ -51,21 +54,21 @@ export class DashboardComponent implements OnInit {
           }
         });
         // this.initChart();
-        this.initChart1(), this.initChart2() , this.initChart3();
+        this.initChart1(), this.initChart2(), this.initChart3();
       },
     });
   }
 
-    initChart1() {
+  initChart1() {
     let today1 = new Date();
-    if (today1 !== endOfWeek(new Date(), { weekStartsOn: 1 })) {
+    if (today1 !== endOfWeek(new Date(), {weekStartsOn: 1})) {
       today1 = subWeeks(today1, 1);
     }
     // Get this week data
     const myWeekData = this.dataSummaries.filter((cs) => {
       const [day, month, year] = cs.date.split('/');
       const csDate = new Date(+year, +month - 1, +day);
-      const result = isSameWeek(csDate, today1, { weekStartsOn: 1 });
+      const result = isSameWeek(csDate, today1, {weekStartsOn: 1});
       return result;
     });
 
@@ -92,9 +95,10 @@ export class DashboardComponent implements OnInit {
     this.drawChart1(this.thirdCtx, tests, 'tests');
   }
 
+
+
   drawChart1(ctx, data, type) {
     let dataSet;
-
     switch (type) {
       case 'cases':
         dataSet = {
@@ -132,7 +136,7 @@ export class DashboardComponent implements OnInit {
       type: 'line',
 
       data: {
-        labels: ['Pzt', 'Salı', 'Çarş', 'Perş', 'Cuma', 'Cmt', 'Pzr'],
+        labels: [1, 2, 3, 4, 5, 6, 7],
         datasets: [dataSet],
       },
       options: {
@@ -150,7 +154,7 @@ export class DashboardComponent implements OnInit {
               ticks: {
                 fontColor: '#9f9f9f',
                 beginAtZero: false,
-                maxTicksLimit: 5,
+                maxTicksLimit: 4,
                 // padding: 20
               },
               gridLines: {
@@ -184,14 +188,14 @@ export class DashboardComponent implements OnInit {
 
   initChart2() {
     let today = new Date();
-    if (today !== endOfWeek(new Date(), { weekStartsOn: 1 })) {
+    if (today !== endOfWeek(new Date(), {weekStartsOn: 1})) {
       today = subWeeks(today, 1);
     }
     // Get this week data
     const myWeekData = this.dataSummaries.filter((cs) => {
       const [day, month, year] = cs.date.split('/');
       const csDate = new Date(+year, +month - 1, +day);
-      const result = isSameWeek(csDate, today, { weekStartsOn: 1 });
+      const result = isSameWeek(csDate, today, {weekStartsOn: 1});
       return result;
     });
 
@@ -289,14 +293,14 @@ export class DashboardComponent implements OnInit {
 
   initChart3() {
     let today = new Date();
-    if (today !== endOfWeek(new Date(), { weekStartsOn: 1 })) {
+    if (today !== endOfWeek(new Date(), {weekStartsOn: 1})) {
       today = subWeeks(today, 1);
     }
     // Get this week data
     const myWeekData = this.dataSummaries.filter((cs) => {
       const [day, month, year] = cs.date.split('/');
       const csDate = new Date(+year, +month - 1, +day);
-      const result = isSameWeek(csDate, today, { weekStartsOn: 1 });
+      const result = isSameWeek(csDate, today, {weekStartsOn: 1});
       return result;
     });
 
@@ -384,7 +388,8 @@ export class DashboardComponent implements OnInit {
       options: chartOptions,
     });
   }
-    initChart() {
+
+  initChart() {
     this.datatable = [];
     this.weeklyTable = [];
 
@@ -396,6 +401,7 @@ export class DashboardComponent implements OnInit {
     const totalCases = [];
     const totalDeath = [];
     const totalTests = [];
+    const totalDate = [];
 
     for (let i = 0; i < 7; i++) {
       const dailyResult = this.dataSummaries[i];
@@ -405,6 +411,14 @@ export class DashboardComponent implements OnInit {
       this.weeklyTable[i] = this.datatable[this.datatable.length - 1];
       this.datatable.length -= 1;
     }
+ /*   for (let i = 0; i < 7; i++) {
+      const dailyResult = this.dataSummaries[i];
+      totalDate.push(dailyResult.date);
+      this.dateoflast7day[i] = this.weeklyTable[this.weeklyTable.length - 1];
+      this.weeklyTable.length -= 1;
+    }
+
+  */
 
     console.log(totalCases);
     console.log(totalDeath);
