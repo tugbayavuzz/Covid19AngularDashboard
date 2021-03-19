@@ -37,6 +37,7 @@ export class DashboardComponent implements OnInit {
   constructor(private dataService: DataServicesService) {
   }
   ngOnInit() {
+
     this.dataService.getDailyJsonData().subscribe({
       next: (res) => {
         console.log(res);
@@ -222,9 +223,11 @@ export class DashboardComponent implements OnInit {
       'November',
       'December',
     ];
+
+
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    const startOfWeek = subDays(today, 7);
+    const startOfWeek = subDays(today, 6);
     // Get this week data
     const myWeekData = this.dataSummaries.filter((cs) => {
       const [day, month, year] = cs.date.split('/');
@@ -233,15 +236,14 @@ export class DashboardComponent implements OnInit {
       return result;
     });
 
+
     this.weekDatesLabels = myWeekData.map((cs) => {
       const [day, month, year] = cs.date.split('/');
       const csDate = new Date(+year, +month - 1, +day);
       return `${day} ${monthNames[csDate.getMonth()]}`;
     });
 
-
     const recovered = myWeekData.map((cs) => cs.recovered);
-
 
     console.log('Chart1');
     console.log('Week Data', myWeekData);

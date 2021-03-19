@@ -269,13 +269,8 @@
         <canvas id="chartEmail" ></canvas>
       </div>
       <div class="card-footer">
-        <div class="legend" style="text-align: center"  *ngFor="let item of weekDatesLabels;">
-          <i class="fa fa-circle text-primary">{{item}}</i>
-          <i class="fa fa-circle text-warning">{{item}}</i>
-          <i class="fa fa-circle text-info">{{item}}</i>
-          <i class="fa fa-circle text-success">{{item}}</i>
-          <i class="fa fa-circle text-gray">{{item}}</i>
-          <i class="fa fa-circle text-inverse">{{item}}</i>
+        <div class="legend " style="text-align: center"  *ngFor="let item of weekDatesLabels;">
+          <div class="fa fa-calendar d-flex align-items-center justify-content-between">{{item}}</div>
         </div>
         <hr />
         <div class="stats">
