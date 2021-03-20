@@ -122,8 +122,8 @@ export class DashboardComponent implements OnInit {
     switch (type) {
       case 'cases':
         dataSet = {
-          borderColor: '#f17e5d',
-          backgroundColor: '#f17e5d',
+          borderColor: '#fcc468',
+          backgroundColor: '#fcc468',
           pointRadius: 0,
           pointHoverRadius: 0,
           borderWidth: 3,
@@ -132,8 +132,8 @@ export class DashboardComponent implements OnInit {
         break;
       case 'deaths':
         dataSet = {
-          borderColor: '#fcc468',
-          backgroundColor: '#fcc468',
+          borderColor: '#f17e5d',
+          backgroundColor: '#f17e5d',
           pointRadius: 0,
           pointHoverRadius: 0,
           borderWidth: 3,
@@ -391,7 +391,7 @@ export class DashboardComponent implements OnInit {
         dataFirst = {
           data: data, // Test
           fill: false,
-          borderColor: '#fbc658',
+          borderColor: '#4acccd',
           backgroundColor: 'transparent',
           pointBorderColor: '#fbc658',
           pointRadius: 4,
