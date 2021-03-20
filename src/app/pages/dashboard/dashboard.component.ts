@@ -28,7 +28,6 @@ export class DashboardComponent implements OnInit {
   critical = 0;
   pneumoniaPercent = 0;
   tests = 0;
-  date = '';
   dataSummaries: DataSummary[];
   datatable = [];
   weeklyTable = [];
@@ -45,7 +44,6 @@ export class DashboardComponent implements OnInit {
         res.forEach((cs) => {
           if (!Number.isNaN(cs.date)) {
             this.patients = cs.patients;
-            this.date = cs.date;
             this.critical = cs.critical;
             this.cases = cs.cases;
             this.recovered = cs.recovered;
