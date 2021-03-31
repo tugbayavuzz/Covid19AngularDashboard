@@ -1,4 +1,3 @@
-
 export interface DataSummary {
     date ?: string;
     tests ?: number;

@@ -13,12 +13,15 @@ import { AppRoutes } from './app.routing';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import {HttpClientModule} from '@angular/common/http';
+import {HighchartsChartModule} from 'highcharts-angular';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -31,6 +34,7 @@ import {HttpClientModule} from '@angular/common/http';
     FooterModule,
     FixedPluginModule,
     HttpClientModule,
+    HighchartsChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

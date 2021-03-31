@@ -1,33 +1,175 @@
 import { Component, OnInit } from '@angular/core';
+import {DataServicesService} from '../../services/data.service';
 
-declare var google: any;
+// @ts-ignore
+import worldMap from '@highcharts/map-collection/custom/world.geo.json';
+import turkeyMap from '@highcharts/map-collection/countries/tr/tr-all.geo.json';
+// import * as turkeyMap from "assets/maps/tr-all.geo.json";
+// import proj4 from "proj4";
+// import * as Highcharts from "highcharts";
+import * as Highcharts from 'highcharts/highmaps';
+import {TheVirusTracker} from '../../models/virusmap.model';
+
 
 @Component({
-    moduleId: module.id,
-  // tslint:disable-next-line:component-selector
-    selector: 'maps-cmp',
-    templateUrl: 'maps.component.html'
+  moduleId: module.id,
+  selector: 'maps-cmp',
+  templateUrl: 'maps.component.html',
 })
-
 export class MapsComponent implements OnInit {
-    ngOnInit() {
-        const myLatlng = new google.maps.LatLng(40.748817, -73.985428);
-        const mapOptions = {
-          zoom: 13,
-          center: myLatlng,
-          scrollwheel: false, // we disable de scroll over the map, it is a really annoing when you scroll through page
-          // tslint:disable-next-line:max-line-length
-          styles: [{'featureType': 'water', 'stylers': [{'saturation': 43}, {'lightness': -11}, {'hue': '#0088ff'}]}, {'featureType': 'road', 'elementType': 'geometry.fill', 'stylers': [{'hue': '#ff0000'}, {'saturation': -100}, {'lightness': 99}]}, {'featureType': 'road', 'elementType': 'geometry.stroke', 'stylers': [{'color': '#808080'}, {'lightness': 54}]}, {'featureType': 'landscape.man_made', 'elementType': 'geometry.fill', 'stylers': [{'color': '#ece2d9'}]}, {'featureType': 'poi.park', 'elementType': 'geometry.fill', 'stylers': [{'color': '#ccdca1'}]}, {'featureType': 'road', 'elementType': 'labels.text.fill', 'stylers': [{'color': '#767676'}]}, {'featureType': 'road', 'elementType': 'labels.text.stroke', 'stylers': [{'color': '#ffffff'}]}, {'featureType': 'poi', 'stylers': [{'visibility': 'off'}]}, {'featureType': 'landscape.natural', 'elementType': 'geometry.fill', 'stylers': [{'visibility': 'on'}, {'color': '#b8cb93'}]}, {'featureType': 'poi.park', 'stylers': [{'visibility': 'on'}]}, {'featureType': 'poi.sports_complex', 'stylers': [{'visibility': 'on'}]}, {'featureType': 'poi.medical', 'stylers': [{'visibility': 'on'}]}, {'featureType': 'poi.business', 'stylers': [{'visibility': 'simplified'}]}]
 
-        }
-        const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  mapData: TheVirusTracker[];
+  dateRange = '' ;
+  cities = [];
 
-        const marker = new google.maps.Marker({
-            position: myLatlng,
-            title: 'Hello World!'
-        });
 
-        // To add the marker to the map, call setMap();
-        marker.setMap(map);
-    }
+  Highcharts: typeof Highcharts = Highcharts;
+  chartConstructor = 'mapChart';
+
+  chartOptions: Highcharts.Options = {
+    chart: {
+      map: turkeyMap,
+    },
+    title: {
+      text: 'Highcharts Maps Covid illere göre dağılım',
+    },
+    subtitle: {
+      text: `Source map: <a href="http://code.highcharts.com/mapdata/countries/tr/tr-all.js">Turkey</a>`,
+    },
+
+    mapNavigation: {
+      enabled: true,
+      buttonOptions: {
+        alignTo: 'spacingBox',
+      },
+    },
+    legend: {
+      enabled: true,
+    },
+    colorAxis: {
+      min: 0,
+    },
+    series: [
+      {
+        type: 'map',
+        name: 'Random data',
+        states: {
+          hover: {
+            color: '#BADA55',
+          },
+        },
+        dataLabels: {
+          enabled: true,
+          format: '{point.name}',
+        },
+        allAreas: false,
+        data: [
+          ['tr-or', 0],
+          ['tr-ss', 1],
+          ['tr-ga', 2],
+          ['tr-kc', 4],
+          ['tr-bk', 5],
+          ['tr-ck', 6],
+          ['tr-tt', 7],
+          ['tr-gi', 8],
+          ['tr-en', 9],
+          ['tr-bg', 10],
+          ['tr-ht', 11],
+          ['tr-aa', 12],
+          ['tr-cm', 13],
+          ['tr-kk', 14],
+          ['tr-ng', 15],
+          ['tr-ak', 16],
+          ['tr-kh', 17],
+          ['tr-yz', 18],
+          ['tr-am', 19],
+          ['tr-ms', 20],
+          ['tr-bm', 21],
+          ['tr-ka', 22],
+          ['tr-ig', 23],
+          ['tr-du', 24],
+          ['tr-zo', 25],
+          ['tr-kb', 26],
+          ['tr-yl', 27],
+          ['tr-sk', 28],
+          ['tr-ci', 29],
+          ['tr-bl', 30],
+          ['tr-ed', 31],
+          ['tr-es', 32],
+          ['tr-ko', 33],
+          ['tr-bu', 34],
+          ['tr-kl', 35],
+          ['tr-ib', 36],
+          ['tr-kr', 37],
+          ['tr-al', 38],
+          ['tr-af', 39],
+          ['tr-bd', 40],
+          ['tr-ip', 41],
+          ['tr-ay', 42],
+          ['tr-mn', 43],
+          ['tr-dy', 44],
+          ['tr-ad', 45],
+          ['tr-km', 46],
+          ['tr-ky', 47],
+          ['tr-eg', 48],
+          ['tr-ic', 49],
+          ['tr-sp', 50],
+          ['tr-av', 51],
+          ['tr-ri', 52],
+          ['tr-tb', 53],
+          ['tr-an', 54],
+          ['tr-su', 55],
+          ['tr-bb', 56],
+          ['tr-em', 57],
+          ['tr-mr', 58],
+          ['tr-sr', 59],
+          ['tr-si', 60],
+          ['tr-hk', 61],
+          ['tr-va', 62],
+          ['tr-ar', 63],
+          ['tr-ki', 64],
+          ['tr-br', 65],
+          ['tr-tg', 66],
+          ['tr-iz', 67],
+          ['tr-ks', 68],
+          ['tr-mg', 69],
+          ['tr-ku', 70],
+          ['tr-nv', 71],
+          ['tr-sv', 72],
+          ['tr-tc', 73],
+          ['tr-ml', 74],
+          ['tr-ag', 75],
+          ['tr-bt', 76],
+          ['tr-gu', 77],
+          ['tr-os', 78],
+          ['tr-bc', 79],
+          ['tr-dn', 80],
+          ['tr-us', 81],
+        ],
+      },
+    ],
+  };
+
+  // chartCallback: Highcharts.ChartCallbackFunction = function (chart) { ... } // optional function, defaults to null
+  updateFlag = false; // optional boolean
+  oneToOneFlag = true; // optional boolean, defaults to false
+  runOutsideAngular = false; // optional boolean, defaults to false
+
+  constructor(private dataService: DataServicesService) {}
+  ngOnInit() {
+    this.dataService.getWeeklyJsonData().subscribe({
+      next: (res) => {
+        console.log(res);
+        this.mapData = res;
+        res.forEach((item) => {
+          if (!Number.isNaN(item.dateRange)) {
+            this.dateRange = item.dateRange;
+            this.cities = item.cities;
+          }
+        })
+
+      }
+    });
+  }
+
 }

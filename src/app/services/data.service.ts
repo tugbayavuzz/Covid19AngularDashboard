@@ -1,18 +1,25 @@
  import { environment } from '../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import {catchError, map} from 'rxjs/operators';
 import { DataSummary } from '../models/turkeydata';
-import { Observable } from 'rxjs';
+import {Observable, pipe} from 'rxjs';
+ import {TheVirusTracker} from '../models/virusmap.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataServicesService {
+
   private dailyDataUrl = environment.apiCsvUrl;
   private dailyDataJsonUrl = environment.apiJsonUrl;
 
   constructor(private http: HttpClient) {}
+
+  getCaseRatioData() {
+    return this.http.get('https://covid-turkey-case-ratio.herokuapp.com');
+  }
+
 
   getDailyData() {
     return this.http.get(this.dailyDataUrl, { responseType: 'text' }).pipe(
@@ -74,5 +81,21 @@ export class DataServicesService {
       })
     );
   }
+
+  getWeeklyJsonData(): Observable<TheVirusTracker[]> {
+    // @ts-ignore
+    return this.http(
+      map((res) => {
+        return (Object.values(res) as TheVirusTracker[]).map((item) => {
+          return {
+            ...item,
+            dateRange: +item.dateRange,
+            cities: +item.cities
+          };
+        });
+      })
+    );
+  }
+
 }
 

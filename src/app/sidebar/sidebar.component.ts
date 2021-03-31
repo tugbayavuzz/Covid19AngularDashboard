@@ -21,7 +21,6 @@ export const ROUTES: RouteInfo[] = [
 
 @Component({
     moduleId: module.id,
-  // tslint:disable-next-line:component-selector
     selector: 'sidebar-cmp',
     templateUrl: 'sidebar.component.html',
 })

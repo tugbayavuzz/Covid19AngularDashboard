@@ -110,12 +110,14 @@
       true,
       "attribute",
       "app",
+      "directivePrefix",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
       "app",
+      "component-prefix",
       "kebab-case"
     ],
     "no-inputs-metadata-property": true,

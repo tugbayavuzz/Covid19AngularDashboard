@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
     templateUrl: 'icons.component.html'
 })
 
-export class IconsComponent{}
+export class IconsComponent {}

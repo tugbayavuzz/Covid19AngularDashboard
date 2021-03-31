@@ -10,6 +10,8 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
     "target": "es2016",
     "typeRoots": [
       "node_modules/@types"
