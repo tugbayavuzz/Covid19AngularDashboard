@@ -1,0 +1,2918 @@
+[
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Adana",
+    "haftalik_vaka_sayisi": "60"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Adıyaman",
+    "haftalik_vaka_sayisi": "101"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Afyon",
+    "haftalik_vaka_sayisi": "22"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Ağrı",
+    "haftalik_vaka_sayisi": "28"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Aksaray",
+    "haftalik_vaka_sayisi": "92"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Amasya",
+    "haftalik_vaka_sayisi": "96"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Ankara",
+    "haftalik_vaka_sayisi": "35"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Antalya",
+    "haftalik_vaka_sayisi": "78"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Ardahan",
+    "haftalik_vaka_sayisi": "66"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Artvin",
+    "haftalik_vaka_sayisi": "78"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Aydın",
+    "haftalik_vaka_sayisi": "35"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Balıkesir",
+    "haftalik_vaka_sayisi": "84"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Bartın",
+    "haftalik_vaka_sayisi": "45"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Batman",
+    "haftalik_vaka_sayisi": "12"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Bayburt",
+    "haftalik_vaka_sayisi": "61"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Bilecik",
+    "haftalik_vaka_sayisi": "35"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Bingöl",
+    "haftalik_vaka_sayisi": "27"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Bitlis",
+    "haftalik_vaka_sayisi": "10"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Bolu",
+    "haftalik_vaka_sayisi": "45"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Burdur",
+    "haftalik_vaka_sayisi": "76"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Bursa",
+    "haftalik_vaka_sayisi": "35"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Çanakkale",
+    "haftalik_vaka_sayisi": "38"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Çankırı",
+    "haftalik_vaka_sayisi": "23"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Çorum",
+    "haftalik_vaka_sayisi": "35"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Denizli",
+    "haftalik_vaka_sayisi": "33"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Diyarbakır",
+    "haftalik_vaka_sayisi": "18"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Düzce",
+    "haftalik_vaka_sayisi": "44"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Edirne",
+    "haftalik_vaka_sayisi": "66"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Elazığ",
+    "haftalik_vaka_sayisi": "50"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Erzincan",
+    "haftalik_vaka_sayisi": "60"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Erzurum",
+    "haftalik_vaka_sayisi": "38"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Eskişehir",
+    "haftalik_vaka_sayisi": "31"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Gaziantep",
+    "haftalik_vaka_sayisi": "27"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Giresun",
+    "haftalik_vaka_sayisi": "184"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Gümüşhane",
+    "haftalik_vaka_sayisi": "97"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Hakkari",
+    "haftalik_vaka_sayisi": "10"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Hatay",
+    "haftalik_vaka_sayisi": "63"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Iğdır",
+    "haftalik_vaka_sayisi": "23"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Isparta",
+    "haftalik_vaka_sayisi": "34"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Istanbul",
+    "haftalik_vaka_sayisi": "60"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Izmir",
+    "haftalik_vaka_sayisi": "44"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Kahramanmaraş",
+    "haftalik_vaka_sayisi": "39"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Karabük",
+    "haftalik_vaka_sayisi": "34"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Karaman",
+    "haftalik_vaka_sayisi": "103"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Kars",
+    "haftalik_vaka_sayisi": "18"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Kastamonu",
+    "haftalik_vaka_sayisi": "30"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Kayseri",
+    "haftalik_vaka_sayisi": "57"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Kırıkkale",
+    "haftalik_vaka_sayisi": "43"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Kırklareli",
+    "haftalik_vaka_sayisi": "53"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Kırşehir",
+    "haftalik_vaka_sayisi": "30"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Kilis",
+    "haftalik_vaka_sayisi": "52"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Kocaeli",
+    "haftalik_vaka_sayisi": "88"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Konya",
+    "haftalik_vaka_sayisi": "91"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Kütahya",
+    "haftalik_vaka_sayisi": "51"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Malatya",
+    "haftalik_vaka_sayisi": "41"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Manisa",
+    "haftalik_vaka_sayisi": "43"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Mardin",
+    "haftalik_vaka_sayisi": "15"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Içel",
+    "haftalik_vaka_sayisi": "91"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Muğla",
+    "haftalik_vaka_sayisi": "55"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Muş",
+    "haftalik_vaka_sayisi": "16"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Nevşehir",
+    "haftalik_vaka_sayisi": "66"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Niğde",
+    "haftalik_vaka_sayisi": "55"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Ordu",
+    "haftalik_vaka_sayisi": "194"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Osmaniye",
+    "haftalik_vaka_sayisi": "140"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Rize",
+    "haftalik_vaka_sayisi": "202"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Sakarya",
+    "haftalik_vaka_sayisi": "77"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Samsun",
+    "haftalik_vaka_sayisi": "171"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Siirt",
+    "haftalik_vaka_sayisi": "21"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Sinop",
+    "haftalik_vaka_sayisi": "80"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Sivas",
+    "haftalik_vaka_sayisi": "33"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Şanlıurfa",
+    "haftalik_vaka_sayisi": "27"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Şırnak",
+    "haftalik_vaka_sayisi": "8"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Tekirdağ",
+    "haftalik_vaka_sayisi": "55"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Tokat",
+    "haftalik_vaka_sayisi": "119"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Trabzon",
+    "haftalik_vaka_sayisi": "228"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Tunceli",
+    "haftalik_vaka_sayisi": "39"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Uşak",
+    "haftalik_vaka_sayisi": "28"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Van",
+    "haftalik_vaka_sayisi": "15"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Yalova",
+    "haftalik_vaka_sayisi": "75"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Yozgat",
+    "haftalik_vaka_sayisi": "41"
+  },
+  {
+    "tarih_baslangic": "08.02.2021",
+    "tarih_bitis": "14.02.2021",
+    "il": "Zonguldak",
+    "haftalik_vaka_sayisi": "55"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Adana",
+    "haftalik_vaka_sayisi": "43"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Adıyaman",
+    "haftalik_vaka_sayisi": "121"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Afyon",
+    "haftalik_vaka_sayisi": "32"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Ağrı",
+    "haftalik_vaka_sayisi": "20"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Aksaray",
+    "haftalik_vaka_sayisi": "108"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Amasya",
+    "haftalik_vaka_sayisi": "90"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Ankara",
+    "haftalik_vaka_sayisi": "35"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Antalya",
+    "haftalik_vaka_sayisi": "79"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Ardahan",
+    "haftalik_vaka_sayisi": "88"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Artvin",
+    "haftalik_vaka_sayisi": "76"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Aydın",
+    "haftalik_vaka_sayisi": "38"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Balıkesir",
+    "haftalik_vaka_sayisi": "92"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Bartın",
+    "haftalik_vaka_sayisi": "31"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Batman",
+    "haftalik_vaka_sayisi": "9"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Bayburt",
+    "haftalik_vaka_sayisi": "22"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Bilecik",
+    "haftalik_vaka_sayisi": "46"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Bingöl",
+    "haftalik_vaka_sayisi": "18"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Bitlis",
+    "haftalik_vaka_sayisi": "15"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Bolu",
+    "haftalik_vaka_sayisi": "76"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Burdur",
+    "haftalik_vaka_sayisi": "93"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Bursa",
+    "haftalik_vaka_sayisi": "39"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Çanakkale",
+    "haftalik_vaka_sayisi": "44"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Çankırı",
+    "haftalik_vaka_sayisi": "27"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Çorum",
+    "haftalik_vaka_sayisi": "41"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Denizli",
+    "haftalik_vaka_sayisi": "32"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Diyarbakır",
+    "haftalik_vaka_sayisi": "18"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Düzce",
+    "haftalik_vaka_sayisi": "49"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Edirne",
+    "haftalik_vaka_sayisi": "75"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Elazığ",
+    "haftalik_vaka_sayisi": "44"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Erzincan",
+    "haftalik_vaka_sayisi": "34"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Erzurum",
+    "haftalik_vaka_sayisi": "51"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Eskişehir",
+    "haftalik_vaka_sayisi": "36"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Gaziantep",
+    "haftalik_vaka_sayisi": "35"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Giresun",
+    "haftalik_vaka_sayisi": "218"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Gümüşhane",
+    "haftalik_vaka_sayisi": "88"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Hakkari",
+    "haftalik_vaka_sayisi": "3"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Hatay",
+    "haftalik_vaka_sayisi": "46"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Iğdır",
+    "haftalik_vaka_sayisi": "10"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Isparta",
+    "haftalik_vaka_sayisi": "30"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Istanbul",
+    "haftalik_vaka_sayisi": "68"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Izmir",
+    "haftalik_vaka_sayisi": "43"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Kahramanmaraş",
+    "haftalik_vaka_sayisi": "35"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Karabük",
+    "haftalik_vaka_sayisi": "17"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Karaman",
+    "haftalik_vaka_sayisi": "106"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Kars",
+    "haftalik_vaka_sayisi": "19"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Kastamonu",
+    "haftalik_vaka_sayisi": "22"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Kayseri",
+    "haftalik_vaka_sayisi": "74"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Kırıkkale",
+    "haftalik_vaka_sayisi": "47"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Kırklareli",
+    "haftalik_vaka_sayisi": "71"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Kırşehir",
+    "haftalik_vaka_sayisi": "31"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Kilis",
+    "haftalik_vaka_sayisi": "48"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Kocaeli",
+    "haftalik_vaka_sayisi": "93"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Konya",
+    "haftalik_vaka_sayisi": "102"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Kütahya",
+    "haftalik_vaka_sayisi": "58"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Malatya",
+    "haftalik_vaka_sayisi": "44"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Manisa",
+    "haftalik_vaka_sayisi": "37"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Mardin",
+    "haftalik_vaka_sayisi": "13"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Içel",
+    "haftalik_vaka_sayisi": "88"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Muğla",
+    "haftalik_vaka_sayisi": "50"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Muş",
+    "haftalik_vaka_sayisi": "9"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Nevşehir",
+    "haftalik_vaka_sayisi": "51"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Niğde",
+    "haftalik_vaka_sayisi": "57"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Ordu",
+    "haftalik_vaka_sayisi": "228"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Osmaniye",
+    "haftalik_vaka_sayisi": "135"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Rize",
+    "haftalik_vaka_sayisi": "200"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Sakarya",
+    "haftalik_vaka_sayisi": "103"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Samsun",
+    "haftalik_vaka_sayisi": "203"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Siirt",
+    "haftalik_vaka_sayisi": "21"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Sinop",
+    "haftalik_vaka_sayisi": "84"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Sivas",
+    "haftalik_vaka_sayisi": "38"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Şanlıurfa",
+    "haftalik_vaka_sayisi": "20"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Şırnak",
+    "haftalik_vaka_sayisi": "4"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Tekirdağ",
+    "haftalik_vaka_sayisi": "75"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Tokat",
+    "haftalik_vaka_sayisi": "149"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Trabzon",
+    "haftalik_vaka_sayisi": "208"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Tunceli",
+    "haftalik_vaka_sayisi": "30"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Uşak",
+    "haftalik_vaka_sayisi": "17"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Van",
+    "haftalik_vaka_sayisi": "14"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Yalova",
+    "haftalik_vaka_sayisi": "75"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Yozgat",
+    "haftalik_vaka_sayisi": "38"
+  },
+  {
+    "tarih_baslangic": "15.02.2021",
+    "tarih_bitis": "21.02.2021",
+    "il": "Zonguldak",
+    "haftalik_vaka_sayisi": "54"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Adana",
+    "haftalik_vaka_sayisi": "41"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Adıyaman",
+    "haftalik_vaka_sayisi": "116"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Afyon",
+    "haftalik_vaka_sayisi": "38"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Ağrı",
+    "haftalik_vaka_sayisi": "19"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Aksaray",
+    "haftalik_vaka_sayisi": "123"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Amasya",
+    "haftalik_vaka_sayisi": "111"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Ankara",
+    "haftalik_vaka_sayisi": "40"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Antalya",
+    "haftalik_vaka_sayisi": "78"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Ardahan",
+    "haftalik_vaka_sayisi": "58"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Artvin",
+    "haftalik_vaka_sayisi": "89"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Aydın",
+    "haftalik_vaka_sayisi": "42"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Balıkesir",
+    "haftalik_vaka_sayisi": "143"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Bartın",
+    "haftalik_vaka_sayisi": "43"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Batman",
+    "haftalik_vaka_sayisi": "8"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Bayburt",
+    "haftalik_vaka_sayisi": "32"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Bilecik",
+    "haftalik_vaka_sayisi": "61"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Bingöl",
+    "haftalik_vaka_sayisi": "16"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Bitlis",
+    "haftalik_vaka_sayisi": "16"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Bolu",
+    "haftalik_vaka_sayisi": "83"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Burdur",
+    "haftalik_vaka_sayisi": "105"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Bursa",
+    "haftalik_vaka_sayisi": "50"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Çanakkale",
+    "haftalik_vaka_sayisi": "82"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Çankırı",
+    "haftalik_vaka_sayisi": "29"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Çorum",
+    "haftalik_vaka_sayisi": "28"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Denizli",
+    "haftalik_vaka_sayisi": "32"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Diyarbakır",
+    "haftalik_vaka_sayisi": "18"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Düzce",
+    "haftalik_vaka_sayisi": "56"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Edirne",
+    "haftalik_vaka_sayisi": "107"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Elazığ",
+    "haftalik_vaka_sayisi": "40"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Erzincan",
+    "haftalik_vaka_sayisi": "37"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Erzurum",
+    "haftalik_vaka_sayisi": "48"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Eskişehir",
+    "haftalik_vaka_sayisi": "44"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Gaziantep",
+    "haftalik_vaka_sayisi": "36"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Giresun",
+    "haftalik_vaka_sayisi": "265"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Gümüşhane",
+    "haftalik_vaka_sayisi": "115"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Hakkari",
+    "haftalik_vaka_sayisi": "5"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Hatay",
+    "haftalik_vaka_sayisi": "40"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Iğdır",
+    "haftalik_vaka_sayisi": "17"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Isparta",
+    "haftalik_vaka_sayisi": "39"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Istanbul",
+    "haftalik_vaka_sayisi": "90"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Izmir",
+    "haftalik_vaka_sayisi": "53"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Kahramanmaraş",
+    "haftalik_vaka_sayisi": "33"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Karabük",
+    "haftalik_vaka_sayisi": "26"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Karaman",
+    "haftalik_vaka_sayisi": "65"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Kars",
+    "haftalik_vaka_sayisi": "23"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Kastamonu",
+    "haftalik_vaka_sayisi": "34"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Kayseri",
+    "haftalik_vaka_sayisi": "88"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Kırıkkale",
+    "haftalik_vaka_sayisi": "51"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Kırklareli",
+    "haftalik_vaka_sayisi": "96"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Kırşehir",
+    "haftalik_vaka_sayisi": "22"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Kilis",
+    "haftalik_vaka_sayisi": "68"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Kocaeli",
+    "haftalik_vaka_sayisi": "99"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Konya",
+    "haftalik_vaka_sayisi": "119"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Kütahya",
+    "haftalik_vaka_sayisi": "72"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Malatya",
+    "haftalik_vaka_sayisi": "46"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Manisa",
+    "haftalik_vaka_sayisi": "40"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Mardin",
+    "haftalik_vaka_sayisi": "9"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Içel",
+    "haftalik_vaka_sayisi": "92"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Muğla",
+    "haftalik_vaka_sayisi": "57"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Muş",
+    "haftalik_vaka_sayisi": "17"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Nevşehir",
+    "haftalik_vaka_sayisi": "49"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Niğde",
+    "haftalik_vaka_sayisi": "59"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Ordu",
+    "haftalik_vaka_sayisi": "302"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Osmaniye",
+    "haftalik_vaka_sayisi": "145"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Rize",
+    "haftalik_vaka_sayisi": "213"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Sakarya",
+    "haftalik_vaka_sayisi": "114"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Samsun",
+    "haftalik_vaka_sayisi": "262"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Siirt",
+    "haftalik_vaka_sayisi": "16"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Sinop",
+    "haftalik_vaka_sayisi": "160"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Sivas",
+    "haftalik_vaka_sayisi": "30"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Şanlıurfa",
+    "haftalik_vaka_sayisi": "15"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Şırnak",
+    "haftalik_vaka_sayisi": "2"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Tekirdağ",
+    "haftalik_vaka_sayisi": "86"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Tokat",
+    "haftalik_vaka_sayisi": "167"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Trabzon",
+    "haftalik_vaka_sayisi": "240"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Tunceli",
+    "haftalik_vaka_sayisi": "27"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Uşak",
+    "haftalik_vaka_sayisi": "18"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Van",
+    "haftalik_vaka_sayisi": "10"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Yalova",
+    "haftalik_vaka_sayisi": "85"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Yozgat",
+    "haftalik_vaka_sayisi": "43"
+  },
+  {
+    "tarih_baslangic": "20.02.2021",
+    "tarih_bitis": "26.02.2021",
+    "il": "Zonguldak",
+    "haftalik_vaka_sayisi": "59"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Adana",
+    "haftalik_vaka_sayisi": "53"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Adıyaman",
+    "haftalik_vaka_sayisi": "141"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Afyon",
+    "haftalik_vaka_sayisi": "48"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Ağrı",
+    "haftalik_vaka_sayisi": "24"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Aksaray",
+    "haftalik_vaka_sayisi": "141"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Amasya",
+    "haftalik_vaka_sayisi": "184"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Ankara",
+    "haftalik_vaka_sayisi": "55"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Antalya",
+    "haftalik_vaka_sayisi": "82"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Ardahan",
+    "haftalik_vaka_sayisi": "71"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Artvin",
+    "haftalik_vaka_sayisi": "109"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Aydın",
+    "haftalik_vaka_sayisi": "49"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Balıkesir",
+    "haftalik_vaka_sayisi": "172"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Bartın",
+    "haftalik_vaka_sayisi": "76"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Batman",
+    "haftalik_vaka_sayisi": "9"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Bayburt",
+    "haftalik_vaka_sayisi": "39"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Bilecik",
+    "haftalik_vaka_sayisi": "65"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Bingöl",
+    "haftalik_vaka_sayisi": "17"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Bitlis",
+    "haftalik_vaka_sayisi": "29"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Bolu",
+    "haftalik_vaka_sayisi": "68"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Burdur",
+    "haftalik_vaka_sayisi": "105"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Bursa",
+    "haftalik_vaka_sayisi": "59"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Çanakkale",
+    "haftalik_vaka_sayisi": "107"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Çankırı",
+    "haftalik_vaka_sayisi": "23"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Çorum",
+    "haftalik_vaka_sayisi": "45"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Denizli",
+    "haftalik_vaka_sayisi": "39"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Diyarbakır",
+    "haftalik_vaka_sayisi": "20"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Düzce",
+    "haftalik_vaka_sayisi": "56"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Edirne",
+    "haftalik_vaka_sayisi": "180"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Elazığ",
+    "haftalik_vaka_sayisi": "36"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Erzincan",
+    "haftalik_vaka_sayisi": "31"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Erzurum",
+    "haftalik_vaka_sayisi": "52"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Eskişehir",
+    "haftalik_vaka_sayisi": "48"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Gaziantep",
+    "haftalik_vaka_sayisi": "44"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Giresun",
+    "haftalik_vaka_sayisi": "282"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Gümüşhane",
+    "haftalik_vaka_sayisi": "152"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Hakkari",
+    "haftalik_vaka_sayisi": "5"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Hatay",
+    "haftalik_vaka_sayisi": "62"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Iğdır",
+    "haftalik_vaka_sayisi": "25"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Isparta",
+    "haftalik_vaka_sayisi": "47"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Istanbul",
+    "haftalik_vaka_sayisi": "112"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Izmir",
+    "haftalik_vaka_sayisi": "66"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Kahramanmaraş",
+    "haftalik_vaka_sayisi": "42"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Karabük",
+    "haftalik_vaka_sayisi": "41"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Karaman",
+    "haftalik_vaka_sayisi": "55"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Kars",
+    "haftalik_vaka_sayisi": "25"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Kastamonu",
+    "haftalik_vaka_sayisi": "66"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Kayseri",
+    "haftalik_vaka_sayisi": "98"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Kırıkkale",
+    "haftalik_vaka_sayisi": "62"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Kırklareli",
+    "haftalik_vaka_sayisi": "117"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Kırşehir",
+    "haftalik_vaka_sayisi": "40"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Kilis",
+    "haftalik_vaka_sayisi": "163"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Kocaeli",
+    "haftalik_vaka_sayisi": "112"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Konya",
+    "haftalik_vaka_sayisi": "151"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Kütahya",
+    "haftalik_vaka_sayisi": "85"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Malatya",
+    "haftalik_vaka_sayisi": "53"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Manisa",
+    "haftalik_vaka_sayisi": "51"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Mardin",
+    "haftalik_vaka_sayisi": "11"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Içel",
+    "haftalik_vaka_sayisi": "101"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Muğla",
+    "haftalik_vaka_sayisi": "66"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Muş",
+    "haftalik_vaka_sayisi": "24"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Nevşehir",
+    "haftalik_vaka_sayisi": "35"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Niğde",
+    "haftalik_vaka_sayisi": "83"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Ordu",
+    "haftalik_vaka_sayisi": "280"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Osmaniye",
+    "haftalik_vaka_sayisi": "174"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Rize",
+    "haftalik_vaka_sayisi": "208"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Sakarya",
+    "haftalik_vaka_sayisi": "140"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Samsun",
+    "haftalik_vaka_sayisi": "348"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Siirt",
+    "haftalik_vaka_sayisi": "12"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Sinop",
+    "haftalik_vaka_sayisi": "314"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Sivas",
+    "haftalik_vaka_sayisi": "24"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Şanlıurfa",
+    "haftalik_vaka_sayisi": "16"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Şırnak",
+    "haftalik_vaka_sayisi": "6"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Tekirdağ",
+    "haftalik_vaka_sayisi": "111"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Tokat",
+    "haftalik_vaka_sayisi": "229"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Trabzon",
+    "haftalik_vaka_sayisi": "226"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Tunceli",
+    "haftalik_vaka_sayisi": "26"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Uşak",
+    "haftalik_vaka_sayisi": "11"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Van",
+    "haftalik_vaka_sayisi": "17"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Yalova",
+    "haftalik_vaka_sayisi": "135"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Yozgat",
+    "haftalik_vaka_sayisi": "36"
+  },
+  {
+    "tarih_baslangic": "27.02.2021",
+    "tarih_bitis": "05.03.2021",
+    "il": "Zonguldak",
+    "haftalik_vaka_sayisi": "65"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Adana",
+    "haftalik_vaka_sayisi": "63"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Adıyaman",
+    "haftalik_vaka_sayisi": "155"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Afyon",
+    "haftalik_vaka_sayisi": "48"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Ağrı",
+    "haftalik_vaka_sayisi": "22"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Aksaray",
+    "haftalik_vaka_sayisi": "174"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Amasya",
+    "haftalik_vaka_sayisi": "164"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Ankara",
+    "haftalik_vaka_sayisi": "69"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Antalya",
+    "haftalik_vaka_sayisi": "95"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Ardahan",
+    "haftalik_vaka_sayisi": "74"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Artvin",
+    "haftalik_vaka_sayisi": "101"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Aydın",
+    "haftalik_vaka_sayisi": "59"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Balıkesir",
+    "haftalik_vaka_sayisi": "258"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Bartın",
+    "haftalik_vaka_sayisi": "63"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Batman",
+    "haftalik_vaka_sayisi": "16"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Bayburt",
+    "haftalik_vaka_sayisi": "51"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Bilecik",
+    "haftalik_vaka_sayisi": "81"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Bingöl",
+    "haftalik_vaka_sayisi": "25"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Bitlis",
+    "haftalik_vaka_sayisi": "16"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Bolu",
+    "haftalik_vaka_sayisi": "66"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Burdur",
+    "haftalik_vaka_sayisi": "86"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Bursa",
+    "haftalik_vaka_sayisi": "78"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Çanakkale",
+    "haftalik_vaka_sayisi": "150"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Çankırı",
+    "haftalik_vaka_sayisi": "47"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Çorum",
+    "haftalik_vaka_sayisi": "73"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Denizli",
+    "haftalik_vaka_sayisi": "42"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Diyarbakır",
+    "haftalik_vaka_sayisi": "18"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Düzce",
+    "haftalik_vaka_sayisi": "82"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Edirne",
+    "haftalik_vaka_sayisi": "200"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Elazığ",
+    "haftalik_vaka_sayisi": "30"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Erzincan",
+    "haftalik_vaka_sayisi": "54"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Erzurum",
+    "haftalik_vaka_sayisi": "46"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Eskişehir",
+    "haftalik_vaka_sayisi": "75"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Gaziantep",
+    "haftalik_vaka_sayisi": "67"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Giresun",
+    "haftalik_vaka_sayisi": "297"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Gümüşhane",
+    "haftalik_vaka_sayisi": "138"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Hakkari",
+    "haftalik_vaka_sayisi": "8"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Hatay",
+    "haftalik_vaka_sayisi": "69"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Iğdır",
+    "haftalik_vaka_sayisi": "81"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Isparta",
+    "haftalik_vaka_sayisi": "61"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Istanbul",
+    "haftalik_vaka_sayisi": "178"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Izmir",
+    "haftalik_vaka_sayisi": "79"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Kahramanmaraş",
+    "haftalik_vaka_sayisi": "57"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Karabük",
+    "haftalik_vaka_sayisi": "47"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Karaman",
+    "haftalik_vaka_sayisi": "57"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Kars",
+    "haftalik_vaka_sayisi": "25"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Kastamonu",
+    "haftalik_vaka_sayisi": "118"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Kayseri",
+    "haftalik_vaka_sayisi": "143"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Kırıkkale",
+    "haftalik_vaka_sayisi": "88"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Kırklareli",
+    "haftalik_vaka_sayisi": "137"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Kırşehir",
+    "haftalik_vaka_sayisi": "48"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Kilis",
+    "haftalik_vaka_sayisi": "256"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Kocaeli",
+    "haftalik_vaka_sayisi": "138"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Konya",
+    "haftalik_vaka_sayisi": "204"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Kütahya",
+    "haftalik_vaka_sayisi": "85"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Malatya",
+    "haftalik_vaka_sayisi": "93"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Manisa",
+    "haftalik_vaka_sayisi": "50"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Mardin",
+    "haftalik_vaka_sayisi": "17"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Içel",
+    "haftalik_vaka_sayisi": "97"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Muğla",
+    "haftalik_vaka_sayisi": "80"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Muş",
+    "haftalik_vaka_sayisi": "27"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Nevşehir",
+    "haftalik_vaka_sayisi": "65"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Niğde",
+    "haftalik_vaka_sayisi": "89"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Ordu",
+    "haftalik_vaka_sayisi": "249"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Osmaniye",
+    "haftalik_vaka_sayisi": "199"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Rize",
+    "haftalik_vaka_sayisi": "188"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Sakarya",
+    "haftalik_vaka_sayisi": "90"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Samsun",
+    "haftalik_vaka_sayisi": "459"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Siirt",
+    "haftalik_vaka_sayisi": "2"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Sinop",
+    "haftalik_vaka_sayisi": "346"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Sivas",
+    "haftalik_vaka_sayisi": "44"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Şanlıurfa",
+    "haftalik_vaka_sayisi": "15"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Şırnak",
+    "haftalik_vaka_sayisi": "4"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Tekirdağ",
+    "haftalik_vaka_sayisi": "122"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Tokat",
+    "haftalik_vaka_sayisi": "244"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Trabzon",
+    "haftalik_vaka_sayisi": "222"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Tunceli",
+    "haftalik_vaka_sayisi": "54"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Uşak",
+    "haftalik_vaka_sayisi": "19"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Van",
+    "haftalik_vaka_sayisi": "20"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Yalova",
+    "haftalik_vaka_sayisi": "200"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Yozgat",
+    "haftalik_vaka_sayisi": "46"
+  },
+  {
+    "tarih_baslangic": "06.03.2021",
+    "tarih_bitis": "12.03.2021",
+    "il": "Zonguldak",
+    "haftalik_vaka_sayisi": "75"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Adana",
+    "haftalik_vaka_sayisi": "62"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Adıyaman",
+    "haftalik_vaka_sayisi": "170"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Afyon",
+    "haftalik_vaka_sayisi": "47"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Ağrı",
+    "haftalik_vaka_sayisi": "41"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Aksaray",
+    "haftalik_vaka_sayisi": "214"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Amasya",
+    "haftalik_vaka_sayisi": "194"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Ankara",
+    "haftalik_vaka_sayisi": "108"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Antalya",
+    "haftalik_vaka_sayisi": "119"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Ardahan",
+    "haftalik_vaka_sayisi": "86"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Artvin",
+    "haftalik_vaka_sayisi": "114"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Aydın",
+    "haftalik_vaka_sayisi": "69"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Balıkesir",
+    "haftalik_vaka_sayisi": "288"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Bartın",
+    "haftalik_vaka_sayisi": "77"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Batman",
+    "haftalik_vaka_sayisi": "29"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Bayburt",
+    "haftalik_vaka_sayisi": "74"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Bilecik",
+    "haftalik_vaka_sayisi": "114"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Bingöl",
+    "haftalik_vaka_sayisi": "48"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Bitlis",
+    "haftalik_vaka_sayisi": "23"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Bolu",
+    "haftalik_vaka_sayisi": "100"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Burdur",
+    "haftalik_vaka_sayisi": "72"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Bursa",
+    "haftalik_vaka_sayisi": "97"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Çanakkale",
+    "haftalik_vaka_sayisi": "203"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Çankırı",
+    "haftalik_vaka_sayisi": "123"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Çorum",
+    "haftalik_vaka_sayisi": "139"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Denizli",
+    "haftalik_vaka_sayisi": "49"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Diyarbakır",
+    "haftalik_vaka_sayisi": "19"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Düzce",
+    "haftalik_vaka_sayisi": "95"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Edirne",
+    "haftalik_vaka_sayisi": "219"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Elazığ",
+    "haftalik_vaka_sayisi": "80"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Erzincan",
+    "haftalik_vaka_sayisi": "124"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Erzurum",
+    "haftalik_vaka_sayisi": "72"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Eskişehir",
+    "haftalik_vaka_sayisi": "117"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Gaziantep",
+    "haftalik_vaka_sayisi": "87"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Giresun",
+    "haftalik_vaka_sayisi": "356"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Gümüşhane",
+    "haftalik_vaka_sayisi": "105"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Hakkari",
+    "haftalik_vaka_sayisi": "16"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Hatay",
+    "haftalik_vaka_sayisi": "62"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Iğdır",
+    "haftalik_vaka_sayisi": "107"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Isparta",
+    "haftalik_vaka_sayisi": "74"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Istanbul",
+    "haftalik_vaka_sayisi": "251"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Izmir",
+    "haftalik_vaka_sayisi": "111"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Kahramanmaraş",
+    "haftalik_vaka_sayisi": "67"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Karabük",
+    "haftalik_vaka_sayisi": "84"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Karaman",
+    "haftalik_vaka_sayisi": "89"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Kars",
+    "haftalik_vaka_sayisi": "31"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Kastamonu",
+    "haftalik_vaka_sayisi": "197"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Kayseri",
+    "haftalik_vaka_sayisi": "196"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Kırıkkale",
+    "haftalik_vaka_sayisi": "74"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Kırklareli",
+    "haftalik_vaka_sayisi": "155"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Kırşehir",
+    "haftalik_vaka_sayisi": "61"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Kilis",
+    "haftalik_vaka_sayisi": "258"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Kocaeli",
+    "haftalik_vaka_sayisi": "176"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Konya",
+    "haftalik_vaka_sayisi": "252"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Kütahya",
+    "haftalik_vaka_sayisi": "111"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Malatya",
+    "haftalik_vaka_sayisi": "141"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Manisa",
+    "haftalik_vaka_sayisi": "65"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Mardin",
+    "haftalik_vaka_sayisi": "17"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Içel",
+    "haftalik_vaka_sayisi": "81"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Muğla",
+    "haftalik_vaka_sayisi": "92"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Muş",
+    "haftalik_vaka_sayisi": "21"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Nevşehir",
+    "haftalik_vaka_sayisi": "79"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Niğde",
+    "haftalik_vaka_sayisi": "104"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Ordu",
+    "haftalik_vaka_sayisi": "259"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Osmaniye",
+    "haftalik_vaka_sayisi": "199"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Rize",
+    "haftalik_vaka_sayisi": "202"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Sakarya",
+    "haftalik_vaka_sayisi": "124"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Samsun",
+    "haftalik_vaka_sayisi": "509"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Siirt",
+    "haftalik_vaka_sayisi": "14"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Sinop",
+    "haftalik_vaka_sayisi": "309"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Sivas",
+    "haftalik_vaka_sayisi": "56"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Şanlıurfa",
+    "haftalik_vaka_sayisi": "18"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Şırnak",
+    "haftalik_vaka_sayisi": "8"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Tekirdağ",
+    "haftalik_vaka_sayisi": "168"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Tokat",
+    "haftalik_vaka_sayisi": "249"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Trabzon",
+    "haftalik_vaka_sayisi": "247"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Tunceli",
+    "haftalik_vaka_sayisi": "64"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Uşak",
+    "haftalik_vaka_sayisi": "19"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Van",
+    "haftalik_vaka_sayisi": "27"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Yalova",
+    "haftalik_vaka_sayisi": "275"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Yozgat",
+    "haftalik_vaka_sayisi": "93"
+  },
+  {
+    "tarih_baslangic": "13.03.2021",
+    "tarih_bitis": "19.03.2021",
+    "il": "Zonguldak",
+    "haftalik_vaka_sayisi": "81"
+  }
+]

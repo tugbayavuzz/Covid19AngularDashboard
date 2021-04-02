@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DataServicesService} from '../../services/data.service';
+import { DataServicesService } from '../../services/data.service';
 
 // @ts-ignore
 import worldMap from '@highcharts/map-collection/custom/world.geo.json';
@@ -8,8 +8,7 @@ import turkeyMap from '@highcharts/map-collection/countries/tr/tr-all.geo.json';
 // import proj4 from "proj4";
 // import * as Highcharts from "highcharts";
 import * as Highcharts from 'highcharts/highmaps';
-import {TheVirusTracker} from '../../models/virusmap.model';
-
+import { TheVirusTracker } from '../../models/virusmap.model';
 
 @Component({
   moduleId: module.id,
@@ -17,138 +16,21 @@ import {TheVirusTracker} from '../../models/virusmap.model';
   templateUrl: 'maps.component.html',
 })
 export class MapsComponent implements OnInit {
-
-  mapData: TheVirusTracker[];
-  dateRange = '' ;
+  mapData: TheVirusTracker;
+  dateRange = '';
   cities = [];
 
+  'use strict';
+
+  private fs = require('fs');
+
+  private highchartsTurkeyGeoUrl = 'assets/highcharts-turkey.geo.json';
+  private apiUrl = 'https://covid-turkey-case-ratio.herokuapp.com/';
 
   Highcharts: typeof Highcharts = Highcharts;
   chartConstructor = 'mapChart';
 
-  chartOptions: Highcharts.Options = {
-    chart: {
-      map: turkeyMap,
-    },
-    title: {
-      text: 'Highcharts Maps Covid illere göre dağılım',
-    },
-    subtitle: {
-      text: `Source map: <a href="http://code.highcharts.com/mapdata/countries/tr/tr-all.js">Turkey</a>`,
-    },
-
-    mapNavigation: {
-      enabled: true,
-      buttonOptions: {
-        alignTo: 'spacingBox',
-      },
-    },
-    legend: {
-      enabled: true,
-    },
-    colorAxis: {
-      min: 0,
-    },
-    series: [
-      {
-        type: 'map',
-        name: 'Random data',
-        states: {
-          hover: {
-            color: '#BADA55',
-          },
-        },
-        dataLabels: {
-          enabled: true,
-          format: '{point.name}',
-        },
-        allAreas: false,
-        data: [
-          ['tr-or', 0],
-          ['tr-ss', 1],
-          ['tr-ga', 2],
-          ['tr-kc', 4],
-          ['tr-bk', 5],
-          ['tr-ck', 6],
-          ['tr-tt', 7],
-          ['tr-gi', 8],
-          ['tr-en', 9],
-          ['tr-bg', 10],
-          ['tr-ht', 11],
-          ['tr-aa', 12],
-          ['tr-cm', 13],
-          ['tr-kk', 14],
-          ['tr-ng', 15],
-          ['tr-ak', 16],
-          ['tr-kh', 17],
-          ['tr-yz', 18],
-          ['tr-am', 19],
-          ['tr-ms', 20],
-          ['tr-bm', 21],
-          ['tr-ka', 22],
-          ['tr-ig', 23],
-          ['tr-du', 24],
-          ['tr-zo', 25],
-          ['tr-kb', 26],
-          ['tr-yl', 27],
-          ['tr-sk', 28],
-          ['tr-ci', 29],
-          ['tr-bl', 30],
-          ['tr-ed', 31],
-          ['tr-es', 32],
-          ['tr-ko', 33],
-          ['tr-bu', 34],
-          ['tr-kl', 35],
-          ['tr-ib', 36],
-          ['tr-kr', 37],
-          ['tr-al', 38],
-          ['tr-af', 39],
-          ['tr-bd', 40],
-          ['tr-ip', 41],
-          ['tr-ay', 42],
-          ['tr-mn', 43],
-          ['tr-dy', 44],
-          ['tr-ad', 45],
-          ['tr-km', 46],
-          ['tr-ky', 47],
-          ['tr-eg', 48],
-          ['tr-ic', 49],
-          ['tr-sp', 50],
-          ['tr-av', 51],
-          ['tr-ri', 52],
-          ['tr-tb', 53],
-          ['tr-an', 54],
-          ['tr-su', 55],
-          ['tr-bb', 56],
-          ['tr-em', 57],
-          ['tr-mr', 58],
-          ['tr-sr', 59],
-          ['tr-si', 60],
-          ['tr-hk', 61],
-          ['tr-va', 62],
-          ['tr-ar', 63],
-          ['tr-ki', 64],
-          ['tr-br', 65],
-          ['tr-tg', 66],
-          ['tr-iz', 67],
-          ['tr-ks', 68],
-          ['tr-mg', 69],
-          ['tr-ku', 70],
-          ['tr-nv', 71],
-          ['tr-sv', 72],
-          ['tr-tc', 73],
-          ['tr-ml', 74],
-          ['tr-ag', 75],
-          ['tr-bt', 76],
-          ['tr-gu', 77],
-          ['tr-os', 78],
-          ['tr-bc', 79],
-          ['tr-dn', 80],
-          ['tr-us', 81],
-        ],
-      },
-    ],
-  };
+  chartOptions: Highcharts.Options;
 
   // chartCallback: Highcharts.ChartCallbackFunction = function (chart) { ... } // optional function, defaults to null
   updateFlag = false; // optional boolean
@@ -156,20 +38,61 @@ export class MapsComponent implements OnInit {
   runOutsideAngular = false; // optional boolean, defaults to false
 
   constructor(private dataService: DataServicesService) {}
-  ngOnInit() {
-    this.dataService.getWeeklyJsonData().subscribe({
-      next: (res) => {
-        console.log(res);
-        this.mapData = res;
-        res.forEach((item) => {
-          if (!Number.isNaN(item.dateRange)) {
-            this.dateRange = item.dateRange;
-            this.cities = item.cities;
-          }
-        })
 
-      }
+  ngOnInit() {
+
+    // combine the two observables in one single observable
+
+    this.dataService.dataCombined$.subscribe(([covidRatio, hcGeoData]) => {
+      const result = this.dataService.makeHighChartData({ covidRatio, hcGeoData });
+      console.log(result);
+      this.makeChartOptions(result);
+
     });
   }
 
+  makeChartOptions(data) {
+    this.chartOptions = {
+      chart: {
+        map: turkeyMap,
+      },
+      title: {
+        text: 'Türkiye Vaka Risk Haritası',
+      },
+      subtitle: {
+        text: `Source map: <a href="http://code.highcharts.com/mapdata/countries/tr/tr-all.js">Turkey</a>`,
+      },
+
+      mapNavigation: {
+        enabled: true,
+        buttonOptions: {
+          alignTo: 'spacingBox',
+        },
+      },
+      legend: {
+        enabled: true,
+      },
+      colorAxis: {
+        min: 0,
+      },
+
+      series: [
+        {
+          type: 'map',
+          name: 'Haftalık Vaka Oranı',
+          states: {
+            hover: {
+              color: '#8B0000',
+            },
+          },
+          dataLabels: {
+            enabled: true,
+            format: '{point.name}',
+          },
+          allAreas: false,
+          data,
+        },
+      ],
+    };
+  }
 }

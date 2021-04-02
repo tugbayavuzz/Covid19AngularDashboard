@@ -1,25 +1,31 @@
- import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {catchError, map} from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { DataSummary } from '../models/turkeydata';
-import {Observable, pipe} from 'rxjs';
- import {TheVirusTracker} from '../models/virusmap.model';
+import { combineLatest, Observable, pipe } from 'rxjs';
+import { TheVirusTracker, City } from '../models/virusmap.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataServicesService {
-
   private dailyDataUrl = environment.apiCsvUrl;
   private dailyDataJsonUrl = environment.apiJsonUrl;
+  private weeklyDataUrl = 'https://covid-turkey-case-ratio.herokuapp.com';
+
+  dataCombined$ = combineLatest([
+    this.getCaseRatioData(),
+    this.getHighChartGeoData(),
+  ]);
 
   constructor(private http: HttpClient) {}
 
-  getCaseRatioData() {
-    return this.http.get('https://covid-turkey-case-ratio.herokuapp.com');
+  getCaseRatioData(): Observable<City[]> {
+    return this.http
+      .get<TheVirusTracker>(this.weeklyDataUrl)
+      .pipe(map((res) => res.cities));
   }
-
 
   getDailyData() {
     return this.http.get(this.dailyDataUrl, { responseType: 'text' }).pipe(
@@ -82,20 +88,54 @@ export class DataServicesService {
     );
   }
 
-  getWeeklyJsonData(): Observable<TheVirusTracker[]> {
-    // @ts-ignore
-    return this.http(
-      map((res) => {
-        return (Object.values(res) as TheVirusTracker[]).map((item) => {
-          return {
-            ...item,
-            dateRange: +item.dateRange,
-            cities: +item.cities
-          };
-        });
-      })
-    );
+  getHighChartGeoData(): Observable<any> {
+    return this.http
+      .get('./../assets/highcharts-turkey.geo.json')
+      .pipe(map((res) => this.mapGeoData(res['features'])));
   }
 
-}
+  mapGeoData(data) {
+    // why 77 and not 82
+    return data.map((feature) => {
+      const key = feature.properties['hc-key'];
+      const name = feature.properties['name'];
 
+      return {
+        'hc-key': key,
+        'woe-name': name ? name : key,
+      };
+    });
+  }
+
+  makeHighChartData({ covidRatio, hcGeoData }) {
+    const hcData = [];
+    covidRatio.forEach((ratio) => {
+      hcGeoData.forEach((hcGeo) => {
+        if (
+          this.replaceCityNameChars(ratio.name) ===
+          this.replaceCityNameChars(hcGeo['woe-name'])
+        ) {
+          hcData.push([hcGeo['hc-key'], +ratio['caseRatio']]);
+        }
+      });
+    });
+    return hcData;
+  }
+
+  replaceCityNameChars(cityName) {
+    return cityName
+      .replace(/Ğ/gim, 'G')
+      .replace(/Ü/gim, 'U')
+      .replace(/Ş/gim, 'S')
+      .replace(/İ/gim, 'I')
+      .replace(/Ö/gim, 'O')
+      .replace(/Ç/gim, 'C')
+      .replace(/ğ/gim, 'g')
+      .replace(/ü/gim, 'u')
+      .replace(/ş/gim, 's')
+      .replace(/ı/gim, 'i')
+      .replace(/ö/gim, 'o')
+      .replace(/ç/gim, 'c')
+      .toLowerCase();
+  }
+}

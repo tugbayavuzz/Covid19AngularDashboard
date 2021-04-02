@@ -1,10 +1,9 @@
 export interface TheVirusTracker {
-    dateRange: string;
-    cities: City[];
-  }
+  dateRange: string;
+  cities: City[];
+}
 
-  interface City {
-    name: string;
-    caseRatio: string;
-  }
-
+export interface City {
+  name: string;
+  caseRatio: number;
+}
