@@ -73,7 +73,19 @@ export class MapsComponent implements OnInit {
         enabled: true,
       },
       colorAxis: {
-        min: 0,
+        dataClasses: [{
+          to: 19.99
+        }, {
+          from: 20,
+          to: 49.99
+        }, {
+          from: 50,
+          to: 99.99
+        }, {
+          from: 100,
+          to: 1000000
+        },
+        ]
       },
 
       series: [
