@@ -1,12 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {DataServicesService} from '../../services/data.service';
 import {VaccineTracker} from '../../models/vaccine';
-import {isWithinInterval, subDays} from 'date-fns';
+// @ts-ignore
+import worldMap from '@highcharts/map-collection/custom/world.geo.json';
+import turkeyMap from '@highcharts/map-collection/countries/tr/tr-all.geo.json';
+import * as Highcharts from 'highcharts/highmaps';
 
-declare interface TableData {
-  headerRow: string[];
-  dataRows: string[][];
-}
 
 @Component({
     selector: 'icons-cmp',
@@ -15,65 +14,97 @@ declare interface TableData {
 })
 
 export class IconsComponent implements OnInit {
-  public tableData1: TableData;
-  public tableData2: TableData;
-  location: string;
-  date: string;
-  vaccine: string;
-  source_url: string;
-  total_vaccinations: number;
-  people_vaccinated: number;
-  people_fully_vaccinated: number;
-  total = 0;
-  dataVaccine: VaccineTracker[];
 
+  result = [];
+  vaccineMap: VaccineTracker;
+  name: string;
+  total: number;
+  firstDose: number;
+  secondDose: number;
+
+  'use strict';
+
+  private fs = require('fs');
+
+  Highcharts: typeof Highcharts = Highcharts;
+  chartConstructor = 'mapChart';
+
+  chartOptions: Highcharts.Options;
+
+  // chartCallback: Highcharts.ChartCallbackFunction = function (chart) { ... } // optional function, defaults to null
+  updateFlag = false; // optional boolean
+  oneToOneFlag = true; // optional boolean, defaults to false
+  runOutsideAngular = false; // optional boolean, defaults to false
 
   constructor(private dataService: DataServicesService) {}
 
   ngOnInit() {
 
-    this.dataService.getVaccineData().subscribe({
-      next: (res) => {
-        console.log(res);
-        this.dataVaccine = res;
-        res.forEach((cs) => {
-          if (!Number.isNaN(cs.date)) {
-            this.date = cs.date;
-            this.vaccine = cs.vaccine;
-            this.total_vaccinations = cs.total_vaccinations;
-            this.people_vaccinated = cs.people_vaccinated;
-            this.people_fully_vaccinated = cs.people_fully_vaccinated;
-          }
-        });
-        this.displayVaccineOptions();
-      },
+    // combine the two observables in one single observable
+
+    // @ts-ignore
+    this.dataService.dataCombined2$.subscribe(([totalVaccine, hcGeoData]) => {
+      const res = this.dataService.makeHighChartDataVaccine({totalVaccine, hcGeoData}) ;
+      console.log(res);
+      this.makeChartOptions(res);
+
     });
   }
 
-    displayVaccineOptions() {
+  makeChartOptions(data) {
+    this.chartOptions = {
+      chart: {
+        map: turkeyMap,
+      },
+      title: {
+        text: 'Türkiye Aşı Durum Haritası',
+      },
+      subtitle: {
+        text: `Source map: <a href="http://code.highcharts.com/mapdata/countries/tr/tr-all.js">Turkey</a>`,
+      },
 
-      this.tableData1 = {
-        headerRow: ['ID', 'Name', 'Country', 'City', 'Salary'],
-        dataRows: [
-          ['1', 'Dakota Rice', 'Niger', 'Oud-Turnhout', '$36,738'],
-          ['2', 'Minerva Hooper', 'Curaçao', 'Sinaai-Waas', '$23,789'],
-          ['3', 'Sage Rodriguez', 'Netherlands', 'Baileux', '$56,142'],
-          ['4', 'Philip Chaney', 'Korea, South', 'Overland Park', '$38,735'],
-          ['5', 'Doris Greene', 'Malawi', 'Feldkirchen in Kärnten', '$63,542'],
-          ['6', 'Mason Porter', 'Chile', 'Gloucester', '$78,615']
+      mapNavigation: {
+        enabled: true,
+        buttonOptions: {
+          alignTo: 'spacingBox',
+        },
+      },
+      legend: {
+        enabled: true,
+      },
+      colorAxis: {
+        dataClasses: [{
+          to: 100000
+        }, {
+          from: 300000,
+          to: 300001
+        }, {
+          from: 600000,
+          to: 600001
+        }, {
+          from: 1000000,
+          to: 100000000
+        },
         ]
-      };
-      this.tableData2 = {
-        headerRow: ['ID', 'Name', 'Salary', 'Country', 'City'],
-        dataRows: [
-          ['1', 'Dakota Rice', '$36,738', 'Niger', 'Oud-Turnhout'],
-          ['2', 'Minerva Hooper', '$23,789', 'Curaçao', 'Sinaai-Waas'],
-          ['3', 'Sage Rodriguez', '$56,142', 'Netherlands', 'Baileux'],
-          ['4', 'Philip Chaney', '$38,735', 'Korea, South', 'Overland Park'],
-          ['5', 'Doris Greene', '$63,542', 'Malawi', 'Feldkirchen in Kärnten', ],
-          ['6', 'Mason Porter', '$78,615', 'Chile', 'Gloucester']
-        ]
-      };
+      },
 
+      series: [
+        {
+          type: 'map',
+          name: 'Toplam Aşı',
+          states: {
+            hover: {
+              color: '#7FFFD4',
+            },
+          },
+          dataLabels: {
+            enabled: true,
+            format: '{point.name}',
+          },
+          allAreas: false,
+          data,
+        },
+      ],
+    };
   }
 }

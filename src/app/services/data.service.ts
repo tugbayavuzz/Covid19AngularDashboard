@@ -5,7 +5,7 @@ import {catchError, map, tap} from 'rxjs/operators';
 import {DataSummary} from '../models/turkeydata';
 import {combineLatest, Observable, pipe} from 'rxjs';
 import {TheVirusTracker, City} from '../models/virusmap.model';
-import {VaccineTracker} from '../models/vaccine';
+import {Cities, VaccineTracker} from '../models/vaccine';
 
 
 @Injectable({
@@ -15,10 +15,15 @@ export class DataServicesService {
   private dailyDataUrl = environment.apiCsvUrl;
   private dailyDataJsonUrl = environment.apiJsonUrl;
   private weeklyDataUrl = 'https://covid-turkey-case-ratio.herokuapp.com';
-  private vaccineUrl = 'https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/country_data/Turkey.csv';
+  private vaccineUrl = 'https://covid-turkey-case-ratio.herokuapp.com/vaccine';
 
   dataCombined$ = combineLatest([
     this.getCaseRatioData(),
+    this.getHighChartGeoData(),
+  ]);
+
+  dataCombined2$ = combineLatest([
+    this.getTotalVaccineData(),
     this.getHighChartGeoData(),
   ]);
 
@@ -30,6 +35,14 @@ export class DataServicesService {
       .get<TheVirusTracker>(this.weeklyDataUrl)
       .pipe(map((res) => res.cities));
   }
+
+  getTotalVaccineData(): Observable<Cities[]> {
+    return this.http
+      .get<VaccineTracker>(this.vaccineUrl)
+      .pipe(map((res) => res.result));
+  }
+
+
 
   getDailyData() {
     return this.http.get(this.dailyDataUrl, {responseType: 'text'}).pipe(
@@ -126,57 +139,22 @@ export class DataServicesService {
     return hcData;
   }
 
-  getVaccineData() {
-    return this.http.get(this.vaccineUrl, { responseType: 'text'}).pipe(
-      map(result => {
-        const data: VaccineTracker[] = [];
-        const raw = {};
-        const rows = result.split('\n');
-
-        rows.forEach((row) => {
-          const cols = row;
-          const cs = {
-            date: cols[1],
-            vaccine: +cols[2],
-            total_vaccinations: +cols[4],
-            people_vaccinated: +cols[5],
-            people_fully_vaccinated: +cols[6]
-          };
-          const temp: VaccineTracker = rows[cs.date];
-          if (temp) {
-            temp.total_vaccinations = cs.total_vaccinations + temp.total_vaccinations;
-            temp.people_vaccinated = cs.people_vaccinated + temp.people_vaccinated;
-            temp.people_fully_vaccinated = cs.people_fully_vaccinated + temp.people_fully_vaccinated;
-             raw[cs.date] = temp;
-          } else {
-            raw[cs.date] = cs;
-          }
+  makeHighChartDataVaccine({totalVaccine, hcGeoData}) {
+    const hcData = [];
+    totalVaccine.forEach((total) => {
+      hcGeoData.forEach((hcGeo) => {
+            if (
+              this.replaceCityNameChars(total.name) ===
+              this.replaceCityNameChars(hcGeo['woe-name'])
+            ) {
+              hcData.push([hcGeo['hc-key'], +total['total']]);
+            }
+          });
         });
-          return Object.values(raw) as VaccineTracker[];
-
-      }));
+    return hcData;
   }
 
 
-
-
-  displayVaccine(): Observable<VaccineTracker> {
-    return this.http.get(this.vaccineUrl).pipe(
-      map((res) => {
-        // @ts-ignore
-        return (Object.values(res) as VaccineTracker).map((item) => {
-          return {
-            ...item,
-            date: item.date,
-            vaccine: +item.vaccine,
-            total_vaccinations: +item.total_vaccinations,
-            people_vaccinated: +item.people_vaccinated,
-            people_fully_vaccinated: +item.people_fully_vaccinated,
-          };
-        });
-      })
-    )
-  }
 
   replaceCityNameChars(cityName) {
     return cityName
