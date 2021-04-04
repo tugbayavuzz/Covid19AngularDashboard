@@ -4,6 +4,7 @@ export const environment = {
     'https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.json',
   apiCsvUrl:
     'https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.csv',
-  apiMapUrl: 'https://covid-turkey-case-ratio.herokuapp.com/',
+
+  apiVaccineUrl: 'https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/country_data/Turkey.csv',
 
 };

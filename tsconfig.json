@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
     "importHelpers": true,
@@ -22,7 +23,8 @@
       "es2016",
       "es2017",
       "es2017.object",
-      "dom"
+      "dom",
+      "dom.iterable"
     ],
     "module": "esnext"
   }

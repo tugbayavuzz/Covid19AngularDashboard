@@ -24,9 +24,6 @@ export class MapsComponent implements OnInit {
 
   private fs = require('fs');
 
-  private highchartsTurkeyGeoUrl = 'assets/highcharts-turkey.geo.json';
-  private apiUrl = 'https://covid-turkey-case-ratio.herokuapp.com/';
-
   Highcharts: typeof Highcharts = Highcharts;
   chartConstructor = 'mapChart';
 

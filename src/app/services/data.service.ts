@@ -1,10 +1,12 @@
-import { environment } from '../../environments/environment';
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
-import { DataSummary } from '../models/turkeydata';
-import { combineLatest, Observable, pipe } from 'rxjs';
-import { TheVirusTracker, City } from '../models/virusmap.model';
+import {environment} from '../../environments/environment';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {catchError, map, tap} from 'rxjs/operators';
+import {DataSummary} from '../models/turkeydata';
+import {combineLatest, Observable, pipe} from 'rxjs';
+import {TheVirusTracker, City} from '../models/virusmap.model';
+import {VaccineTracker} from '../models/vaccine';
+
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +15,7 @@ export class DataServicesService {
   private dailyDataUrl = environment.apiCsvUrl;
   private dailyDataJsonUrl = environment.apiJsonUrl;
   private weeklyDataUrl = 'https://covid-turkey-case-ratio.herokuapp.com';
+  private vaccineUrl = 'https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/country_data/Turkey.csv';
 
   dataCombined$ = combineLatest([
     this.getCaseRatioData(),
@@ -21,6 +24,7 @@ export class DataServicesService {
 
   constructor(private http: HttpClient) {}
 
+
   getCaseRatioData(): Observable<City[]> {
     return this.http
       .get<TheVirusTracker>(this.weeklyDataUrl)
@@ -28,7 +32,7 @@ export class DataServicesService {
   }
 
   getDailyData() {
-    return this.http.get(this.dailyDataUrl, { responseType: 'text' }).pipe(
+    return this.http.get(this.dailyDataUrl, {responseType: 'text'}).pipe(
       map((res) => {
         const data: DataSummary[] = [];
         const raw = {};
@@ -107,7 +111,7 @@ export class DataServicesService {
     });
   }
 
-  makeHighChartData({ covidRatio, hcGeoData }) {
+  makeHighChartData({covidRatio, hcGeoData}) {
     const hcData = [];
     covidRatio.forEach((ratio) => {
       hcGeoData.forEach((hcGeo) => {
@@ -120,6 +124,58 @@ export class DataServicesService {
       });
     });
     return hcData;
+  }
+
+  getVaccineData() {
+    return this.http.get(this.vaccineUrl, { responseType: 'text'}).pipe(
+      map(result => {
+        const data: VaccineTracker[] = [];
+        const raw = {};
+        const rows = result.split('\n');
+
+        rows.forEach((row) => {
+          const cols = row;
+          const cs = {
+            date: cols[1],
+            vaccine: +cols[2],
+            total_vaccinations: +cols[4],
+            people_vaccinated: +cols[5],
+            people_fully_vaccinated: +cols[6]
+          };
+          const temp: VaccineTracker = rows[cs.date];
+          if (temp) {
+            temp.total_vaccinations = cs.total_vaccinations + temp.total_vaccinations;
+            temp.people_vaccinated = cs.people_vaccinated + temp.people_vaccinated;
+            temp.people_fully_vaccinated = cs.people_fully_vaccinated + temp.people_fully_vaccinated;
+             raw[cs.date] = temp;
+          } else {
+            raw[cs.date] = cs;
+          }
+        });
+          return Object.values(raw) as VaccineTracker[];
+
+      }));
+  }
+
+
+
+
+  displayVaccine(): Observable<VaccineTracker> {
+    return this.http.get(this.vaccineUrl).pipe(
+      map((res) => {
+        // @ts-ignore
+        return (Object.values(res) as VaccineTracker).map((item) => {
+          return {
+            ...item,
+            date: item.date,
+            vaccine: +item.vaccine,
+            total_vaccinations: +item.total_vaccinations,
+            people_vaccinated: +item.people_vaccinated,
+            people_fully_vaccinated: +item.people_fully_vaccinated,
+          };
+        });
+      })
+    )
   }
 
   replaceCityNameChars(cityName) {

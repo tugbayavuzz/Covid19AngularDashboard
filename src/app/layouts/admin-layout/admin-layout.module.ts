@@ -32,7 +32,7 @@ import {HighchartsChartModule} from 'highcharts-angular';
     TypographyComponent,
     IconsComponent,
     MapsComponent,
-    NotificationsComponent,
+    NotificationsComponent
   ]
 })
 
