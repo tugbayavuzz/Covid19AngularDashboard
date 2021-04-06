@@ -7790,6 +7790,12 @@ img {
   background-color: #5e5954;
   border-color: #5e5954; }
 
+.badge-dark[href]:focus,
+.badge-dark[href]:hover {
+  color: #000000;
+  background-color: #000000;
+  border-color: #000000; }
+
 .pagination .page-item .page-link {
   border: 0;
   border-radius: 30px !important;

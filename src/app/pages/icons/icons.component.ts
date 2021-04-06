@@ -46,8 +46,7 @@ export class IconsComponent implements OnInit {
     this.dataService.dataCombined2$.subscribe(([totalVaccine, hcGeoData]) => {
       const res = this.dataService.makeHighChartDataVaccine({totalVaccine, hcGeoData}) ;
       console.log(res);
-      this.makeChartOptions(res);
-
+       this.makeChartOptions(res);
     });
   }
 
@@ -57,7 +56,7 @@ export class IconsComponent implements OnInit {
         map: turkeyMap,
       },
       title: {
-        text: 'Türkiye Aşı Durum Haritası',
+        text: 'Türkiye Covid19 Aşı Durum Haritası',
       },
       subtitle: {
         text: `Source map: <a href="http://code.highcharts.com/mapdata/countries/tr/tr-all.js">Turkey</a>`,

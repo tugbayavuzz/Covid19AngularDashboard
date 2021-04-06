@@ -3,6 +3,7 @@ import { ROUTES } from '../../sidebar/sidebar.component';
 import { Router } from '@angular/router';
 import { Location} from '@angular/common';
 
+
 @Component({
     moduleId: module.id,
   // tslint:disable-next-line:component-selector
@@ -45,7 +46,7 @@ export class NavbarComponent implements OnInit {
               return this.listTitles[item].title;
           }
       }
-      return 'Dashboard';
+      return 'Genel Durum';
     }
     sidebarToggle() {
         if (this.sidebarVisible === false) {

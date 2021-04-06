@@ -142,19 +142,17 @@ export class DataServicesService {
   makeHighChartDataVaccine({totalVaccine, hcGeoData}) {
     const hcData = [];
     totalVaccine.forEach((total) => {
-      hcGeoData.forEach((hcGeo) => {
+          hcGeoData.forEach((hcGeo) => {
             if (
               this.replaceCityNameChars(total.name) ===
               this.replaceCityNameChars(hcGeo['woe-name'])
-            ) {
-              hcData.push([hcGeo['hc-key'], +total['total']]);
-            }
+              ) {
+                  hcData.push([hcGeo['hc-key'], +total['total']]);
+                }
           });
-        });
+    });
     return hcData;
   }
-
-
 
   replaceCityNameChars(cityName) {
     return cityName

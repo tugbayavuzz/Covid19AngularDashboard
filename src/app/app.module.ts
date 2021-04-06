@@ -1,5 +1,5 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -36,7 +36,9 @@ import {HighchartsChartModule} from 'highcharts-angular';
     HttpClientModule,
     HighchartsChartModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'en-TR' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

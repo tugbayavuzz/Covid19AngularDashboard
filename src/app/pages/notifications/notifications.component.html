@@ -2,10 +2,11 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <h5 class="card-title">Notifications</h5>
-        <p class="card-category">Handcrafted by our friend
-          <a target="_blank" href="https://github.com/mouse0270">Robert McIntosh</a>. Please checkout the
-          <a href="http://bootstrap-notify.remabledesigns.com/" target="_blank">full documentation.</a>
+        <h5 class="card-title" >Notifications</h5>
+        <p class="card-category">COVID-19, farklı kişileri farklı şekillerde etkilemektedir.
+          Enfekte kişilerin çoğu, hafif ila orta düzeyde semptomlar geliştirmekte ve hastaneye kaldırılmadan iyileşmektedir.
+          <!--<a target="_blank" href="https://github.com/mouse0270">Robert McIntosh</a>. Please checkout the
+          <a href="http://bootstrap-notify.remabledesigns.com/" target="_blank">full documentation.</a> -->
         </p>
       </div>
       <div class="card-body">
@@ -13,31 +14,42 @@
           <div class="col-md-6">
             <div class="card card-plain">
               <div class="card-header">
-                <h5 class="card-title">Notifications Style</h5>
+                <h5 class="card-title">Belirtiler</h5>
               </div>
               <div class="card-body">
-                <div class="alert alert-info">
-                  <span>This is a plain notification</span>
-                </div>
-                <div class="alert alert-info alert-dismissible fade show">
+                <div class="alert alert-success alert-with-icon alert-dismissible fade show" data-notify="container">
                   <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
                     <i class="nc-icon nc-simple-remove"></i>
                   </button>
-                  <span>This is a notification with close button.</span>
+                  <span data-notify="icon" class="nc-icon nc-sound-wave"></span>
+                  <span data-notify="message">En Yaygın Semptomlar: <br>
+                    Ateş, <br>
+                    Kuru öksürük, <br>
+                    Yorgunluk</span>
                 </div>
-                <div class="alert alert-info alert-with-icon alert-dismissible fade show" data-notify="container">
+                <div class="alert alert-danger alert-with-icon alert-dismissible fade show" data-notify="container">
                   <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
                     <i class="nc-icon nc-simple-remove"></i>
                   </button>
-                  <span data-notify="icon" class="nc-icon nc-bell-55"></span>
-                  <span data-notify="message">This is a notification with close button and icon.</span>
+                  <span data-notify="icon" class="nc-icon nc-alert-circle-i"></span>
+                  <span data-notify="message">Ciddi semptomlar:<br>
+                    Solunum güçlüğü veya nefes darlığı<br>
+                    Göğüs ağrısı veya göğüste baskı<br>
+                    Konuşma veya hareket kaybı</span>
                 </div>
-                <div class="alert alert-info alert-with-icon alert-dismissible fade show" data-notify="container">
+                <div class="alert alert-primary alert-with-icon alert-dismissible fade show" data-notify="container">
                   <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
                     <i class="nc-icon nc-simple-remove"></i>
                   </button>
-                  <span data-notify="icon" class="nc-icon nc-chart-pie-36"></span>
-                  <span data-notify="message">This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.</span>
+                  <span data-notify="icon" class="nc-icon nc-check-2"></span>
+                  <span data-notify="message" >Daha seyrek görülen semptomlar:<br>
+                      Ağrı ve sızı<br>
+                      Boğaz ağrısı<br>
+                      İshal<br>
+                      Konjunktivit<br>
+                      Baş ağrısı<br>
+                      Tat alma veya koku duyusunun kaybı<br>
+                      Ciltte döküntü ya da el veya ayak parmaklarında renk değişimi</span>
                 </div>
               </div>
             </div>

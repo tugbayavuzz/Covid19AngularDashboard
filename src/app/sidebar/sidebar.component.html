@@ -5,14 +5,14 @@
         <img src="assets/img/editor-7.7s-45px.gif">
       </div>
     </a>
-    <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+    <a class="simple-text logo-normal">
       Covid 19
     </a>
   </div>
   <ul class="nav">
-    <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
+    <li *ngFor="let menuItem of menuItems" routerLinkActive="active"   class="{{menuItem.class}}">
       <a [routerLink]="[menuItem.path]">
-        <i class="nc-icon {{menuItem.icon}}"></i>
+        <i class="nc-icon    {{menuItem.icon}}"></i>
         <p>{{menuItem.title}}</p>
       </a>
     </li>

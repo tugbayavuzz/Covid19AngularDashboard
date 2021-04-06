@@ -139,6 +139,10 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
       @include badge-color($white-color);
       color: inherit;
   }
+  &.badge-dark{
+      @include badge-color($dark-color);
+      color: inherit;
+  }
 }
 
 .card-user {

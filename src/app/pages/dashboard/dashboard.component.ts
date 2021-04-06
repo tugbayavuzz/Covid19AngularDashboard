@@ -58,6 +58,7 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+
   initChart1() {
     const monthNames = [
       'January',

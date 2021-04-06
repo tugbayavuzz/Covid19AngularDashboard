@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-  // tslint:disable-next-line:component-selector
     selector: 'fixedplugin-cmp',
     templateUrl: 'fixedplugin.component.html'
 })
