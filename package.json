@@ -1,7 +1,6 @@
 {
-  "name": "paper-dashboard-angular",
-  "version": "2.2.0",
-  "license": "MIT",
+  "name": "covid19-angular-dashboard",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
