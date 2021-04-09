@@ -278,8 +278,8 @@ export class DashboardComponent implements OnInit {
 
     }
 
-    this.chartEmail = new Chart(this.ctx, {
-      type: 'pie',
+    this.chartHours = new Chart(this.ctx, {
+      type: 'bar',
 
       data: {
         labels: weekDatesLabels,
