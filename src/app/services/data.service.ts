@@ -14,8 +14,8 @@ import {Cities, VaccineTracker} from '../models/vaccine';
 export class DataServicesService {
   private dailyDataUrl = environment.apiCsvUrl;
   private dailyDataJsonUrl = environment.apiJsonUrl;
-  private weeklyDataUrl = 'https://covid-turkey-case-ratio.herokuapp.com';
-  private vaccineUrl = 'https://covid-turkey-case-ratio.herokuapp.com/vaccine';
+  private weeklyDataUrl = 'https://api-covid-turkey.herokuapp.com';
+  private vaccineUrl = 'https://api-covid-turkey.herokuapp.com/vaccine';
 
   dataCombined$ = combineLatest([
     this.getCaseRatioData(),
