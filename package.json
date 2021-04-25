@@ -43,6 +43,7 @@
     "lodash-es": "^4.17.21",
     "moment": "2.29.1",
     "ngx-toastr": "13.2.0",
+    "primeflex": "^2.0.0",
     "primeicons": "^4.1.0",
     "primeng": "^11.4.0",
     "proj4": "^2.7.2",

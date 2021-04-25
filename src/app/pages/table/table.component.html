@@ -7,13 +7,24 @@
       <div class="card-body">
         <div class="table-responsive">
           <p-table
+            #dt1
             [value]="globalData"
             [scrollable]="true"
             scrollHeight="600px"
+            [globalFilterFields]="['country']"
           >
             <ng-template pTemplate="caption">
-              <div class="table-header">
+              <div class="table-header p-d-flex">
                 Situation by Region, Country, Territory & Area
+                <span class="p-input-icon-left p-ml-auto">
+                  <i class="pi pi-search"></i>
+                  <input
+                    pInputText
+                    type="text"
+                    (input)="dt1.filterGlobal($event.target.value, 'contains')"
+                    placeholder="Search keyword"
+                  />
+                </span>
               </div>
             </ng-template>
             <ng-template pTemplate="header">

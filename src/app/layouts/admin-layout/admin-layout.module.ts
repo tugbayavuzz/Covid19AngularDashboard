@@ -18,6 +18,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { HighchartsChartModule } from "highcharts-angular";
 import { TableModule } from "primeng/table";
 import { ProgressBarModule } from "primeng/progressbar";
+import { InputTextModule } from "primeng/inputtext";
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { ProgressBarModule } from "primeng/progressbar";
     HighchartsChartModule,
     TableModule,
     ProgressBarModule,
+    InputTextModule,
   ],
   declarations: [
     DashboardComponent,
