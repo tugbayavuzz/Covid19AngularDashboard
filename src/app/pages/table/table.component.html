@@ -15,7 +15,6 @@
           >
             <ng-template pTemplate="caption">
               <div class="table-header p-d-flex">
-                Situation by Region, Country, Territory & Area
                 <span class="p-input-icon-left p-ml-auto">
                   <i class="pi pi-search"></i>
                   <input
@@ -29,10 +28,10 @@
             </ng-template>
             <ng-template pTemplate="header">
               <tr>
-                <th>Ülke</th>
-                <th>Toplam Vaka</th>
-                <th>Toplam İyileşen</th>
-                <th>Toplam Vefat</th>
+                <th pSortableColumn="country">Ülke <p-sortIcon field="country"></p-sortIcon></th>
+                <th pSortableColumn="cases">Toplam Vaka <p-sortIcon field="cases"></p-sortIcon></th>
+                <th pSortableColumn="recovered">Toplam İyileşen <p-sortIcon field="recovered"></p-sortIcon></th>
+                <th pSortableColumn="deaths">Toplam Vefat <p-sortIcon field="deaths"></p-sortIcon></th>
               </tr>
             </ng-template>
             <ng-template pTemplate="body" let-country>
