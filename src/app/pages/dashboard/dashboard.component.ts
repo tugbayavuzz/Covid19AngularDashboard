@@ -117,7 +117,6 @@ export class DashboardComponent implements OnInit {
   }
 
 
-
   drawChart1(ctx, data, type,  weekDatesLabels) {
     let dataSet;
     switch (type) {

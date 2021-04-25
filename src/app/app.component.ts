@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 
 }
