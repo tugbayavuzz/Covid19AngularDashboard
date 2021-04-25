@@ -8,5 +8,4 @@ export interface Cities {
   firstDose: number;
   secondDose: number;
 
-
 }

@@ -6,6 +6,7 @@ import {DataSummary} from '../models/turkeydata';
 import {combineLatest, Observable, pipe} from 'rxjs';
 import {TheVirusTracker, City} from '../models/virusmap.model';
 import {Cities, VaccineTracker} from '../models/vaccine';
+import {CountryReports} from '../models/global-data';
 
 
 @Injectable({
@@ -14,8 +15,9 @@ import {Cities, VaccineTracker} from '../models/vaccine';
 export class DataServicesService {
   private dailyDataUrl = environment.apiCsvUrl;
   private dailyDataJsonUrl = environment.apiJsonUrl;
-  private weeklyDataUrl = 'https://covid-turkey-case-ratio.herokuapp.com';
-  private vaccineUrl = 'https://covid-turkey-case-ratio.herokuapp.com/vaccine';
+  private weeklyDataUrl = 'https://api-covid-turkey.herokuapp.com';
+  private vaccineUrl = 'https://api-covid-turkey.herokuapp.com/vaccine';
+  private globalDataUrl = 'https://corona.lmao.ninja/v3/covid-19/countries';
 
   dataCombined$ = combineLatest([
     this.getCaseRatioData(),
@@ -42,7 +44,11 @@ export class DataServicesService {
       .pipe(map((res) => res.result));
   }
 
-
+  getGlobalData(): Observable<any> {
+    return  this.http
+      .get<CountryReports>(this.globalDataUrl)
+      .pipe(map((res) => res));
+  }
 
   getDailyData() {
     return this.http.get(this.dailyDataUrl, {responseType: 'text'}).pipe(
@@ -170,4 +176,5 @@ export class DataServicesService {
       .replace(/ç/gim, 'c')
       .toLowerCase();
   }
+
 }
