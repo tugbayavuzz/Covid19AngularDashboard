@@ -17,7 +17,8 @@
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
             "allowedCommonJsDependencies": [
-              "chart.js", "highcharts"
+              "chart.js",
+              "highcharts"
             ],
             "assets": [
               "src/assets",
@@ -26,7 +27,10 @@
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
               "src/assets/scss/paper-dashboard.scss",
-              "node_modules/ngx-toastr/toastr.css"
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css"
             ],
             "scripts": []
           },
