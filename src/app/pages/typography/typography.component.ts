@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
 
 @Component({
     selector: 'typography-cmp',
@@ -6,4 +7,9 @@ import { Component } from '@angular/core';
     templateUrl: 'typography.component.html'
 })
 
-export class TypographyComponent{}
+export class TypographyComponent implements OnInit {
+
+
+  ngOnInit() {
+  }
+}

@@ -17,18 +17,16 @@
       </div>
       <div class="card-footer">
         <!-- buraya cekilen verileri koycaz-->
-        <hr />
+        <hr/>
         <div class="stats">
           <i
             class="fa"
             style="
               text-align: center;
               color: #000000;
-              font-weight: 900;
               font-size: 150%;
             "
-          >{{ tests }}</i
-          >
+          >{{ tests | number }}</i>
         </div>
       </div>
     </div>
@@ -51,17 +49,16 @@
       </div>
       <div class="card-footer">
         <!-- buraya cekilen verileri koycaz-->
-        <hr />
+        <hr/>
         <div class="stats">
           <i
             class="fa"
             style="
               text-align: center;
               color: #000000;
-              font-weight: 900;
               font-size: 150%;
             "
-          >{{ cases }}</i
+          >{{ cases | number }}</i
           >
         </div>
       </div>
@@ -85,17 +82,16 @@
       </div>
       <div class="card-footer">
         <!-- buraya cekilen verileri koycaz-->
-        <hr />
+        <hr/>
         <div class="stats">
           <i
             class="fa"
             style="
               text-align: center;
               color: #000000;
-              font-weight: 900;
               font-size: 150%;
             "
-          >{{ patients }}</i
+          >{{ patients | number }}</i
           >
         </div>
       </div>
@@ -119,17 +115,16 @@
       </div>
       <div class="card-footer">
         <!-- buraya cekilen verileri koycaz-->
-        <hr />
+        <hr/>
         <div class="stats">
           <i
             class="fa"
             style="
               text-align: center;
               color: #000000;
-              font-weight: 900;
               font-size: 150%;
             "
-          >{{ recovered }}</i
+          >{{ recovered | number }}</i
           >
         </div>
       </div>
@@ -153,17 +148,16 @@
       </div>
       <div class="card-footer">
         <!-- buraya cekilen verileri koycaz-->
-        <hr />
+        <hr/>
         <div class="stats">
           <i
             class="fa"
             style="
               text-align: center;
               color: #000000;
-              font-weight: 900;
               font-size: 150%;
             "
-          >{{ deaths }}</i
+          >{{ deaths | number }}</i
           >
         </div>
       </div>
@@ -187,17 +181,16 @@
       </div>
       <div class="card-footer">
         <!-- buraya cekilen verileri koycaz-->
-        <hr />
+        <hr/>
         <div class="stats">
           <i
             class="fa"
             style="
               text-align: center;
               color: #000000;
-              font-weight: 900;
               font-size: 150%;
             "
-          >{{ critical }}</i
+          >{{ critical | number }}</i
           >
         </div>
       </div>
@@ -215,10 +208,9 @@
         <canvas id="chartHours" width="400" height="100"></canvas>
       </div>
       <div class="card-footer">
-        <hr />
+        <hr/>
         <div class="legend" style="text-align: center">
           <i class="fa fa-circle text-warning"></i> Vaka
-
         </div>
       </div>
     </div>
@@ -233,7 +225,7 @@
         <canvas id="chartThird" width="400" height="100"></canvas>
       </div>
       <div class="card-footer">
-        <hr />
+        <hr/>
         <div class="legend" style="text-align: center">
           <i class="fa fa-circle text-primary"></i> Test
         </div>
@@ -250,7 +242,7 @@
         <canvas id="chartSecond" width="400" height="100"></canvas>
       </div>
       <div class="card-footer">
-        <hr />
+        <hr/>
         <div class="legend" style="text-align: center">
           <i class="fa fa-circle text-danger"></i> Vefat
         </div>
@@ -266,7 +258,7 @@
         <h5 class="card-title">Son Hafta İyileşen İstatistiği</h5>
       </div>
       <div class="card-body">
-        <canvas id="chartEmail" ></canvas>
+        <canvas id="chartEmail"></canvas>
       </div>
       <div class="card-footer">
         <div class="stats">
@@ -284,10 +276,6 @@
         <canvas id="speedChart" width="400" height="94"></canvas>
       </div>
       <div class="card-footer">
-        <div class="chart-legend"   style="text-align: center">
-          <i class="fa fa-circle text-info" ></i> Hasta
-        </div>
-        <hr />
         <div class="card-stats">
           <i class="fa fa-check"></i> Son Haftanın Hasta Sayısı İstatistiği
         </div>
