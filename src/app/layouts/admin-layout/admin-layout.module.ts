@@ -19,6 +19,7 @@ import { HighchartsChartModule } from "highcharts-angular";
 import { TableModule } from "primeng/table";
 import { ProgressBarModule } from "primeng/progressbar";
 import { InputTextModule } from "primeng/inputtext";
+import {SelectButtonModule} from 'primeng/selectbutton';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { InputTextModule } from "primeng/inputtext";
     TableModule,
     ProgressBarModule,
     InputTextModule,
+    SelectButtonModule,
   ],
   declarations: [
     DashboardComponent,
