@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">COVID 19 DÜNYA DURUM</h4>
+        <h4 class="card-title">COVID-19 DÜNYA DURUM TABLOSU</h4>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -20,23 +20,30 @@
                     pInputText
                     type="text"
                     (input)="dt1.filterGlobal($event.target.value, 'contains')"
-                    placeholder="Search keyword"
-                  />
+                    placeholder="Ülke ara..."/>
                 </span>
               </div>
             </ng-template>
             <ng-template pTemplate="header">
               <tr>
-                <th pSortableColumn="country">Ülke <p-sortIcon field="country"></p-sortIcon></th>
-                <th pSortableColumn="cases">Toplam Vaka <p-sortIcon field="cases"></p-sortIcon></th>
-                <th pSortableColumn="recovered">Toplam İyileşen <p-sortIcon field="recovered"></p-sortIcon></th>
-                <th pSortableColumn="deaths">Toplam Vefat <p-sortIcon field="deaths"></p-sortIcon></th>
+                <th pSortableColumn="country">Ülke
+                  <p-sortIcon field="country"></p-sortIcon>
+                </th>
+                <th pSortableColumn="cases">Toplam Vaka
+                  <p-sortIcon field="cases"></p-sortIcon>
+                </th>
+                <th pSortableColumn="recovered">Toplam İyileşen
+                  <p-sortIcon field="recovered"></p-sortIcon>
+                </th>
+                <th pSortableColumn="deaths">Toplam Vefat
+                  <p-sortIcon field="deaths"></p-sortIcon>
+                </th>
               </tr>
             </ng-template>
             <ng-template pTemplate="body" let-country>
               <tr>
                 <td>
-                  <img [src]="country.countryInfo.flag" width="30" />
+                  <img [src]="country.countryInfo.flag" width="30"/>
                   <span class="country-name">{{ country.country }}</span>
                 </td>
                 <td class="cases">
@@ -87,70 +94,6 @@
             </tr>
             </tbody>
           </table> -->
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-12 d-none">
-    <div class="card card-plain">
-      <div class="card-header">
-        <h4 class="card-title">Table on Plain Background</h4>
-        <p class="card-category">Here is a subtitle for this table</p>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table">
-            <thead class="text-primary">
-              <th>Name</th>
-              <th>Country</th>
-              <th>City</th>
-              <th class="text-right">Salary</th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Dakota Rice</td>
-                <td>Niger</td>
-                <td>Oud-Turnhout</td>
-                <td class="text-right">$36,738</td>
-              </tr>
-              <tr>
-                <td>Minerva Hooper</td>
-                <td>Curaçao</td>
-                <td>Sinaai-Waas</td>
-                <td class="text-right">$23,789</td>
-              </tr>
-              <tr>
-                <td>Sage Rodriguez</td>
-                <td>Netherlands</td>
-                <td>Baileux</td>
-                <td class="text-right">$56,142</td>
-              </tr>
-              <tr>
-                <td>Philip Chaney</td>
-                <td>Korea, South</td>
-                <td>Overland Park</td>
-                <td class="text-right">$38,735</td>
-              </tr>
-              <tr>
-                <td>Doris Greene</td>
-                <td>Malawi</td>
-                <td>Feldkirchen in Kärnten</td>
-                <td class="text-right">$63,542</td>
-              </tr>
-              <tr>
-                <td>Mason Porter</td>
-                <td>Chile</td>
-                <td>Gloucester</td>
-                <td class="text-right">$78,615</td>
-              </tr>
-              <tr>
-                <td>Jon Porter</td>
-                <td>Portugal</td>
-                <td>Gloucester</td>
-                <td class="text-right">$98,615</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </div>
     </div>

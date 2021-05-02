@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import { DataServicesService } from "../../services/data.service";
-import { CountryReports } from "../../models/global-data";
+import { Component, OnInit } from '@angular/core';
+import { DataServicesService } from '../../services/data.service';
+import { CountryReports } from '../../models/global-data';
 
 declare interface TableData {
   headerRow: string[];
@@ -8,10 +8,10 @@ declare interface TableData {
 }
 
 @Component({
-  selector: "table-cmp",
+  selector: 'table-cmp',
   moduleId: module.id,
-  templateUrl: "table.component.html",
-  styleUrls: ["./table.component.scss"],
+  templateUrl: 'table.component.html',
+  styleUrls: ['./table.component.scss'],
 })
 export class TableComponent implements OnInit {
   public tableData1: TableData;
@@ -19,11 +19,12 @@ export class TableComponent implements OnInit {
   globalData: CountryReports[];
   active: 0;
   cases: 0;
-  country: "";
+  country: '';
   deaths: 0;
   recovered: 0;
   tests: 0;
   todayCases: 0;
+  id: 0;
 
   constructor(private dataService: DataServicesService) {}
   ngOnInit() {
@@ -35,12 +36,8 @@ export class TableComponent implements OnInit {
     });
 
     this.tableData1 = {
-      headerRow: ["ID", "Name", "Country", "City", "Salary"],
-      dataRows: [["country", "cases", "deaths", "recovered", "todayCases"]],
-    };
-    this.tableData2 = {
-      headerRow: ["ID", "Name", "Salary", "Country", "City"],
-      dataRows: [["country", "cases", "deaths", "recovered", "todayCases"]],
+      headerRow: ['ID', 'Name', 'Country', 'City', 'Salary'],
+      dataRows: [['country', 'cases', 'deaths', 'recovered', 'todayCases']],
     };
   }
 }
