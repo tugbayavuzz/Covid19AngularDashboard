@@ -1,10 +1,8 @@
 <div class="row">
   <div class="col-md-6">
     <div class="card">
-
       <div class="card-header">
-        <p-selectButton [options]="paymentOptions" [(ngModel)]="value2" multiple="multiple" optionLabel="name" optionValue="value"></p-selectButton>
-
+        <p-selectButton [options]="paymentOptions" [(ngModel)]="data1" multiple="multiple" optionLabel="name" optionValue="value"></p-selectButton>
         <h5 class="card-title">Vaka İstatistiği</h5>
       </div>
       <div class="card-body">
@@ -15,11 +13,9 @@
 
   <div class="col-md-6">
     <div class="card">
-
       <div class="card-header">
-        <p-selectButton [options]="paymentOptions2" [(ngModel)]="value1" multiple="multiple" optionLabel="name" optionValue="value"></p-selectButton>
-
-        <h5 class="card-title">Hasta İstatistiği</h5>
+        <p-selectButton [options]="paymentOptions2" [(ngModel)]="data3" multiple="multiple" optionLabel="name" optionValue="value"></p-selectButton>
+        <h5 class="card-title">Vefat İstatistiği</h5>
       </div>
       <div class="card-body">
         <canvas id="chartEmail1"></canvas>

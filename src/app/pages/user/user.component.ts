@@ -30,12 +30,17 @@ export class UserComponent implements OnInit {
   datatable = [];
   weeklyTable = [];
   weekDatesLabels = [];
+  weekDatesLabels2 = [];
+  weekDatesLabels3 = [];
   stateOptions: any[];
   paymentOptions: any[];
   paymentOptions2: any[];
-  value1: number;
-  value2: number;
-  value3: number;
+  data1 = [];
+  data2 = [];
+  data3 = [];
+  data4 = [];
+  data5 = [];
+  data6 = [];
 
 
 
@@ -46,9 +51,9 @@ export class UserComponent implements OnInit {
       {name: 'Son Bir Aylık Vaka ', value: 3}
     ];
     this.paymentOptions2 = [
-      {name: 'Son Bir Haftalık Vaka ', value: 4},
-      {name: 'Son İki Haftalık Vaka ', value: 5},
-      {name: 'Son Bir Aylık Vaka ', value: 6}
+      {name: 'Son Bir Haftalık Vefat ', value: 4},
+      {name: 'Son İki Haftalık Vefat ', value: 5},
+      {name: 'Son Bir Aylık Vefat ', value: 6}
     ];
   }
     ngOnInit() {
@@ -93,6 +98,8 @@ export class UserComponent implements OnInit {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const startOfWeek = subDays(today, 6);
+    const startOfWeek2 = subDays(today, 14);//for two weeks
+    const startOfWeek3 = subDays(today, 30);
 
     // Get this week data
     const myWeekData = this.dataSummaries.filter((cs) => {
@@ -100,6 +107,20 @@ export class UserComponent implements OnInit {
       const csDate = new Date(+year, +month - 1, +day);
       const result = isWithinInterval(csDate, { start: startOfWeek, end: today });
       return result;
+    });
+    // last two week data
+    const myWeekData2 = this.dataSummaries.filter((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate2 = new Date(+year, +month - 1, +day);
+      const result2 = isWithinInterval(csDate2, { start: startOfWeek2, end: today });
+      return result2;
+    });
+    // last one month data
+    const myWeekData3 = this.dataSummaries.filter((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate3 = new Date(+year, +month - 1, +day);
+      const result3 = isWithinInterval(csDate3, { start: startOfWeek3, end: today });
+      return result3;
     });
 
 
@@ -109,10 +130,27 @@ export class UserComponent implements OnInit {
       return `${day} ${monthNames[csDate.getMonth()]}`;
     });
 
+    this.weekDatesLabels2 = myWeekData2.map((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate2 = new Date(+year, +month - 1, +day);
+      return `${day} ${monthNames[csDate2.getMonth()]}`;
+    });
+
+    this.weekDatesLabels3 = myWeekData3.map((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate3 = new Date(+year, +month - 1, +day);
+      return `${day} ${monthNames[csDate3.getMonth()]}`;
+    });
+
+
     const cases = myWeekData.map((cs) => cs.cases);
 
     console.log('Chart1');
     console.log('Week Data', myWeekData);
+    console.log('Chart2');
+    console.log('Week Data', myWeekData2);
+    console.log('Chart3');
+    console.log('Week Data', myWeekData3);
     console.log(cases);
 
 
@@ -120,6 +158,8 @@ export class UserComponent implements OnInit {
     this.ctx = this.canvas.getContext('2d');
 
     this.drawChart1(this.ctx, cases, this.weekDatesLabels);
+    // this.drawChart1(this.ctx, cases, this.weekDatesLabels2);
+    // this.drawChart1(this.ctx, cases, this.weekDatesLabels3);
   }
 
   drawChart1(ctx, data, weekDatesLabels) {
@@ -129,13 +169,37 @@ export class UserComponent implements OnInit {
         pointRadius: 0,
         pointHoverRadius: 0,
         backgroundColor: [
-          '#8b0000',
-          '#a40000',
-          '#cd0000',
-          '#ee0000',
-          '#ff0000',
-          '#f00000',
-          '#ff2929',
+          '#4b0d0d',
+          '#5d1012',
+          '#711314',
+          '#841617',
+          '#981919',
+          '#901919',
+          '#3c0c10',
+          '#410d11',
+          '#460d13',
+          '#4b0e14',
+          '#4f0e15',
+          '#540f15',
+          '#590f16',
+          '#5e1017',
+          '#631017',
+          '#681018',
+          '#6d1119',
+          '#721119',
+          '#781219',
+          '#7d131a',
+          '#82131a',
+          '#87141a',
+          '#8c141b',
+          '#91151b',
+          '#96161b',
+          '#9b171b',
+          '#a1181a',
+          '#a6191a',
+          '#ab1a1a',
+          '#a6191a',
+          '#b65253'
         ],
         borderWidth: 0,
         data: data,
@@ -225,7 +289,7 @@ export class UserComponent implements OnInit {
 
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    const startOfWeek = subDays(today, 6);
+    const startOfWeek = subDays(today, 30);
 
     // Get this week data
     const myWeekData = this.dataSummaries.filter((cs) => {
@@ -242,17 +306,17 @@ export class UserComponent implements OnInit {
       return `${day} ${monthNames[csDate.getMonth()]}`;
     });
 
-    const patients = myWeekData.map((cs) => cs.patients);
+    const deaths = myWeekData.map((cs) => cs.deaths);
 
     console.log('Chart1');
     console.log('Week Data', myWeekData);
-    console.log(patients);
+    console.log(this.deaths);
 
 
     this.canvas = document.getElementById('chartEmail1');
     this.ctx = this.canvas.getContext('2d');
 
-    this.drawChart2(this.ctx, patients, this.weekDatesLabels);
+    this.drawChart2(this.ctx, deaths, this.weekDatesLabels);
   }
 
   drawChart2(ctx, data, weekDatesLabels) {
@@ -262,13 +326,36 @@ export class UserComponent implements OnInit {
         pointRadius: 0,
         pointHoverRadius: 0,
         backgroundColor: [
-          '#c60000',
-          '#00cc00',
-          '#00ffff',
-          '#0080ff',
-          '#ffff00',
-          '#CC99FF',
-          '#FF8000',
+          '#fa6e6e',
+          '#f46e66',
+          '#ee6e5e',
+          '#e76e56',
+          '#e06f4f',
+          '#d96f49',
+          '#d26f42',
+          '#ca703d',
+          '#c37037',
+          '#bb7032',
+          '#b3702e',
+          '#ac702a',
+          '#a46f26',
+          '#9c6f23',
+          '#946e20',
+          '#8d6e1e',
+          '#856d1d',
+          '#7e6c1c',
+          '#776b1c',
+          '#6f6a1c',
+          '#68681c',
+          '#61671d',
+          '#5a661f',
+          '#536420',
+          '#4d6222',
+          '#466023',
+          '#405e25',
+          '#3a5c27',
+          '#335a28',
+          '#2d582a'
         ],
         borderWidth: 0,
         data: data,
