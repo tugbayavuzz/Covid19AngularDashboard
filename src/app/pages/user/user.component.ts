@@ -30,6 +30,7 @@ export class UserComponent implements OnInit {
   datatable = [];
   weeklyTable = [];
   weekDatesLabels = [];
+  weekDatesLabel = [];
   weekDatesLabels2 = [];
   weekDatesLabels3 = [];
   stateOptions: any[];
@@ -143,7 +144,7 @@ export class UserComponent implements OnInit {
     });
 
 
-    const cases = myWeekData.map((cs) => cs.cases);
+    const cases = myWeekData3.map((cs) => cs.cases);
 
     console.log('Chart1');
     console.log('Week Data', myWeekData);
@@ -157,12 +158,12 @@ export class UserComponent implements OnInit {
     this.canvas = document.getElementById('chartEmail');
     this.ctx = this.canvas.getContext('2d');
 
-    this.drawChart1(this.ctx, cases, this.weekDatesLabels);
-    // this.drawChart1(this.ctx, cases, this.weekDatesLabels2);
-    // this.drawChart1(this.ctx, cases, this.weekDatesLabels3);
+    //this.drawChart1(this.ctx, cases, this.weekDatesLabels);
+     //this.drawChart1(this.ctx, cases, this.weekDatesLabels2);
+    this.drawChart1(this.ctx, cases, this.weekDatesLabels3);
   }
 
-  drawChart1(ctx, data, weekDatesLabels) {
+  drawChart1(ctx, data, weekDatesLabels3) {
     let dataSet2;
     {
       dataSet2 = {
@@ -211,7 +212,7 @@ export class UserComponent implements OnInit {
       type: 'bar',
 
       data: {
-        labels: weekDatesLabels,
+        labels: weekDatesLabels3,
         datasets: [dataSet2],
       },
       options: {
@@ -300,7 +301,7 @@ export class UserComponent implements OnInit {
     });
 
 
-    this.weekDatesLabels = myWeekData.map((cs) => {
+    this.weekDatesLabel = myWeekData.map((cs) => {
       const [day, month, year] = cs.date.split('/');
       const csDate = new Date(+year, +month - 1, +day);
       return `${day} ${monthNames[csDate.getMonth()]}`;
@@ -316,7 +317,7 @@ export class UserComponent implements OnInit {
     this.canvas = document.getElementById('chartEmail1');
     this.ctx = this.canvas.getContext('2d');
 
-    this.drawChart2(this.ctx, deaths, this.weekDatesLabels);
+    this.drawChart2(this.ctx, deaths, this.weekDatesLabel);
   }
 
   drawChart2(ctx, data, weekDatesLabels) {
