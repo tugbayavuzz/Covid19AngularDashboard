@@ -98,7 +98,7 @@ export class UserComponent implements OnInit {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const startOfWeek = subDays(today, 6);
-    const startOfWeek2 = subDays(today, 14);//for two weeks
+    const startOfWeek2 = subDays(today, 14); // for two weeks
     const startOfWeek3 = subDays(today, 30);
 
     // Get this week data
@@ -425,8 +425,6 @@ export class UserComponent implements OnInit {
         },
       }});
   }
-
-
 
   initChart() {
     this.datatable = [];

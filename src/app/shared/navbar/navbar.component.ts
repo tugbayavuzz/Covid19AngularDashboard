@@ -12,7 +12,10 @@ import { Location} from '@angular/common';
 })
 
 export class NavbarComponent implements OnInit {
-   todayDate: Date = new Date();
+    todayDate: Date = new Date();
+    format = 'short';
+    locale = 'tr';
+    timezone = '+3'; // offset from GMT
     private listTitles: any[];
     location: Location;
     private nativeElement: Node;
