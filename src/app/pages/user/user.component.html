@@ -2,7 +2,9 @@
   <div class="col-md-6">
     <div class="card">
       <div class="card-header">
-        <p-selectButton [options]="paymentOptions" [(ngModel)]="data2"  optionLabel="name" optionValue="value"></p-selectButton>
+        <button pButton pRipple type="button" label="Son Bir Haftalık Vaka" class="p-button-info" style="margin-right:10px"  (click)="selectData($event)"></button>
+        <button pButton pRipple type="button" label="Son İki Haftalık Vaka" class="p-button-danger" style="margin-right:10px" (click)="selectData2($event)"></button>
+        <button pButton pRipple type="button" label="Son Bir Aylık Vaka"    class="p-button-secondary" style="margin-right:10px" (click)="selectData3($event)"></button>
         <h5 class="card-title">Vaka İstatistiği</h5>
       </div>
       <div class="card-body">
@@ -13,7 +15,9 @@
   <div class="col-md-6">
     <div class="card">
       <div class="card-header">
-        <p-selectButton [options]="paymentOptions2" [(ngModel)]="data4"  optionLabel="name" optionValue="value"></p-selectButton>
+        <button pButton pRipple type="button" label="Son Bir Haftalık Vefat" class="p-button-raised p-button-success" style="margin-right:10px"></button>
+        <button pButton pRipple type="button" label="Son İki Haftalık Vefat" class="p-button-raised p-button-warning" style="margin-right:10px"></button>
+        <button pButton pRipple type="button" label="Son Bir Aylık Vefat"    class="p-button-raised p-button-help" style="margin-right:10px"></button>
         <h5 class="card-title">Vefat İstatistiği</h5>
       </div>
       <div class="card-body">

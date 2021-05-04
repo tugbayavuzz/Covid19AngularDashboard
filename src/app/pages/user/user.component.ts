@@ -33,30 +33,8 @@ export class UserComponent implements OnInit {
   weekDatesLabel = [];
   weekDatesLabels2 = [];
   weekDatesLabels3 = [];
-  stateOptions: any[];
-  paymentOptions: any[];
-  paymentOptions2: any[];
-  data1 = [];
-  data2 = [];
-  data3 = [];
-  data4 = [];
-  data5 = [];
-  data6 = [];
 
-
-
-  constructor(private dataService: DataServicesService) {
-    this.paymentOptions = [
-      {name: 'Son Bir Haftalık Vaka ', value: 1},
-      {name: 'Son İki Haftalık Vaka ', value: 2},
-      {name: 'Son Bir Aylık Vaka ', value: 3}
-    ];
-    this.paymentOptions2 = [
-      {name: 'Son Bir Haftalık Vefat ', value: 4},
-      {name: 'Son İki Haftalık Vefat ', value: 5},
-      {name: 'Son Bir Aylık Vefat ', value: 6}
-    ];
-  }
+  constructor(private dataService: DataServicesService) {}
     ngOnInit() {
 
       this.dataService.getDailyJsonData().subscribe({
@@ -124,7 +102,7 @@ export class UserComponent implements OnInit {
       return result3;
     });
 
-
+    // last week
     this.weekDatesLabels = myWeekData.map((cs) => {
       const [day, month, year] = cs.date.split('/');
       const csDate = new Date(+year, +month - 1, +day);
@@ -143,7 +121,6 @@ export class UserComponent implements OnInit {
       return `${day} ${monthNames[csDate3.getMonth()]}`;
     });
 
-
     const cases = myWeekData3.map((cs) => cs.cases);
 
     console.log('Chart1');
@@ -158,12 +135,24 @@ export class UserComponent implements OnInit {
     this.canvas = document.getElementById('chartEmail');
     this.ctx = this.canvas.getContext('2d');
 
-    //this.drawChart1(this.ctx, cases, this.weekDatesLabels);
-     //this.drawChart1(this.ctx, cases, this.weekDatesLabels2);
+    this.drawChart1(this.ctx, cases, this.weekDatesLabels);
+    this.drawChart1(this.ctx, cases, this.weekDatesLabels2);
     this.drawChart1(this.ctx, cases, this.weekDatesLabels3);
   }
 
-  drawChart1(ctx, data, weekDatesLabels3) {
+  selectData(event) {
+    event.dataset2 = this.weekDatesLabels
+  }
+  selectData2(event) {
+    event.dataset2 = this.weekDatesLabels2
+  }
+
+  selectData3(event) {
+    event.dataset2 = this.weekDatesLabels3
+  }
+
+
+  drawChart1(ctx, data, weekDatesLabels) {
     let dataSet2;
     {
       dataSet2 = {
@@ -212,12 +201,13 @@ export class UserComponent implements OnInit {
       type: 'bar',
 
       data: {
-        labels: weekDatesLabels3,
+        labels: weekDatesLabels,
         datasets: [dataSet2],
       },
       options: {
         legend: {
           display: false,
+
         },
         plugins: {
           datalabels: {
@@ -320,7 +310,7 @@ export class UserComponent implements OnInit {
     this.drawChart2(this.ctx, deaths, this.weekDatesLabel);
   }
 
-  drawChart2(ctx, data, weekDatesLabels) {
+  drawChart2(ctx2, data, weekDatesLabel) {
     let dataSet2;
     {
       dataSet2 = {
@@ -368,7 +358,7 @@ export class UserComponent implements OnInit {
       type: 'bar',
 
       data: {
-        labels: weekDatesLabels,
+        labels: weekDatesLabel,
         datasets: [dataSet2],
       },
       options: {
@@ -385,6 +375,7 @@ export class UserComponent implements OnInit {
             },
             color: '#fff',
           },
+
           pieceLabel: {
             render: 'percentage',
             fontColor: ['white'],

@@ -20,6 +20,8 @@ import { TableModule } from 'primeng/table';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { InputTextModule } from 'primeng/inputtext';
 import {SelectButtonModule} from 'primeng/selectbutton';
+import {RippleModule} from 'primeng/ripple';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   imports: [
@@ -32,6 +34,8 @@ import {SelectButtonModule} from 'primeng/selectbutton';
     ProgressBarModule,
     InputTextModule,
     SelectButtonModule,
+    RippleModule,
+    ButtonModule,
   ],
   declarations: [
     DashboardComponent,
