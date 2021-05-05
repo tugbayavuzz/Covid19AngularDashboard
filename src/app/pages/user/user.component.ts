@@ -34,6 +34,10 @@ export class UserComponent implements OnInit {
   weekDatesLabels2 = [];
   weekDatesLabels3 = [];
 
+  public clicked = true;
+  public clicked1 = false;
+  public clicked2 = false;
+
   constructor(private dataService: DataServicesService) {}
     ngOnInit() {
 
@@ -260,6 +264,14 @@ export class UserComponent implements OnInit {
         },
       }});
   }
+/*
+  public updateOptions() {
+    this.chartHours.data.datasets[0].data = this.data;
+    this.chartHours.update();
+  }
+
+ */
+
 
   initChart2() {
     const monthNames = [

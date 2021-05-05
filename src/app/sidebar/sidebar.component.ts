@@ -9,14 +9,14 @@ export interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard',     title: 'Genel Durum ',         icon: 'nc-bank',       class: '' },
-    { path: '/vaccine',       title: 'Aşı Durum',            icon: 'nc-diamond',    class: '' },
-    { path: '/maps',          title: 'Harita',               icon: 'nc-pin-3',      class: '' },
-    { path: '/info',          title: 'Semptomplar',          icon: 'nc-bell-55',    class: '' },
-    { path: '/news',          title: 'Covid 19 Haberler ',   icon: 'nc-single-02',  class: '' },
-    { path: '/global',        title: 'Table List',           icon: 'nc-tile-56',    class: '' },
-    { path: '/typography',    title: 'Typography',           icon: 'nc-caps-small', class: '' },
-    { path: '/upgrade',       title: '#EVDE KAL',            icon: 'nc-planet',     class: 'active-pro' },
+    { path: '/uptodatecase',      title: 'GÜNCEL DURUM',        icon: 'nc-bank',              class: '' },
+    { path: '/vaccinemaps',       title: 'AŞI HARİTASI',        icon: 'nc-diamond',           class: '' },
+    { path: '/riskmaps',          title: 'RİSK HARİTASI',       icon: 'nc-pin-3',             class: '' },
+    { path: '/info',              title: 'SEMPTOMPLAR',         icon: 'nc-alert-circle-i',    class: '' },
+    { path: '/generalcase',       title: 'GENEL DURUM ',        icon: 'nc-chart-bar-32',      class: '' },
+    { path: '/typography',        title: 'Typography',          icon: 'nc-caps-small',        class: '' },
+    { path: '/upgrade',           title: '#EVDE KAL',           icon: 'nc-planet',            class: 'active-pro' },
+    { path: '/globalcase',        title: 'DÜNYADA DURUM',       icon: 'nc-world-2',           class: '' },
 ];
 
 @Component({

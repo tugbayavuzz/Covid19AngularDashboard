@@ -1,9 +1,10 @@
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    moduleId: module.id,
-    selector: 'fixedplugin-cmp',
-    templateUrl: 'fixedplugin.component.html'
+  moduleId: module.id,
+  selector: 'fixedplugin-cmp',
+  templateUrl: 'fixedplugin.component.html'
 })
 
 export class FixedPluginComponent implements OnInit {
@@ -19,7 +20,7 @@ export class FixedPluginComponent implements OnInit {
     this.sidebarColor = color;
     // tslint:disable-next-line:triple-equals
     if (sidebar != undefined) {
-        sidebar.setAttribute('data-color', color);
+      sidebar.setAttribute('data-color', color);
     }
   }
   changeSidebarActiveColor(color) {
@@ -27,7 +28,7 @@ export class FixedPluginComponent implements OnInit {
     this.sidebarActiveColor = color;
     // tslint:disable-next-line:triple-equals
     if (sidebar != undefined) {
-        sidebar.setAttribute('data-active-color', color);
+      sidebar.setAttribute('data-active-color', color);
     }
   }
   ngOnInit() {}
