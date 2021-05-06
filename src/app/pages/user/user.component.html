@@ -7,12 +7,14 @@
         <button pButton pRipple type="button" label="Son Bir Aylık Vaka"    class="p-button-secondary" style="margin-right:10px" (click)="selectData3($event)"></button>
         <h5 class="card-title">Vaka İstatistiği</h5>
       </div>
-      <div class="card-body">
-        <canvas id="chartEmail"></canvas>
+      <div class="card-header">
+        <canvas  [hidden]="selectedTable!==1" id="chartEmail" ></canvas>
+        <canvas  [hidden]="selectedTable!==2" id="chartEmail1"></canvas>
+        <canvas [hidden]="selectedTable!==3" id="chartEmail2"></canvas>
       </div>
     </div>
   </div>
-  <div class="col-md-6">
+ <!-- <div class="col-md-6">
     <div class="card">
       <div class="card-header">
         <button pButton pRipple type="button" label="Son Bir Haftalık Vefat" class="p-button-raised p-button-success" style="margin-right:10px"></button>
@@ -21,10 +23,10 @@
         <h5 class="card-title">Vefat İstatistiği</h5>
       </div>
       <div class="card-body">
-        <canvas id="chartEmail1"></canvas>
+        <canvas id="chartEmail3"></canvas>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="card">
     <div class="card-header">
       <h5 class="title">Paper Table Heading</h5>

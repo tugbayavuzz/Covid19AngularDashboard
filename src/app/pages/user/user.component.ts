@@ -33,10 +33,7 @@ export class UserComponent implements OnInit {
   weekDatesLabel = [];
   weekDatesLabels2 = [];
   weekDatesLabels3 = [];
-
-  public clicked = true;
-  public clicked1 = false;
-  public clicked2 = false;
+  selectedTable = 1 ;
 
   constructor(private dataService: DataServicesService) {}
     ngOnInit() {
@@ -140,21 +137,27 @@ export class UserComponent implements OnInit {
     this.ctx = this.canvas.getContext('2d');
 
     this.drawChart1(this.ctx, cases, this.weekDatesLabels);
+    this.canvas = document.getElementById('chartEmail1');
+    this.ctx = this.canvas.getContext('2d');
+
     this.drawChart1(this.ctx, cases, this.weekDatesLabels2);
+
+    this.canvas = document.getElementById('chartEmail2');
+    this.ctx = this.canvas.getContext('2d');
+
     this.drawChart1(this.ctx, cases, this.weekDatesLabels3);
   }
 
   selectData(event) {
-    event.dataset2 = this.weekDatesLabels
+    this.selectedTable = 1 ;
   }
   selectData2(event) {
-    event.dataset2 = this.weekDatesLabels2
+    this.selectedTable = 2 ;
   }
 
   selectData3(event) {
-    event.dataset2 = this.weekDatesLabels3
+    this.selectedTable = 3 ;
   }
-
 
   drawChart1(ctx, data, weekDatesLabels) {
     let dataSet2;
@@ -316,7 +319,7 @@ export class UserComponent implements OnInit {
     console.log(this.deaths);
 
 
-    this.canvas = document.getElementById('chartEmail1');
+    this.canvas = document.getElementById('chartEmail3');
     this.ctx = this.canvas.getContext('2d');
 
     this.drawChart2(this.ctx, deaths, this.weekDatesLabel);
