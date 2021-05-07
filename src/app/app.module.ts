@@ -1,5 +1,7 @@
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
+// @ts-ignore
 import { RouterModule } from '@angular/router';
+// @ts-ignore
 import { ToastrModule } from 'ngx-toastr';
 
 import { SidebarModule } from './sidebar/sidebar.module';
@@ -9,15 +11,19 @@ import { FixedPluginModule } from './shared/fixedplugin/fixedplugin.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routing';
+// @ts-ignore
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { HttpClientModule } from '@angular/common/http';
+// @ts-ignore
 import { HighchartsChartModule } from 'highcharts-angular';
+// @ts-ignore
 import { MatTableExporterModule } from 'mat-table-exporter';
 import {MatTableModule} from '@angular/material/table';
 import { NgxPrintModule} from 'ngx-print';
 
+// @ts-ignore
 @NgModule({
   declarations: [AppComponent, AdminLayoutComponent],
   imports: [
