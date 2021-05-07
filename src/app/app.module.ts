@@ -18,10 +18,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { HttpClientModule } from '@angular/common/http';
 // @ts-ignore
 import { HighchartsChartModule } from 'highcharts-angular';
-// @ts-ignore
-import { MatTableExporterModule } from 'mat-table-exporter';
-import {MatTableModule} from '@angular/material/table';
-import { NgxPrintModule} from 'ngx-print';
+
+
 
 // @ts-ignore
 @NgModule({
@@ -38,9 +36,6 @@ import { NgxPrintModule} from 'ngx-print';
     FixedPluginModule,
     HttpClientModule,
     HighchartsChartModule,
-    MatTableExporterModule,
-    MatTableModule,
-    NgxPrintModule
   ],
   providers: [],
   bootstrap: [AppComponent],

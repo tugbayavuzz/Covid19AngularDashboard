@@ -6,25 +6,8 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <p-table #dt1  [value]="globalData" [scrollable]="true" scrollHeight="600px" [globalFilterFields]="['country']" [columns]="cols">
+          <p-table #dt1  [value]="globalData" [scrollable]="true" scrollHeight="600px" [globalFilterFields]="['country']" >
             <ng-template pTemplate="caption">
-                    <button  type="button" pButton pRipple icon="pi pi-file-o" (click)="exportCSV()" class="p-mr-2" pTooltip="CSV" tooltipPosition="bottom" title="CSV"></button>
-                    <button  type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success p-mr-2"  pTooltip="XLS" tooltipPosition="bottom"></button>
-                    <button  type="button" pButton pRipple icon="pi pi-file-pdf" (click)="exportPdf()" class="p-button-warning p-mr-2" pTooltip="PDF" tooltipPosition="bottom"></button>
-                <ng-template pTemplate="header" let-columns>
-                  <tr>
-                    <th *ngFor="let col of columns">
-                      {{col.header}}
-                    </th>
-                  </tr>
-                </ng-template>
-                <ng-template pTemplate="body" let-rowData let-columns="columns">
-                  <tr [pSelectableRow]="rowData">
-                    <td *ngFor="let col of columns">
-                      {{rowData[col.field]}}
-                    </td>
-                  </tr>
-                </ng-template>
               <div class="table-header p-d-flex">
                 <span class="p-input-icon-left p-ml-auto">
                   <i class="pi pi-search"></i>
