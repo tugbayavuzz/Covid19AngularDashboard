@@ -113,6 +113,7 @@ export class TableComponent implements OnInit {
     })
   }
   */
+  exportPdf() {}
   exportCSV() {
     const csvExporter = new ExportToCsv();
     csvExporter.generateCsv(this.globalData);
