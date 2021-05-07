@@ -20,14 +20,14 @@ export const ROUTES: RouteInfo[] = [
 ];
 
 @Component({
-    moduleId: module.id,
-    selector: 'sidebar-cmp',
-    templateUrl: 'sidebar.component.html',
+  moduleId: module.id,
+  selector: 'sidebar-cmp',
+  templateUrl: 'sidebar.component.html',
 })
 
 export class SidebarComponent implements OnInit {
-    public menuItems: any[];
-    ngOnInit() {
-        this.menuItems = ROUTES.filter(menuItem => menuItem);
-    }
+  public menuItems: any[];
+  ngOnInit() {
+    this.menuItems = ROUTES.filter(menuItem => menuItem);
+  }
 }

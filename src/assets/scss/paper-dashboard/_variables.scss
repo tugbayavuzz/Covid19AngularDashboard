@@ -21,7 +21,7 @@ $light-black:                #444    !default;
 
 $black-bg:                   rgba(30,30,30,.97) !default;
 
-$black-color:                #2c2c2c !default;
+$black-color:                #000000 !default;
 $black-hr:                   #444444 !default;
 
 $hr-line:                    rgba(0,0,0, .1) !default;
@@ -59,9 +59,9 @@ $transparent-bg:             transparent !default;
 
 $placeholder-gray:           rgba(210, 210, 210, 1)  !default;
 
-$default-color:              #66615B !default;
-$default-bg:                 #66615B !default;
-$default-states-color:       #403D39 !default;
+$default-color:              #000000 !default;
+$default-bg:                 #000000 !default;
+$default-states-color:       #000000 !default;
 
 $smoke-bg:                   #F5F5F5 !default;
 $pale-bg:                    #FFFCF5 !default;
@@ -82,6 +82,9 @@ $warning-states-color:       darken($warning-color, 10%) !default;
 
 $danger-color:               #ef8157 !default;
 $danger-states-color:        darken($danger-color, 8%) !default;
+
+
+
 
 $link-disabled-color:        #666666 !default;
 

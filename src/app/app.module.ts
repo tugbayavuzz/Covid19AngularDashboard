@@ -1,4 +1,3 @@
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
@@ -10,10 +9,14 @@ import { FixedPluginModule } from './shared/fixedplugin/fixedplugin.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { MatTableExporterModule } from 'mat-table-exporter';
+import {MatTableModule} from '@angular/material/table';
+import { NgxPrintModule} from 'ngx-print';
 
 @NgModule({
   declarations: [AppComponent, AdminLayoutComponent],
@@ -29,8 +32,11 @@ import { HighchartsChartModule } from 'highcharts-angular';
     FixedPluginModule,
     HttpClientModule,
     HighchartsChartModule,
+    MatTableExporterModule,
+    MatTableModule,
+    NgxPrintModule
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'en-TR' }],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

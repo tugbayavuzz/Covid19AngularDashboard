@@ -22,6 +22,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {RippleModule} from 'primeng/ripple';
 import {ButtonModule} from 'primeng/button';
+import {NgxPrintModule} from 'ngx-print';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import {ButtonModule} from 'primeng/button';
     SelectButtonModule,
     RippleModule,
     ButtonModule,
+    NgxPrintModule,
   ],
   declarations: [
     DashboardComponent,

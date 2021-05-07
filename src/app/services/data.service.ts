@@ -49,6 +49,9 @@ export class DataServicesService {
       .get<CountryReports>(this.globalDataUrl)
       .pipe(map((res) => res));
   }
+  public covid19Reports() {
+    return this.http.get('https://corona.lmao.ninja/v3/covid-19/countries');
+  }
 
   getDailyData() {
     return this.http.get(this.dailyDataUrl, {responseType: 'text'}).pipe(
