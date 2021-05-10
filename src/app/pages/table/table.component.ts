@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataServicesService } from '../../services/data.service';
 import { CountryReports } from '../../models/global-data';
-import {strict} from 'assert';
 
 declare interface TableData {
   headerRow: string[];
@@ -42,5 +41,4 @@ export class TableComponent implements OnInit {
       dataRows: [['country', 'cases', 'deaths', 'recovered', 'todayCases']],
     };
   }
-
 }

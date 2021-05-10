@@ -15,32 +15,53 @@
     </div>
   </div>
   <div class="col-md-6">
-  <div class="card">
-    <div class="card-header">
-      <h5 class="title">Genel Durum</h5>
-    </div>
-    <div class="card-body">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Genel Durum</h5>
+      </div>
+      <div class="card-body">
         <blockquote>
-          <p class="blockquote blockquote-primary">
-            "I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
-            "I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
-            "I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
-            "I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
+          <p class="blockquote blockquote-primary" [hidden]="selectedTable!==1">
+            "Bugün vaka sayısı {{caseToday}} olmuştur." <br>
+            "Bu hafta en yüksek vaka sayısı {{dateofMaxCaseWeekly}} tarihinde {{maxCaseWeekly}} olmuştur."<br>
+            "Vaka sayılarında bugün, düne göre
+            {{rateofCases < 0 ? '%'+ Math.abs(rateofCases).toFixed(2) + ' Azalmistir"' : (rateofCases >= 0 ? '%'+ Math.abs(rateofCases).toFixed(2) + ' Artmıştır"' : ' ')}}<br>
+            "Önceki haftaya göre, bu hafta
+            {{rateofCasesWeekly < 0 ? '%'+ Math.abs(rateofCasesWeekly).toFixed(2) + ' Azalmistir"' : (rateofCases >= 0 ? '%'+ Math.abs(rateofCasesWeekly).toFixed(2) + ' Artmıştır"' : ' ')}}
+
+          </p>
+          <p class="blockquote blockquote-primary" [hidden]="selectedTable!==2">
+            "Bugün vaka sayısı {{caseToday}} olmuştur." <br>
+            "Bu iki haftada en yüksek vaka sayısı {{dateofMaxCaseTwoWeek}} tarihinde {{maxCaseTwoWeek}} olmuştur."<br>
+            "Vaka sayılarında bugün, düne göre
+            {{rateofCases < 0 ? '%'+ Math.abs(rateofCases).toFixed(2) + ' Azalmistir' : (rateofCases >= 0 ? '%'+ Math.abs(rateofCases).toFixed(2) + ' Artmıştır"' : ' ')}}<br>
+            "Önceki iki haftaya göre, bu iki hafta
+            {{rateofCasesTwoWeek < 0 ? '%'+ Math.abs(rateofCasesTwoWeek).toFixed(2) + ' Azalmistir"' : (rateofCasesTwoWeek >= 0 ? '%'+ Math.abs(rateofCasesTwoWeek).toFixed(2) + ' Artmıştır"' : ' ')}}
+          </p>
+          <p class="blockquote blockquote-primary" [hidden]="selectedTable!==3">
+            "Bugün vaka sayısı {{caseToday}} olmuştur." <br>
+            "Bu ay içinde en yüksek vaka sayısı {{dateofMaxCaseMonthly}} tarihinde {{maxCaseMonthly}} olmuştur."<br>
+            "Vaka sayılarında bugün, düne göre
+            {{rateofCases < 0 ? '%'+ Math.abs(rateofCases).toFixed(2) + ' Azalmistir' : (rateofCases >= 0 ? '%'+ Math.abs(rateofCases).toFixed(2) + ' Artmıştır"' : ' ')}}<br>
+            "Önceki iki haftaya göre, bu iki hafta
+            {{rateofCasesMonthly < 0 ? '%'+ Math.abs(rateofCasesMonthly).toFixed(2) + ' Azalmistir"' : (rateofCasesMonthly >= 0 ? '%'+ Math.abs(rateofCasesMonthly).toFixed(2) + ' Artmıştır"' : ' ')}}
           </p>
         </blockquote>
+      </div>
     </div>
-  </div>
   </div>
   <div class="col-md-6">
     <div class="card">
       <div class="card-header">
-        <button pButton pRipple type="button" label="Son Bir Haftalık Vefat" class="p-button-raised p-button-success" style="margin-right:10px"></button>
-        <button pButton pRipple type="button" label="Son İki Haftalık Vefat" class="p-button-raised p-button-warning" style="margin-right:10px"></button>
-        <button pButton pRipple type="button" label="Son Bir Aylık Vefat"    class="p-button-raised p-button-help" style="margin-right:10px"></button>
+        <button pButton pRipple type="button" label="Son Bir Haftalık Vefat" class="p-button-raised p-button-success" style="margin-right:10px" (click)="selectData4($event)"></button>
+        <button pButton pRipple type="button" label="Son İki Haftalık Vefat" class="p-button-raised p-button-warning" style="margin-right:10px" (click)="selectData5($event)"></button>
+        <button pButton pRipple type="button" label="Son Bir Aylık Vefat"    class="p-button-raised p-button-help" style="margin-right:10px" (click)="selectData6($event)"></button>
         <h5 class="card-title">Vefat İstatistiği</h5>
       </div>
       <div class="card-body">
-        <canvas id="chartEmail3"></canvas>
+        <canvas  [hidden]="selectedTable2!==1" id="chartEmail3" ></canvas>
+        <canvas  [hidden]="selectedTable2!==2" id="chartEmail4"></canvas>
+        <canvas [hidden]="selectedTable2!==3" id="chartEmail5"></canvas>
       </div>
     </div>
   </div>
@@ -51,11 +72,29 @@
       </div>
       <div class="card-body">
         <blockquote>
-          <p class="blockquote blockquote-primary">
-            "I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
-            "I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
-            "I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
-            "I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
+          <p class="blockquote blockquote-primary" [hidden]="selectedTable2!==1">
+            "Bugün vefat sayısı {{deathToday}} olmuştur." <br>
+            "Bu hafta en yüksek vefat sayısı {{dateofMaxDeathWeekly}} tarihinde {{maxDeathWeekly}} olmuştur."<br>
+            "Vefat sayılarında bugün, düne göre
+            {{rateofDeaths < 0 ?  Math.abs(rateofDeaths) + ' Azalmistir"' : (rateofDeaths >= 0 ? rateofDeaths + ' Artmıştır"' : ' ')}}<br>
+            "Vefat sayıları önceki haftaya göre, bu hafta
+            {{rateofDeathWeekly < 0 ?  Math.abs(rateofDeathWeekly) + ' Azalmistir"' : (rateofDeathWeekly >= 0 ? rateofDeathWeekly + ' Artmıştır"' : ' ')}}
+          </p>
+          <p class="blockquote blockquote-primary" [hidden]="selectedTable2!==2">
+            "Bugün vefat sayısı {{deathToday}} olmuştur." <br>
+            "Bu hafta en yüksek vefat sayısı {{dateofMaxDeathTwoWeek}} tarihinde {{maxDeathTwoWeek}} olmuştur."<br>
+            "Vefat sayılarında bugün, düne göre
+            {{rateofDeaths < 0 ?  Math.abs(rateofDeaths) + ' Azalmistir"' : (rateofDeaths >= 0 ? rateofDeaths + ' Artmıştır"' : ' ')}}<br>
+            "Vefat sayıları önceki iki haftaya göre, bu iki haftada
+            {{rateofDeathTwoWeek < 0 ?  Math.abs(rateofDeathTwoWeek) + ' Azalmistir"' : (rateofDeathTwoWeek >= 0 ? rateofDeathTwoWeek + ' Artmıştır"' : ' ')}}
+          </p>
+          <p class="blockquote blockquote-primary" [hidden]="selectedTable2!==3">
+            "Bugün vefat sayısı {{deathToday}} olmuştur." <br>
+            "Bu hafta en yüksek vefat sayısı {{dateofMaxDeathMonthly}} tarihinde {{maxDeathMonthly}} olmuştur."<br>
+            "Vefat sayılarında bugün, düne göre
+            {{rateofDeaths < 0 ?  Math.abs(rateofDeaths) + ' Azalmistir"' : (rateofDeaths >= 0 ? rateofDeaths + ' Artmıştır"' : ' ')}}<br>
+            "Vefat sayıları önceki aya göre, bu ay
+            {{rateofDeathMonthly < 0 ?  Math.abs(rateofDeathMonthly) + ' Azalmistir"' : (rateofDeathMonthly >= 0 ? rateofDeathMonthly + ' Artmıştır"' : ' ')}}
           </p>
         </blockquote>
       </div>

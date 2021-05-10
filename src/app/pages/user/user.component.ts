@@ -3,12 +3,11 @@ import {DataSummary} from '../../models/turkeydata';
 import {DataServicesService} from '../../services/data.service';
 import Chart from 'chart.js';
 import {isWithinInterval, subDays} from 'date-fns';
-import {Subscription} from 'rxjs';
 
 @Component({
-    selector: 'user-cmp',
-    moduleId: module.id,
-    templateUrl: 'user.component.html'
+  selector: 'user-cmp',
+  moduleId: module.id,
+  templateUrl: 'user.component.html'
 })
 
 export class UserComponent implements OnInit {
@@ -33,31 +32,162 @@ export class UserComponent implements OnInit {
   weekDatesLabel = [];
   weekDatesLabels2 = [];
   weekDatesLabels3 = [];
+  weekDatesLabels4 = [];
   selectedTable = 1 ;
+  selectedTable2 = 1;
+  maxCaseWeekly: Number;
+  maxCaseTwoWeek: Number;
+  maxCaseMonthly: Number;
+  maxDeathWeekly: Number;
+  maxDeathTwoWeek: Number;
+  maxDeathMonthly: Number;
+  dateofMaxCaseWeekly ;
+  dateofMaxCaseTwoWeek ;
+  dateofMaxCaseMonthly ;
+  dateofMaxDeathWeekly ;
+  dateofMaxDeathTwoWeek ;
+  dateofMaxDeathMonthly ;
+  rateofCases ;
+  rateofDeaths ;
+  Math: any = Math;
+  deathToday ;
+  caseToday ;
+  rateofCasesWeekly ;
+  rateofCasesTwoWeek ;
+  rateofCasesMonthly ;
+  rateofDeathWeekly: Number ;
+  rateofDeathTwoWeek: Number ;
+  rateofDeathMonthly: Number;
 
   constructor(private dataService: DataServicesService) {}
-    ngOnInit() {
+  ngOnInit() {
 
-      this.dataService.getDailyJsonData().subscribe({
-        next: (res) => {
-          console.log(res);
-          this.dataSummaries = res;
-          res.forEach((cs) => {
-            if (!Number.isNaN(cs.date)) {
-              this.patients = cs.patients;
-              this.critical = cs.critical;
-              this.cases = cs.cases;
-              this.recovered = cs.recovered;
-              this.pneumoniaPercent = cs.pneumoniaPercent;
-              this.deaths = cs.deaths;
-              this.tests = cs.tests;
-            }
-          });
-          // this.initChart();
-          this.initChart1(), this.initChart2();
-        },
-      });
+    this.dataService.getDailyJsonData().subscribe({
+      next: (res) => {
+        console.log(res);
+        this.dataSummaries = res;
+        res.forEach((cs) => {
+          if (!Number.isNaN(cs.date)) {
+            this.patients = cs.patients;
+            this.critical = cs.critical;
+            this.cases = cs.cases;
+            this.recovered = cs.recovered;
+            this.pneumoniaPercent = cs.pneumoniaPercent;
+            this.deaths = cs.deaths;
+            this.tests = cs.tests;
+          }
+        });
+        this.initChart1(), this.initChart2();
+      },
+    });
+  }
+  findMaxCase(data: DataSummary[]): Number {
+    const result = data.map(obj => {
+      return obj.cases
+    });
+    return  Math.max(...result);
+  }
+  findMaxDeath(data: DataSummary[]): Number {
+    const result = data.map(obj => {
+      return obj.deaths
+    });
+    return  Math.max(...result);
+  }
+
+
+  findDateofMaxCase(data: DataSummary[], maxCase: Number): Date {
+    let dataReturn;
+    data.forEach(function(data1) {
+      if (data1.cases === maxCase) {
+        dataReturn = data1.date;
+      }
+    })
+    return dataReturn;
+  }
+  findDateofMaxDeath(data: DataSummary[], maxDeath: Number): Date {
+    let dataReturn;
+    data.forEach(function(data1) {
+      if (data1.deaths === maxDeath) {
+        dataReturn = data1.date;
+      }
+    })
+    return dataReturn;
+  }
+  findRateofCases(data: DataSummary[], index) {
+    const array = data.map(obj => {
+      return obj.cases
+    });
+    const x = array[index] - array[index - 1];
+    const y = x / array[index - 1];
+    const rate = y * 100;
+    return rate;
+  }
+  findSubsofDeaths(data: DataSummary[], index) {
+    const array = data.map(obj => {
+      return obj.deaths
+    });
+    const subs = array[index] - array[index - 1];
+    return subs;
+  }
+  findCaseforToday(data: DataSummary []) {
+    const result = data.map(obj => {
+      return obj.cases
+    });
+    return result[result.length - 1];
+  }
+  findDeathforToday(data: DataSummary []) {
+    const result = data.map(obj => {
+      return obj.deaths
+    });
+    return result[result.length - 1];
+  }
+  findSumofCase(data: DataSummary[]) {
+    let sumFirstWeek = 0;
+    let sumSecondWeek = 0;
+    const x = [];
+    const array = data.map(obj => {
+      return obj.cases
+    });
+    for (let i = 0; i < array.length / 2; i++) {
+      sumFirstWeek += array[i];
     }
+    x[0] = sumFirstWeek;
+    for (let i ; i < array.length; i++) {
+      sumSecondWeek += array[i];
+    }
+    x[1] = sumSecondWeek;
+    return this.findRate(x, x.length - 1);
+
+  }
+  findSumofDeath(data: DataSummary[]) {
+    let sumFirstWeek = 0;
+    let sumSecondWeek = 0;
+    const x = [];
+    const array = data.map(obj => {
+      return obj.deaths
+    });
+    for (let i = 0; i < array.length / 2; i++) {
+      sumFirstWeek += array[i];
+    }
+    x[0] = sumFirstWeek;
+    for (let i ; i < array.length; i++) {
+      sumSecondWeek += array[i];
+    }
+    x[1] = sumSecondWeek;
+    console.log(x);
+    return this.findSubs(x);
+
+  }
+  findRate(data: Array<any> , index) {
+    const x = data[index] - data[index - 1];
+    const y = x / data[index - 1];
+    const rate = y * 100;
+    return rate;
+  }
+  findSubs(data: Array<any>) {
+    return data[data.length - 1] - data[data.length - 2];
+  }
+
   initChart1() {
     const monthNames = [
       'January',
@@ -78,8 +208,10 @@ export class UserComponent implements OnInit {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const startOfWeek = subDays(today, 6);
-    const startOfWeek2 = subDays(today, 14); // for two weeks
-    const startOfWeek3 = subDays(today, 30);
+    const startOfWeek2 = subDays(today, 13); // for two weeks
+    const startOfWeek3 = subDays(today, 29);
+    const startOfWeek4 = subDays(today, 59);
+
 
     // Get this week data
     const myWeekData = this.dataSummaries.filter((cs) => {
@@ -88,7 +220,8 @@ export class UserComponent implements OnInit {
       const result = isWithinInterval(csDate, { start: startOfWeek, end: today });
       return result;
     });
-    // last two week data
+
+
     const myWeekData2 = this.dataSummaries.filter((cs) => {
       const [day, month, year] = cs.date.split('/');
       const csDate2 = new Date(+year, +month - 1, +day);
@@ -100,6 +233,12 @@ export class UserComponent implements OnInit {
       const [day, month, year] = cs.date.split('/');
       const csDate3 = new Date(+year, +month - 1, +day);
       const result3 = isWithinInterval(csDate3, { start: startOfWeek3, end: today });
+      return result3;
+    });
+    const myWeekData4 = this.dataSummaries.filter((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate4 = new Date(+year, +month - 1, +day);
+      const result3 = isWithinInterval(csDate4, { start: startOfWeek4, end: today });
       return result3;
     });
 
@@ -121,8 +260,28 @@ export class UserComponent implements OnInit {
       const csDate3 = new Date(+year, +month - 1, +day);
       return `${day} ${monthNames[csDate3.getMonth()]}`;
     });
+    this.weekDatesLabels4 = myWeekData4.map((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate4 = new Date(+year, +month - 1, +day);
+      return `${day} ${monthNames[csDate4.getMonth()]}`;
+    });
+    console.log(myWeekData.length);
+    const casesWeekly = myWeekData.map((cs) => cs.cases);
+    const casesTwoWeek = myWeekData2.map((cs) => cs.cases);
+    const casesMonthly = myWeekData3.map((cs) => cs.cases);
+    this.maxCaseWeekly = this.findMaxCase(myWeekData);
+    this.maxCaseTwoWeek = this.findMaxCase(myWeekData2);
+    this.maxCaseMonthly = this.findMaxCase(myWeekData3);
+    this.dateofMaxCaseWeekly = this.findDateofMaxCase(myWeekData, this.maxCaseWeekly);
+    this.dateofMaxCaseTwoWeek = this.findDateofMaxCase(myWeekData2, this.maxCaseTwoWeek);
+    this.dateofMaxCaseMonthly = this.findDateofMaxCase(myWeekData3, this.maxCaseMonthly);
+    this.rateofCases = this.findRateofCases(myWeekData, myWeekData.length - 1);
+    this.caseToday = this.findCaseforToday(myWeekData);
+    this.rateofCasesWeekly = this.findSumofCase(myWeekData2);
+    this.rateofCasesTwoWeek = this.findSumofCase(myWeekData3);
+    this.rateofCasesMonthly = this.findSumofCase(myWeekData4);
 
-    const cases = myWeekData3.map((cs) => cs.cases);
+    console.log(this.rateofCases);
 
     console.log('Chart1');
     console.log('Week Data', myWeekData);
@@ -130,22 +289,21 @@ export class UserComponent implements OnInit {
     console.log('Week Data', myWeekData2);
     console.log('Chart3');
     console.log('Week Data', myWeekData3);
-    console.log(cases);
 
 
     this.canvas = document.getElementById('chartEmail');
     this.ctx = this.canvas.getContext('2d');
 
-    this.drawChart1(this.ctx, cases, this.weekDatesLabels);
+    this.drawChart1(this.ctx, casesWeekly, this.weekDatesLabels);
     this.canvas = document.getElementById('chartEmail1');
     this.ctx = this.canvas.getContext('2d');
 
-    this.drawChart1(this.ctx, cases, this.weekDatesLabels2);
+    this.drawChart1(this.ctx, casesTwoWeek, this.weekDatesLabels2);
 
     this.canvas = document.getElementById('chartEmail2');
     this.ctx = this.canvas.getContext('2d');
 
-    this.drawChart1(this.ctx, cases, this.weekDatesLabels3);
+    this.drawChart1(this.ctx, casesMonthly, this.weekDatesLabels3);
   }
 
   selectData(event) {
@@ -199,42 +357,7 @@ export class UserComponent implements OnInit {
           '#3765fc',
           '#4d31b2',
           '#6aebf2',
-          ],
-        /*backgroundColor: [
-          '#4b0d0d',
-          '#5d1012',
-          '#711314',
-          '#841617',
-          '#981919',
-          '#901919',
-          '#3c0c10',
-          '#410d11',
-          '#460d13',
-          '#4b0e14',
-          '#4f0e15',
-          '#540f15',
-          '#590f16',
-          '#5e1017',
-          '#631017',
-          '#681018',
-          '#6d1119',
-          '#721119',
-          '#781219',
-          '#7d131a',
-          '#82131a',
-          '#87141a',
-          '#8c141b',
-          '#91151b',
-          '#96161b',
-          '#9b171b',
-          '#a1181a',
-          '#a6191a',
-          '#ab1a1a',
-          '#a6191a',
-          '#b65253'
         ],
-
-         */
         borderWidth: 0,
         data: data,
       };
@@ -304,13 +427,7 @@ export class UserComponent implements OnInit {
         },
       }});
   }
-/*
-  public updateOptions() {
-    this.chartHours.data.datasets[0].data = this.data;
-    this.chartHours.update();
-  }
 
- */
 
 
   initChart2() {
@@ -332,7 +449,10 @@ export class UserComponent implements OnInit {
 
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    const startOfWeek = subDays(today, 30);
+    const startOfWeek = subDays(today, 6);
+    const startOfWeek2 = subDays(today, 13); // for two weeks
+    const startOfWeek3 = subDays(today, 29);
+    const startOfWeek4 = subDays(today, 59);
 
     // Get this week data
     const myWeekData = this.dataSummaries.filter((cs) => {
@@ -341,6 +461,26 @@ export class UserComponent implements OnInit {
       const result = isWithinInterval(csDate, { start: startOfWeek, end: today });
       return result;
     });
+    // last two week data
+    const myWeekData2 = this.dataSummaries.filter((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate2 = new Date(+year, +month - 1, +day);
+      const result2 = isWithinInterval(csDate2, { start: startOfWeek2, end: today });
+      return result2;
+    });
+    // last one month data
+    const myWeekData3 = this.dataSummaries.filter((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate3 = new Date(+year, +month - 1, +day);
+      const result3 = isWithinInterval(csDate3, { start: startOfWeek3, end: today });
+      return result3;
+    });
+    const myWeekData4 = this.dataSummaries.filter((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate4 = new Date(+year, +month - 1, +day);
+      const result3 = isWithinInterval(csDate4, { start: startOfWeek4, end: today });
+      return result3;
+    });
 
 
     this.weekDatesLabel = myWeekData.map((cs) => {
@@ -348,18 +488,72 @@ export class UserComponent implements OnInit {
       const csDate = new Date(+year, +month - 1, +day);
       return `${day} ${monthNames[csDate.getMonth()]}`;
     });
+    this.weekDatesLabels2 = myWeekData2.map((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate2 = new Date(+year, +month - 1, +day);
+      return `${day} ${monthNames[csDate2.getMonth()]}`;
+    });
 
-    const deaths = myWeekData.map((cs) => cs.deaths);
+    this.weekDatesLabels3 = myWeekData3.map((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate3 = new Date(+year, +month - 1, +day);
+      return `${day} ${monthNames[csDate3.getMonth()]}`;
+    });
+    this.weekDatesLabels4 = myWeekData4.map((cs) => {
+      const [day, month, year] = cs.date.split('/');
+      const csDate4 = new Date(+year, +month - 1, +day);
+      return `${day} ${monthNames[csDate4.getMonth()]}`;
+    });
+
+    const deathWeekly = myWeekData.map((cs) => cs.deaths);
+    const deathTwoWeek = myWeekData2.map((cs) => cs.deaths);
+    const deathMonthly = myWeekData3.map((cs) => cs.deaths);
+    this.maxDeathWeekly = this.findMaxDeath(myWeekData);
+    this.maxDeathTwoWeek = this.findMaxDeath(myWeekData2);
+    this.maxDeathMonthly = this.findMaxDeath(myWeekData3);
+    this.dateofMaxDeathWeekly = this.findDateofMaxDeath(myWeekData, this.maxDeathWeekly);
+    this.dateofMaxDeathTwoWeek = this.findDateofMaxDeath(myWeekData2, this.maxDeathTwoWeek);
+    this.dateofMaxDeathMonthly = this.findDateofMaxDeath(myWeekData3, this.maxDeathMonthly);
+    this.rateofDeaths = this.findSubsofDeaths(myWeekData, myWeekData.length - 1);
+    this.deathToday = this.findDeathforToday(myWeekData);
+
+    this.rateofDeathWeekly = this.findSumofDeath(myWeekData2);
+    this.rateofDeathTwoWeek = this.findSumofDeath(myWeekData3);
+    this.rateofDeathMonthly = this.findSumofDeath(myWeekData4);
+    console.log(this.rateofDeathWeekly);
+
+
 
     console.log('Chart1');
     console.log('Week Data', myWeekData);
-    console.log(this.deaths);
+    console.log('Chart2');
+    console.log('Week Data', myWeekData2);
+    console.log('Chart3');
+    console.log('Week Data', myWeekData3);
 
 
     this.canvas = document.getElementById('chartEmail3');
     this.ctx = this.canvas.getContext('2d');
 
-    this.drawChart2(this.ctx, deaths, this.weekDatesLabel);
+    this.drawChart2(this.ctx, deathWeekly, this.weekDatesLabel);
+    this.canvas = document.getElementById('chartEmail4');
+    this.ctx = this.canvas.getContext('2d');
+
+    this.drawChart2(this.ctx, deathTwoWeek, this.weekDatesLabels2);
+    this.canvas = document.getElementById('chartEmail5');
+    this.ctx = this.canvas.getContext('2d');
+
+    this.drawChart2(this.ctx, deathMonthly, this.weekDatesLabels3);
+  }
+  selectData4(event) {
+    this.selectedTable2 = 1 ;
+  }
+  selectData5(event) {
+    this.selectedTable2 = 2 ;
+  }
+
+  selectData6(event) {
+    this.selectedTable2 = 3 ;
   }
 
   drawChart2(ctx2, data, weekDatesLabel) {
@@ -419,7 +613,6 @@ export class UserComponent implements OnInit {
         },
         plugins: {
           datalabels: {
-            // tslint:disable-next-line:no-shadowed-variable
             formatter: (value, ctx) => {
               const sum = ctx.dataset._meta[0].total;
               const percentage = (value * 100 / sum).toFixed(2) + '%';

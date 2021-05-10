@@ -7,7 +7,11 @@
       <div class="card-body">
         <div class="table-responsive">
           <p-table #dt1  [value]="globalData" [scrollable]="true" scrollHeight="600px" [globalFilterFields]="['country']" >
-            <ng-template pTemplate="caption">
+              <ng-template pTemplate="caption">
+                <div class="p-d-flex">
+                  <button type="button" pButton pRipple icon="pi pi-file-o" (click)="dt1.exportCSV()" class="p-mr-2" pTooltip="CSV" tooltipPosition="bottom"></button>
+                  <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success p-mr-2"  pTooltip="XLS" tooltipPosition="bottom"></button>
+                </div>
               <div class="table-header p-d-flex">
                 <span class="p-input-icon-left p-ml-auto">
                   <i class="pi pi-search"></i>
