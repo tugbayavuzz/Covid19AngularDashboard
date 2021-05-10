@@ -12,11 +12,11 @@ export const ROUTES: RouteInfo[] = [
     { path: '/uptodatecase',      title: 'GÜNCEL DURUM',        icon: 'nc-bank',              class: '' },
     { path: '/vaccinemaps',       title: 'AŞI HARİTASI',        icon: 'nc-diamond',           class: '' },
     { path: '/riskmaps',          title: 'RİSK HARİTASI',       icon: 'nc-pin-3',             class: '' },
-    { path: '/info',              title: 'SEMPTOMPLAR',         icon: 'nc-alert-circle-i',    class: '' },
     { path: '/generalcase',       title: 'GENEL DURUM ',        icon: 'nc-chart-bar-32',      class: '' },
-    { path: '/typography',        title: 'Typography',          icon: 'nc-caps-small',        class: '' },
-    { path: '/upgrade',           title: '#EVDE KAL',           icon: 'nc-planet',            class: 'active-pro' },
+    //{ path: '/typography',        title: 'Typography',          icon: 'nc-caps-small',        class: '' },
+    //{ path: '/upgrade',           title: '#EVDE KAL',           icon: 'nc-planet',            class: 'active-pro' },
     { path: '/globalcase',        title: 'DÜNYADA DURUM',       icon: 'nc-world-2',           class: '' },
+    { path: '/info',              title: 'BİLGİLENDİRME',       icon: 'nc-alert-circle-i',    class: '' },
 ];
 
 @Component({
@@ -26,6 +26,7 @@ export const ROUTES: RouteInfo[] = [
 })
 
 export class SidebarComponent implements OnInit {
+  value: Date;
   public menuItems: any[];
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);

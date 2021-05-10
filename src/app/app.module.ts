@@ -13,6 +13,7 @@ import { AppRoutes } from './app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+// @ts-ignore
 import { HttpClientModule } from '@angular/common/http';
 import { HighchartsChartModule } from 'highcharts-angular';
 
