@@ -13,15 +13,16 @@ import { AppRoutes } from './app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-// @ts-ignore
+
 import { HttpClientModule } from '@angular/common/http';
 import { HighchartsChartModule } from 'highcharts-angular';
+import {SpinnerDottedModule} from 'spinners-angular/spinner-dotted';
 
 
 @NgModule({
   declarations: [AppComponent, AdminLayoutComponent],
   imports: [
-    BrowserAnimationsModule,
+    SpinnerDottedModule,
     RouterModule.forRoot(AppRoutes, {
       useHash: true,
     }),

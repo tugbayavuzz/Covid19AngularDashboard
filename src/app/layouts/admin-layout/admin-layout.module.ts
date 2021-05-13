@@ -24,6 +24,9 @@ import {SelectButtonModule} from 'primeng/selectbutton';
 import {RippleModule} from 'primeng/ripple';
 import {ButtonModule} from 'primeng/button';
 import {NgxPrintModule} from 'ngx-print';
+import {SpinnerDottedModule} from 'spinners-angular/spinner-dotted';
+import {SpinnersAngularModule} from 'spinners-angular';
+
 
 @NgModule({
   imports: [
@@ -39,6 +42,9 @@ import {NgxPrintModule} from 'ngx-print';
     RippleModule,
     ButtonModule,
     NgxPrintModule,
+    SpinnerDottedModule
+
+
   ],
   declarations: [
     DashboardComponent,
