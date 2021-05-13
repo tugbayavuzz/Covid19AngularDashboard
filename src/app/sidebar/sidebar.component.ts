@@ -13,9 +13,9 @@ export const ROUTES: RouteInfo[] = [
     { path: '/vaccinemaps',       title: 'AŞI HARİTASI',        icon: 'nc-diamond',           class: '' },
     { path: '/riskmaps',          title: 'RİSK HARİTASI',       icon: 'nc-pin-3',             class: '' },
     { path: '/generalcase',       title: 'GENEL DURUM ',        icon: 'nc-chart-bar-32',      class: '' },
-    //{ path: '/typography',        title: 'Typography',          icon: 'nc-caps-small',        class: '' },
-    //{ path: '/upgrade',           title: '#EVDE KAL',           icon: 'nc-planet',            class: 'active-pro' },
+    //{ path: '/upgrade',         title: '#EVDE KAL',           icon: 'nc-planet',            class: 'active-pro' },
     { path: '/globalcase',        title: 'DÜNYADA DURUM',       icon: 'nc-world-2',           class: '' },
+    { path: '/news',              title: 'HABERLER',            icon: 'nc-caps-small',        class: '' },
     { path: '/info',              title: 'BİLGİLENDİRME',       icon: 'nc-alert-circle-i',    class: '' },
 ];
 

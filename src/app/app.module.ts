@@ -16,13 +16,15 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 
 import { HttpClientModule } from '@angular/common/http';
 import { HighchartsChartModule } from 'highcharts-angular';
-import {SpinnerDottedModule} from 'spinners-angular/spinner-dotted';
+import { BrowserModule } from '@angular/platform-browser';
 
+import { SpinnerDottedModule } from 'spinners-angular/spinner-dotted';
 
 @NgModule({
   declarations: [AppComponent, AdminLayoutComponent],
   imports: [
-    SpinnerDottedModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes, {
       useHash: true,
     }),
@@ -33,6 +35,7 @@ import {SpinnerDottedModule} from 'spinners-angular/spinner-dotted';
     FixedPluginModule,
     HttpClientModule,
     HighchartsChartModule,
+    SpinnerDottedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
