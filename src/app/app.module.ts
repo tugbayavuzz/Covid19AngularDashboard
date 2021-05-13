@@ -1,28 +1,30 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { ToastrModule } from 'ngx-toastr';
+import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { ToastrModule } from "ngx-toastr";
 
-import { SidebarModule } from './sidebar/sidebar.module';
-import { FooterModule } from './shared/footer/footer.module';
-import { NavbarModule } from './shared/navbar/navbar.module';
-import { FixedPluginModule } from './shared/fixedplugin/fixedplugin.module';
+import { SidebarModule } from "./sidebar/sidebar.module";
+import { FooterModule } from "./shared/footer/footer.module";
+import { NavbarModule } from "./shared/navbar/navbar.module";
+import { FixedPluginModule } from "./shared/fixedplugin/fixedplugin.module";
 
-import { AppComponent } from './app.component';
-import { AppRoutes } from './app.routing';
+import { AppComponent } from "./app.component";
+import { AppRoutes } from "./app.routing";
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 
-import { HttpClientModule } from '@angular/common/http';
-import { HighchartsChartModule } from 'highcharts-angular';
-import {SpinnerDottedModule} from 'spinners-angular/spinner-dotted';
+import { HttpClientModule } from "@angular/common/http";
+import { HighchartsChartModule } from "highcharts-angular";
+import { BrowserModule } from "@angular/platform-browser";
 
+import { SpinnerDottedModule } from "spinners-angular/spinner-dotted";
 
 @NgModule({
   declarations: [AppComponent, AdminLayoutComponent],
   imports: [
-    SpinnerDottedModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes, {
       useHash: true,
     }),
@@ -33,6 +35,7 @@ import {SpinnerDottedModule} from 'spinners-angular/spinner-dotted';
     FixedPluginModule,
     HttpClientModule,
     HighchartsChartModule,
+    SpinnerDottedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

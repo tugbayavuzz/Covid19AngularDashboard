@@ -2,7 +2,7 @@
   <div class="col">
     <div class="card">
       <div class="card-header"></div>
-      <div class="card-body">
+      <div class="card-body" style="height: 845px; position: relative">
         <!-- <highcharts-chart
           [Highcharts]="Highcharts"
           [constructorType]="chartConstructor"
@@ -13,12 +13,26 @@
           [runOutsideAngular]="runOutsideAngular"
           style="width: 100%; height: 400px; display: block"
         ></highcharts-chart> -->
-        <sa-spinner-dotted [size]="50" [thickness]="100" [speed]="100" color="rgba(0, 0, 255, 1)" ></sa-spinner-dotted>
+        <!-- <sa-spinner-dotted [size]="50" [thickness]="100" [speed]="100" color="rgba(0, 0, 255, 1)" ></sa-spinner-dotted> -->
+
+        <app-fulfilling-bouncing-circle-spinner
+          style="
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          "
+          *ngIf="!chartOptions"
+          [animationDuration]="4000"
+          [size]="60"
+          [color]="'rgb(29 88 255)'"
+        ></app-fulfilling-bouncing-circle-spinner>
         <highcharts-chart
+          *ngIf="chartOptions"
           [Highcharts]="Highcharts"
           [options]="chartOptions"
           [constructorType]="chartConstructor"
-          style="width: 100%; height:750px; display: block"
+          style="width: 100%; height: 750px; display: block"
         ></highcharts-chart>
       </div>
     </div>
