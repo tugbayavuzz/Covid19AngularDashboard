@@ -1,7 +1,6 @@
-
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-// @ts-ignore
+
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -28,6 +27,7 @@ import { NgxPrintModule } from 'ngx-print';
 import { SpinnerDottedModule } from 'spinners-angular/spinner-dotted';
 import { SpinnersAngularModule } from 'spinners-angular';
 import {FulfillingBouncingCircleSpinnerModule} from 'angular-epic-spinners'
+import {CardModule} from 'primeng/card';
 
 @NgModule({
   imports: [
@@ -43,7 +43,9 @@ import {FulfillingBouncingCircleSpinnerModule} from 'angular-epic-spinners'
     RippleModule,
     ButtonModule,
     NgxPrintModule,
-    FulfillingBouncingCircleSpinnerModule
+    FulfillingBouncingCircleSpinnerModule,
+    CardModule,
+
     // SpinnerDottedModule,
   ],
   declarations: [
