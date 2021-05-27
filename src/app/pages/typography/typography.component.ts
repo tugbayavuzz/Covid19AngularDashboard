@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { DataServicesService } from 'app/services/data.service';
 
 
 @Component({
@@ -10,6 +11,15 @@ import {Component, OnInit} from '@angular/core';
 export class TypographyComponent implements OnInit {
 
 
+  displayNews: any =  [];
+
+  constructor(private dataService: DataServicesService) {}
   ngOnInit() {
+    this.dataService.covid19News().subscribe({
+      next: (res) => {
+        console.log(res);
+        this.displayNews = res.articles;
+      },
+    });
   }
 }

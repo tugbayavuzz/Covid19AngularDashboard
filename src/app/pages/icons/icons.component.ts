@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DataServicesService} from '../../services/data.service';
 import {VaccineTracker} from '../../models/vaccine';
-// @ts-ignore
 import worldMap from '@highcharts/map-collection/custom/world.geo.json';
 import turkeyMap from '@highcharts/map-collection/countries/tr/tr-all.geo.json';
 import * as Highcharts from 'highcharts/highmaps';

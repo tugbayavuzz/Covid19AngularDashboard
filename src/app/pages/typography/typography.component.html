@@ -1,16 +1,12 @@
-<div>
-  <div class="p-grid p-nogutter">
-    <p-card header="Advanced Card" subheader="Card Subheader" [style]="{width: '360px'}" styleClass="p-card-shadow">
-      <ng-template pTemplate="header">
-        <img alt="Card" src="https://i.sozcu.com.tr/wp-content/uploads/2021/05/11/iecrop/depophotos-koca-1_16_9_1591127137_16_9_1612374819_16_9_1612975082_16_9_1617292290_16_9_1620738699.jpg">
-      </ng-template>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-        quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
-      <ng-template pTemplate="footer">
-        <p-button label="Save" icon="pi pi-check"></p-button>
-        <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
-      </ng-template>
-    </p-card>
+<div class="container col-md-auto">
+  <div class="row">
+    <div *ngFor = "let d of displayNews" class="col-md-3 p-mt-3 p-mb-3">
+      <div class="box">
+        <img src="{{d.urlToImage}}" alt= "" width="90%">
+        <h5>{{d.title}}</h5>
+        <p>{{d.description}}</p>
+        <a href="{{d.url}}"> Daha fazla</a>
+      </div>
+    </div>
   </div>
 </div>
-

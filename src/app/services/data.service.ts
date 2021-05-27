@@ -18,6 +18,7 @@ export class DataServicesService {
   private weeklyDataUrl = 'https://api-covid-turkey.herokuapp.com';
   private vaccineUrl = 'https://api-covid-turkey.herokuapp.com/vaccine';
   private globalDataUrl = 'https://corona.lmao.ninja/v3/covid-19/countries';
+  private newsUrl = 'https://newsapi.org/v2/top-headlines?country=tr&category=health&koronavirus&apiKey=91f0ea75f81f44f386d7acf225d8f5ed';
 
   dataCombined$ = combineLatest([
     this.getCaseRatioData(),
@@ -52,6 +53,12 @@ export class DataServicesService {
   public covid19Reports() {
     return this.http.get('https://corona.lmao.ninja/v3/covid-19/countries');
   }
+  topHeading
+
+  public covid19News():Observable<any> {
+    return this.http.get(this.newsUrl);
+  }
+
 
   getDailyData() {
     return this.http.get(this.dailyDataUrl, {responseType: 'text'}).pipe(

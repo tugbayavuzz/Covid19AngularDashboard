@@ -6,7 +6,6 @@ import {DataServicesService} from '../../services/data.service';
 
 
 @Component({
-  // tslint:disable-next-line:component-selector
   selector: 'dashboard-cmp',
   moduleId: module.id,
   templateUrl: 'dashboard.component.html',
