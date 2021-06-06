@@ -4,6 +4,7 @@ import {DataServicesService} from '../../services/data.service';
 import Chart from 'chart.js';
 import {isWithinInterval, subDays} from 'date-fns';
 
+
 @Component({
   selector: 'user-cmp',
   moduleId: module.id,
@@ -145,19 +146,19 @@ export class UserComponent implements OnInit {
     let sumFirstWeek = 0;
     let sumSecondWeek = 0;
     const x = [];
+    let i = 0;
     const array = data.map(obj => {
       return obj.cases
     });
-    for (let i = 0; i < array.length / 2; i++) {
+    for (i ; i < array.length / 2; i++) {
       sumFirstWeek += array[i];
     }
     x[0] = sumFirstWeek;
-    for (let i ; i < array.length; i++) {
+    for (i ; i < array.length; i++) {
       sumSecondWeek += array[i];
     }
     x[1] = sumSecondWeek;
     return this.findRate(x, x.length - 1);
-
   }
   findSumofDeath(data: DataSummary[]) {
     let sumFirstWeek = 0;
@@ -174,7 +175,6 @@ export class UserComponent implements OnInit {
       sumSecondWeek += array[i];
     }
     x[1] = sumSecondWeek;
-    console.log(x);
     return this.findSubs(x);
 
   }

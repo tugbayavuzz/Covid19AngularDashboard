@@ -10,8 +10,9 @@ import { DataServicesService } from 'app/services/data.service';
 
 export class TypographyComponent implements OnInit {
 
-
   displayNews: any =  [];
+  displayNews2: any =  [];
+  displayNews3: any =  [];
 
   constructor(private dataService: DataServicesService) {}
   ngOnInit() {
@@ -19,6 +20,19 @@ export class TypographyComponent implements OnInit {
       next: (res) => {
         console.log(res);
         this.displayNews = res.articles;
+      },
+    });
+    this.dataService.News().subscribe({
+      next: (res) => {
+        console.log(res);
+        this.displayNews2 = res.articles;
+      },
+    });
+
+    this.dataService.NewsCovid().subscribe({
+      next: (res) => {
+        console.log(res);
+        this.displayNews2 = res.articles;
       },
     });
   }

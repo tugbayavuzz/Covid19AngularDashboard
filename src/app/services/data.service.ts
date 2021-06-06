@@ -18,8 +18,10 @@ export class DataServicesService {
   private weeklyDataUrl = 'https://api-covid-turkey.herokuapp.com';
   private vaccineUrl = 'https://api-covid-turkey.herokuapp.com/vaccine';
   private globalDataUrl = 'https://corona.lmao.ninja/v3/covid-19/countries';
-  private newsUrl = 'https://newsapi.org/v2/top-headlines?country=tr&category=health&koronavirus&apiKey=91f0ea75f81f44f386d7acf225d8f5ed';
-
+  private newsUrl = 'https://gnewsapi.net/api/search?q=covid&country=tr&language=tr&limit=5&api_token=XFQMlT24qEN9aFXWiImkZe3zye9x1RS6Yl6INhRCfs6eh6uHXUZVk9ZWyMYn';
+  private news = 'https://gnewsapi.net/api/search?q=koronavirus&country=tr&language=tr&limit=5&api_token=XFQMlT24qEN9aFXWiImkZe3zye9x1RS6Yl6INhRCfs6eh6uHXUZVk9ZWyMYn';
+  private newsCovid = 'https://gnewsapi.net/api/search?q=coronavirus&country=tr&language=tr&limit=5&api_token=CZeljXAVsdmBakLbdnJlVH2lTZMOBMao6JPllTZ90j200MRGFUKk3z7kfxmY';
+ 
   dataCombined$ = combineLatest([
     this.getCaseRatioData(),
     this.getHighChartGeoData(),
@@ -57,6 +59,13 @@ export class DataServicesService {
   public covid19News():Observable<any> {
     return this.http.get(this.newsUrl);
   }
+  public News():Observable<any> {
+    return this.http.get(this.news);
+  }
+  public NewsCovid():Observable<any> {
+    return this.http.get(this.newsCovid);
+  }
+
 
 
   getDailyData() {

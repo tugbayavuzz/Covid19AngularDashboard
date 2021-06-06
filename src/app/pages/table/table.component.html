@@ -1,3 +1,15 @@
+<app-fulfilling-bouncing-circle-spinner
+    style="
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          "
+    *ngIf="tableData1"
+    [animationDuration]="4000"
+    [size]="60"
+    [color]="'rgb(29 88 255)'"
+  ></app-fulfilling-bouncing-circle-spinner>
 <div class="row">
   <div class="col-md-12">
     <div class="card">
@@ -8,10 +20,6 @@
         <div class="table-responsive">
           <p-table #dt1  [value]="globalData" [scrollable]="true" scrollHeight="600px" [globalFilterFields]="['country']" >
               <ng-template pTemplate="caption">
-                <div class="p-d-flex">
-                  <button type="button" pButton pRipple icon="pi pi-file-o" (click)="dt1.exportCSV()" class="p-mr-2" pTooltip="CSV" tooltipPosition="bottom"></button>
-                  <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success p-mr-2"  pTooltip="XLS" tooltipPosition="bottom"></button>
-                </div>
               <div class="table-header p-d-flex">
                 <span class="p-input-icon-left p-ml-auto">
                   <i class="pi pi-search"></i>
