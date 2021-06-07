@@ -32,7 +32,7 @@ export class TypographyComponent implements OnInit {
     this.dataService.NewsCovid().subscribe({
       next: (res) => {
         console.log(res);
-        this.displayNews2 = res.articles;
+        this.displayNews3 = res.articles;
       },
     });
   }
