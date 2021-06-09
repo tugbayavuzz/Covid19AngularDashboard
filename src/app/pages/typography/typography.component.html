@@ -1,15 +1,17 @@
 <div class="container col-md-auto">
   <div class="row">
-    <div *ngFor = "let d of displayNews" class="col-md-3 p-mt-3 p-mb-3">
+    <div *ngFor = "let d of displayNews"  class="col-md-3 p-mt-4 p-mb-4">
       <div class="box">
-        <img src="{{d.image_url}}" alt= "" width="90%">
+        <img src="{{d.thumbnail}}" alt= "" width="70%" height="50%">
         <h5>{{d.title}}</h5>
-        <p>{{d.description}}</p>
-        <a href="{{d.article_url}}"> Daha fazla</a>
+        <p>{{d.snippet}}</p>
+        <p>{{d.source}}</p>
+        <a href="{{d.link}}"> Daha fazla</a>
       </div>
     </div>
 
-    <div *ngFor = "let d of displayNews2" class="col-md-3 p-mt-3 p-mb-3">
+  <!--
+    <div *ngFor = "let d of displayNews2" class="col-md-3 p-mt-4 p-mb-4">
       <div class="box">
         <img src="{{d.image_url}}" alt= "" width="90%">
         <h5>{{d.title}}</h5>
@@ -18,7 +20,7 @@
       </div>
     </div>
     
-    <div *ngFor = "let d of displayNews3" class="col-md-3 p-mt-3 p-mb-3">
+    <div *ngFor = "let d of displayNews3" class="col-md-3 p-mt-4 p-mb-4">
       <div class="box">
         <img src="{{d.image_url}}" alt= "" width="90%">
         <h5>{{d.title}}</h5>
@@ -26,5 +28,6 @@
         <a href="{{d.article_url}}"> Daha fazla</a>
       </div>
     </div>
+  -->  
   </div>
 </div>

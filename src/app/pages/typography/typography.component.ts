@@ -16,12 +16,11 @@ export class TypographyComponent implements OnInit {
 
   constructor(private dataService: DataServicesService) {}
   ngOnInit() {
-    this.dataService.covid19News().subscribe({
-      next: (res) => {
-        console.log(res);
-        this.displayNews = res.articles;
-      },
-    });
+    this.dataService.covid19News().subscribe(
+      res => this.displayNews = res.news_results
+    )
+    
+    /*
     this.dataService.News().subscribe({
       next: (res) => {
         console.log(res);
@@ -32,8 +31,9 @@ export class TypographyComponent implements OnInit {
     this.dataService.NewsCovid().subscribe({
       next: (res) => {
         console.log(res);
-        this.displayNews2 = res.articles;
+        this.displayNews3 = res.articles;
       },
     });
+    */
   }
 }
