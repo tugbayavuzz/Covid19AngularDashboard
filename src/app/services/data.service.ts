@@ -18,15 +18,9 @@ export class DataServicesService {
   private weeklyDataUrl = 'https://api-covid-turkey.herokuapp.com';
   private vaccineUrl = 'https://api-covid-turkey.herokuapp.com/vaccine';
   private globalDataUrl = 'https://corona.lmao.ninja/v3/covid-19/countries';
-<<<<<<< HEAD
   private newsUrl = 'https://api.serpwow.com/live/search?api_key=1EBC7832B3ED4AB3B114A7B9841E56DD&q=koronavirus&hl=tr&search_type=news&sort_by=date&time_period=last_day&output=json';
   //private news = 'https://gnewsapi.net/api/search?q=covid&language=tr&country=tr&api_token=24jKTiZWTNo0mBFBzCMQYyKi5j7Ta5urzyWuNVpZnLFHuGzVwMFmMXQtz172';
   //private newsCovid = 'https://gnewsapi.net/api/search?q=koronavirus&language=tr&country=tr&api_token=24jKTiZWTNo0mBFBzCMQYyKi5j7Ta5urzyWuNVpZnLFHuGzVwMFmMXQtz172';
-=======
-  private newsUrl = 'https://gnewsapi.net/api/search?q=covid-19&country=tr&language=tr&limit=20&api_token=XFQMlT24qEN9aFXWiImkZe3zye9x1RS6Yl6INhRCfs6eh6uHXUZVk9ZWyMYn';
-  //private news = 'https://gnewsapi.net/api/search?q=koronavirus&country=tr&language=tr&limit=20&api_token=XFQMlT24qEN9aFXWiImkZe3zye9x1RS6Yl6INhRCfs6eh6uHXUZVk9ZWyMYn';
- //private newsCovid = 'https://gnewsapi.net/api/search?q=coronavirus&country=tr&language=tr&limit=20&api_token=CZeljXAVsdmBakLbdnJlVH2lTZMOBMao6JPllTZ90j200MRGFUKk3z7kfxmY';
->>>>>>> a91d9b845737b76442600ed482f4c3af9277e301
  
   dataCombined$ = combineLatest([
     this.getCaseRatioData(),
