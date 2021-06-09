@@ -1,5 +1,20 @@
 <div class="container col-md-auto">
   <div class="row">
+    <app-fulfilling-bouncing-circle-spinner
+    style="
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 100px;
+            width: 100px;
+            margin-left: 40px;
+            margin-top: 400px;
+            transform: translate(-50%, -50%);
+          "
+    [animationDuration]="2000"
+    [size]="60"
+    [color]="'rgb(220,20,60)'"
+  ></app-fulfilling-bouncing-circle-spinner>
     <div *ngFor = "let d of displayNews"  class="col-md-3 p-mt-4 p-mb-4">
       <div class="box">
         <img src="{{d.image}}" alt= "" width="90%">
@@ -7,26 +22,6 @@
         <p>{{d.description}}</p>
         <a href="{{d.link}}"> Daha fazla</a>
       </div>
-    </div>
-
-  <!--
-    <div *ngFor = "let d of displayNews2" class="col-md-3 p-mt-4 p-mb-4">
-      <div class="box">
-        <img src="{{d.image_url}}" alt= "" width="90%">
-        <h5>{{d.title}}</h5>
-        <p>{{d.description}}</p>
-        <a href="{{d.article_url}}"> Daha fazla</a>
-      </div>
-    </div>
-    
-    <div *ngFor = "let d of displayNews3" class="col-md-3 p-mt-4 p-mb-4">
-      <div class="box">
-        <img src="{{d.image_url}}" alt= "" width="90%">
-        <h5>{{d.title}}</h5>
-        <p>{{d.description}}</p>
-        <a href="{{d.article_url}}"> Daha fazla</a>
-      </div>
-    </div>
-  -->  
+    </div> 
   </div>
 </div>
