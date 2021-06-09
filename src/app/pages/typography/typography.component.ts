@@ -17,7 +17,7 @@ export class TypographyComponent implements OnInit {
   constructor(private dataService: DataServicesService) {}
   ngOnInit() {
     this.dataService.covid19News().subscribe(
-      res => this.displayNews = res.news_results
+      res => this.displayNews = res.image_results
     )
     
     /*

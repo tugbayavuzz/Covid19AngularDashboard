@@ -18,7 +18,7 @@ export class DataServicesService {
   private weeklyDataUrl = 'https://api-covid-turkey.herokuapp.com';
   private vaccineUrl = 'https://api-covid-turkey.herokuapp.com/vaccine';
   private globalDataUrl = 'https://corona.lmao.ninja/v3/covid-19/countries';
-  private newsUrl = 'https://api.serpwow.com/live/search?api_key=1EBC7832B3ED4AB3B114A7B9841E56DD&q=koronavirus&hl=tr&search_type=news&sort_by=date&time_period=last_day&output=json';
+  private newsUrl = 'https://api.serpwow.com/live/search?api_key=1EBC7832B3ED4AB3B114A7B9841E56DD&q=koronavirus&hl=tr&search_type=images&sort_by=date&time_period=last_day';
   //private news = 'https://gnewsapi.net/api/search?q=covid&language=tr&country=tr&api_token=24jKTiZWTNo0mBFBzCMQYyKi5j7Ta5urzyWuNVpZnLFHuGzVwMFmMXQtz172';
   //private newsCovid = 'https://gnewsapi.net/api/search?q=koronavirus&language=tr&country=tr&api_token=24jKTiZWTNo0mBFBzCMQYyKi5j7Ta5urzyWuNVpZnLFHuGzVwMFmMXQtz172';
  
